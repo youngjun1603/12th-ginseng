@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- 배경 그라디언트 -->
+    <radialGradient id="bg1" cx="75%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#C4993A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#142414" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="15%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#0D1A0D" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#142414" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 병 그라디언트 -->
+    <linearGradient id="capG" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#D4A94A"/>
+      <stop offset="50%" stop-color="#C4993A"/>
+      <stop offset="100%" stop-color="#7A5818"/>
+    </linearGradient>
+    <linearGradient id="bottleG" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#0D1A0D"/>
+      <stop offset="40%" stop-color="#1C3A1C"/>
+      <stop offset="70%" stop-color="#142414"/>
+      <stop offset="100%" stop-color="#0A0E0A"/>
+    </linearGradient>
+    <linearGradient id="labelG" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#142414"/>
+      <stop offset="100%" stop-color="#0D1A0D"/>
+    </linearGradient>
+    <linearGradient id="shineG" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="50%" stop-color="rgba(196,153,58,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="#142414"/>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- 그리드 패턴 -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M60 0L0 0 0 60" fill="none" stroke="#C4993A" stroke-width="0.5" stroke-opacity="0.05"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- 세로 구분선 -->
+  <line x1="1020" y1="0" x2="1020" y2="630" stroke="#C4993A" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="840" y1="0" x2="840" y2="630" stroke="#C4993A" stroke-width="1" stroke-opacity="0.07"/>
+
+  <!-- 로고 (좌상단) -->
+  <circle cx="75" cy="46" r="4" fill="#C4993A"/>
+  <text x="90" y="52" font-family="serif" font-size="20" font-weight="700" fill="#C4993A" letter-spacing="6">復元 · 12年</text>
+
+  <!-- URL (우하단) -->
+  <text x="1128" y="606" font-family="sans-serif" font-size="11" fill="#C4993A" fill-opacity="0.4" text-anchor="end" letter-spacing="2">youngjun1603.github.io/12th-ginseng</text>
+
+  <!-- 왼쪽 텍스트 영역 -->
+  <!-- eyebrow -->
+  <line x1="72" y1="168" x2="112" y2="168" stroke="#C4993A" stroke-width="1"/>
+  <text x="124" y="173" font-family="sans-serif" font-size="12" font-weight="600" fill="#C4993A" letter-spacing="4">12년근 산양산삼 발효 드링크</text>
+
+  <!-- 헤드라인 -->
+  <text x="72" y="240" font-family="serif" font-size="64" font-weight="700" fill="#F8F4EC" letter-spacing="-1">오늘의 피로를</text>
+  <text x="72" y="316" font-family="serif" font-size="64" font-weight="700" fill="#C4993A" letter-spacing="-1">12년</text>
+  <text x="222" y="316" font-family="serif" font-size="64" font-weight="700" fill="#F8F4EC" letter-spacing="-1">이 지워드립니다</text>
+  <!-- 헤드라인 언더라인 -->
+  <line x1="72" y1="322" x2="210" y2="322" stroke="#C4993A" stroke-width="2"/>
+
+  <!-- 서브 텍스트 -->
+  <text x="72" y="368" font-family="sans-serif" font-size="18" fill="#F8F4EC" fill-opacity="0.62">9중 9포 자연 발효, 비배양 산양산삼.</text>
+  <text x="72" y="394" font-family="sans-serif" font-size="18" fill="#F8F4EC" fill-opacity="0.62">지친 현대인의 일상을 회복시키는 프리미엄 웰니스 드링크.</text>
+
+  <!-- 구분선 -->
+  <line x1="72" y1="434" x2="680" y2="434" stroke="#C4993A" stroke-width="1" stroke-opacity="0.2"/>
+
+  <!-- 지표 4개 -->
+  <!-- 12년근 -->
+  <text x="72" y="476" font-family="serif" font-size="28" font-weight="700" fill="#C4993A">12</text>
+  <text x="116" y="476" font-family="serif" font-size="14" font-weight="600" fill="#9A7020">년근</text>
+  <text x="72" y="496" font-family="sans-serif" font-size="10" font-weight="600" fill="#8CB98C" fill-opacity="0.65" letter-spacing="3">AGED 12 YRS</text>
+
+  <line x1="168" y1="452" x2="168" y2="502" stroke="#C4993A" stroke-width="1" stroke-opacity="0.18"/>
+
+  <!-- 9×9 -->
+  <text x="190" y="476" font-family="serif" font-size="28" font-weight="700" fill="#C4993A">9×9</text>
+  <text x="190" y="496" font-family="sans-serif" font-size="10" font-weight="600" fill="#8CB98C" fill-opacity="0.65" letter-spacing="3">FERMENTATION</text>
+
+  <line x1="306" y1="452" x2="306" y2="502" stroke="#C4993A" stroke-width="1" stroke-opacity="0.18"/>
+
+  <!-- 100% -->
+  <text x="328" y="476" font-family="serif" font-size="28" font-weight="700" fill="#C4993A">100</text>
+  <text x="396" y="476" font-family="serif" font-size="14" font-weight="600" fill="#9A7020">%</text>
+  <text x="328" y="496" font-family="sans-serif" font-size="10" font-weight="600" fill="#8CB98C" fill-opacity="0.65" letter-spacing="3">DISCLOSED</text>
+
+  <line x1="444" y1="452" x2="444" y2="502" stroke="#C4993A" stroke-width="1" stroke-opacity="0.18"/>
+
+  <!-- 非배양 -->
+  <text x="466" y="476" font-family="serif" font-size="28" font-weight="700" fill="#C4993A">非</text>
+  <text x="500" y="476" font-family="serif" font-size="14" font-weight="600" fill="#9A7020">배양</text>
+  <text x="466" y="496" font-family="sans-serif" font-size="10" font-weight="600" fill="#8CB98C" fill-opacity="0.65" letter-spacing="3">WILD CULTIVATED</text>
+
+  <!-- 오른쪽 병 SVG -->
+  <!-- 병 그림자 -->
+  <ellipse cx="960" cy="590" rx="78" ry="6" fill="rgba(0,0,0,0.45)"/>
+
+  <!-- 뚜껑 -->
+  <rect x="926" y="110" width="68" height="48" fill="url(#capG)"/>
+  <rect x="926" y="110" width="68" height="3" fill="#E5C77A"/>
+  <rect x="926" y="154" width="68" height="4" fill="#7A5818"/>
+  <g stroke="#7A5818" stroke-width="0.8" stroke-opacity="0.5">
+    <line x1="932" y1="118" x2="932" y2="152"/>
+    <line x1="940" y1="118" x2="940" y2="152"/>
+    <line x1="948" y1="118" x2="948" y2="152"/>
+    <line x1="956" y1="118" x2="956" y2="152"/>
+    <line x1="964" y1="118" x2="964" y2="152"/>
+    <line x1="972" y1="118" x2="972" y2="152"/>
+    <line x1="980" y1="118" x2="980" y2="152"/>
+    <line x1="988" y1="118" x2="988" y2="152"/>
+  </g>
+
+  <!-- 넥 -->
+  <path d="M934 158 L934 190 Q934 198 942 198 L978 198 Q986 198 986 190 L986 158 Z" fill="url(#bottleG)"/>
+
+  <!-- 바디 -->
+  <path d="M942 198 Q910 206 900 246 L900 526 Q900 554 928 554 L992 554 Q1020 554 1020 526 L1020 246 Q1010 206 978 198 Z" fill="url(#bottleG)"/>
+
+  <!-- 병 하이라이트 -->
+  <path d="M908 246 Q906 256 906 276 L906 516 Q906 536 916 542" stroke="rgba(196,153,58,0.18)" stroke-width="1.5" fill="none"/>
+
+  <!-- 라벨 배경 -->
+  <rect x="908" y="276" width="104" height="220" fill="url(#labelG)" stroke="#C4993A" stroke-width="0.8" opacity="0.95"/>
+  <rect x="914" y="282" width="92" height="208" fill="none" stroke="rgba(196,153,58,0.35)" stroke-width="0.6"/>
+
+  <!-- 라벨 상단 선 -->
+  <line x1="938" y1="296" x2="982" y2="296" stroke="#C4993A" stroke-width="1"/>
+
+  <!-- 復元 -->
+  <text x="960" y="328" text-anchor="middle" font-family="serif" font-size="22" font-weight="700" fill="#C4993A" letter-spacing="2">復元</text>
+  <text x="960" y="348" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#C4993A" fill-opacity="0.7" letter-spacing="3">FUKWON</text>
+
+  <!-- 구분선 -->
+  <line x1="932" y1="362" x2="988" y2="362" stroke="rgba(196,153,58,0.35)" stroke-width="0.5"/>
+
+  <!-- 12 -->
+  <text x="960" y="396" text-anchor="middle" font-family="serif" font-size="38" font-weight="700" fill="#C4993A">12</text>
+  <text x="960" y="414" text-anchor="middle" font-family="serif" font-size="9" font-weight="500" fill="#C4993A" fill-opacity="0.7" letter-spacing="3">YEARS AGED</text>
+
+  <!-- 구분선 -->
+  <line x1="932" y1="428" x2="988" y2="428" stroke="rgba(196,153,58,0.35)" stroke-width="0.5"/>
+
+  <!-- 산양산삼 -->
+  <text x="960" y="448" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="500" fill="#C4993A" fill-opacity="0.7" letter-spacing="1.5">산양산삼 발효 드링크</text>
+  <text x="960" y="462" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="400" fill="#C4993A" fill-opacity="0.5" letter-spacing="2">9×9 NATURAL FERMENTATION</text>
+
+  <!-- 라벨 하단 선 -->
+  <line x1="938" y1="478" x2="982" y2="478" stroke="#C4993A" stroke-width="1"/>
+  <text x="960" y="490" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="500" fill="#C4993A" fill-opacity="0.5" letter-spacing="2.5">50ml · NET 1.7 FL OZ</text>
+
+  <!-- 병 광택 -->
+  <rect x="900" y="198" width="14" height="356" fill="url(#shineG)" opacity="0.5"/>
+
+  <!-- 병 주변 글로우 -->
+  <ellipse cx="960" cy="380" rx="120" ry="220" fill="#C4993A" fill-opacity="0.06"/>
+</svg>

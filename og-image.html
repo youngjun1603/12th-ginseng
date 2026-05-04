@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <!--
-  OG 이미지 생성용 파일 (1200 × 630px)
-  사용법:
-    1. 브라우저에서 이 파일 열기
-    2. 브라우저 창을 정확히 1200px 너비로 조절
-    3. 전체 페이지 스크린샷 (macOS: Cmd+Shift+3, Windows: Snipping Tool)
-    4. 저장 파일명: og-image.png
-    5. 같은 폴더에 넣고 git push
-    6. index.html 내 og:image URL을
+  OG 이미지 PNG 저장 방법 (아래 버튼 클릭 한 번으로 완료):
+    1. 이 파일을 브라우저에서 열기
+    2. "PNG 저장" 버튼 클릭 → og-image.png 자동 다운로드
+    3. 다운로드된 파일을 이 폴더(12th-ginseng/)에 복사
+    4. git add og-image.png && git push
+    5. index.html 의 og:image URL을
        https://youngjun1603.github.io/12th-ginseng/og-image.png 로 교체
 -->
 <style>
@@ -267,5 +265,29 @@
 
 <div class="url">youngjun1603.github.io/12th-ginseng</div>
 
+<!-- PNG 저장 버튼 (브라우저에서만 표시, 캡처에는 포함 안 됨) -->
+<div id="save-ui" style="position:fixed;top:16px;right:16px;z-index:999;display:flex;gap:8px;align-items:center;background:rgba(0,0,0,.7);padding:10px 16px;border:1px solid #C4993A">
+  <span style="color:#C4993A;font-family:sans-serif;font-size:12px;letter-spacing:.1em">카카오 OG 이미지</span>
+  <button id="saveBtn" style="background:#C4993A;color:#0A0E0A;border:none;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.08em">PNG 저장</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  const ui = document.getElementById('save-ui');
+  ui.style.display = 'none';
+  const canvas = await html2canvas(document.body, {
+    width: 1200, height: 630,
+    scale: 1,
+    useCORS: true,
+    logging: false
+  });
+  ui.style.display = 'flex';
+  const a = document.createElement('a');
+  a.download = 'og-image.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+});
+</script>
 </body>
 </html>
