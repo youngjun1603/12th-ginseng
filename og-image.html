@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<!--
+  OG 이미지 생성용 파일 (1200 × 630px)
+  사용법:
+    1. 브라우저에서 이 파일 열기
+    2. 브라우저 창을 정확히 1200px 너비로 조절
+    3. 전체 페이지 스크린샷 (macOS: Cmd+Shift+3, Windows: Snipping Tool)
+    4. 저장 파일명: og-image.png
+    5. 같은 폴더에 넣고 git push
+    6. index.html 내 og:image URL을
+       https://youngjun1603.github.io/12th-ginseng/og-image.png 로 교체
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@400;600&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  body{
+    width:1200px;
+    height:630px;
+    overflow:hidden;
+    background:#142414;
+    font-family:'Noto Serif KR', serif;
+    position:relative;
+  }
+
+  /* 배경 레이어 */
+  .bg-glow{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 75% 40%, rgba(196,153,58,.18), transparent 50%),
+      radial-gradient(ellipse at 15% 80%, rgba(13,26,13,.9), transparent 55%);
+  }
+  .bg-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(196,153,58,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(196,153,58,.05) 1px, transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at 50% 50%, #000 30%, transparent 80%);
+  }
+  .vrule{
+    position:absolute;top:0;bottom:0;width:1px;
+    background:linear-gradient(to bottom, transparent, rgba(196,153,58,.18) 30%, rgba(196,153,58,.18) 70%, transparent);
+  }
+  .vrule.r1{right:15%}
+  .vrule.r2{right:30%;opacity:.45}
+
+  /* 콘텐츠 레이아웃 */
+  .inner{
+    position:relative;z-index:2;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    height:100%;
+    padding:60px 72px;
+    gap:40px;
+  }
+
+  /* 왼쪽 텍스트 */
+  .text-side{display:flex;flex-direction:column;gap:0}
+
+  .eyebrow{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:28px;
+  }
+  .eyebrow .rule{width:40px;height:1px;background:#C4993A}
+  .eyebrow .lbl{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:#C4993A;
+  }
+
+  .headline{
+    font-size:64px;font-weight:700;
+    line-height:1.12;letter-spacing:-0.02em;
+    color:#F8F4EC;
+    margin-bottom:24px;
+    word-break:keep-all;
+  }
+  .headline .accent{color:#C4993A;position:relative}
+  .headline .accent::after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:-5px;
+    height:2px;
+    background:linear-gradient(90deg, #C4993A, transparent);
+  }
+
+  .sub{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:18px;font-weight:400;
+    line-height:1.75;color:rgba(248,244,236,.65);
+    max-width:500px;
+    word-break:keep-all;
+  }
+
+  /* 지표 */
+  .metrics{
+    display:flex;gap:28px;align-items:center;
+    margin-top:40px;
+    padding-top:24px;
+    border-top:1px solid rgba(196,153,58,.2);
+  }
+  .metric{display:flex;flex-direction:column;gap:4px}
+  .metric-num{
+    font-size:26px;font-weight:700;color:#C4993A;
+    line-height:1;
+  }
+  .metric-num small{font-size:13px;color:#9A7020;font-weight:600;margin-left:2px}
+  .metric-lbl{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:9px;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(140,185,140,.65);
+  }
+  .metric-div{width:1px;height:32px;background:rgba(196,153,58,.18)}
+
+  /* 오른쪽 병 SVG */
+  .bottle-side{
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .bottle-glow{
+    position:absolute;inset:-20%;
+    background:radial-gradient(ellipse at 50% 50%, rgba(196,153,58,.2), transparent 60%);
+    filter:blur(20px);
+  }
+  .bottle-svg{width:210px;position:relative;z-index:2}
+
+  /* 브랜드 로고 */
+  .logo{
+    position:absolute;
+    top:40px;left:72px;
+    font-size:22px;font-weight:700;
+    color:#C4993A;letter-spacing:.12em;
+    display:flex;align-items:center;gap:8px;
+    z-index:3;
+  }
+  .logo-dot{
+    width:6px;height:6px;
+    background:#C4993A;border-radius:50%;
+    margin-top:-2px;
+  }
+
+  /* 우측 하단 사이트 URL */
+  .url{
+    position:absolute;
+    bottom:36px;right:72px;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:11px;font-weight:400;
+    letter-spacing:.12em;
+    color:rgba(196,153,58,.4);
+    z-index:3;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-grid"></div>
+<div class="vrule r1"></div>
+<div class="vrule r2"></div>
+
+<div class="logo"><span class="logo-dot"></span>復元 · 12年</div>
+
+<div class="inner">
+  <div class="text-side">
+    <div class="eyebrow">
+      <span class="rule"></span>
+      <span class="lbl">12년근 산양산삼 발효 드링크</span>
+    </div>
+
+    <h1 class="headline">
+      오늘의 피로를<br>
+      <span class="accent">12년</span>이 지워드립니다
+    </h1>
+
+    <p class="sub">9중 9포 자연 발효, 비배양 산양산삼.<br>지친 현대인의 일상을 회복시키는 프리미엄 웰니스 드링크.</p>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric-num">12<small>년근</small></span>
+        <span class="metric-lbl">Aged 12 Yrs</span>
+      </div>
+      <div class="metric-div"></div>
+      <div class="metric">
+        <span class="metric-num">9×9</span>
+        <span class="metric-lbl">Fermentation</span>
+      </div>
+      <div class="metric-div"></div>
+      <div class="metric">
+        <span class="metric-num">100<small>%</small></span>
+        <span class="metric-lbl">Disclosed</span>
+      </div>
+      <div class="metric-div"></div>
+      <div class="metric">
+        <span class="metric-num">非<small style="font-size:11px">배양</small></span>
+        <span class="metric-lbl">Wild Cultivated</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottle-side">
+    <div class="bottle-glow"></div>
+    <svg class="bottle-svg" viewBox="0 0 240 480" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="og-capG" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#D4A94A"/>
+          <stop offset="50%" stop-color="#C4993A"/>
+          <stop offset="100%" stop-color="#7A5818"/>
+        </linearGradient>
+        <linearGradient id="og-bottleG" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stop-color="#0D1A0D"/>
+          <stop offset="40%" stop-color="#1C3A1C"/>
+          <stop offset="70%" stop-color="#142414"/>
+          <stop offset="100%" stop-color="#0A0E0A"/>
+        </linearGradient>
+        <linearGradient id="og-labelG" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#142414"/>
+          <stop offset="100%" stop-color="#0D1A0D"/>
+        </linearGradient>
+        <linearGradient id="og-shineG" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+          <stop offset="50%" stop-color="rgba(196,153,58,.18)"/>
+          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="120" cy="465" rx="78" ry="6" fill="rgba(0,0,0,.45)"/>
+      <rect x="86" y="14" width="68" height="48" fill="url(#og-capG)"/>
+      <rect x="86" y="14" width="68" height="3" fill="#E5C77A"/>
+      <rect x="86" y="58" width="68" height="4" fill="#7A5818"/>
+      <g stroke="#7A5818" stroke-width=".8" opacity=".5">
+        <line x1="92" y1="22" x2="92" y2="56"/>
+        <line x1="100" y1="22" x2="100" y2="56"/>
+        <line x1="108" y1="22" x2="108" y2="56"/>
+        <line x1="116" y1="22" x2="116" y2="56"/>
+        <line x1="124" y1="22" x2="124" y2="56"/>
+        <line x1="132" y1="22" x2="132" y2="56"/>
+        <line x1="140" y1="22" x2="140" y2="56"/>
+        <line x1="148" y1="22" x2="148" y2="56"/>
+      </g>
+      <path d="M94 62 L94 94 Q94 102 102 102 L138 102 Q146 102 146 94 L146 62 Z" fill="url(#og-bottleG)"/>
+      <path d="M102 102 Q70 110 60 150 L60 430 Q60 458 88 458 L152 458 Q180 458 180 430 L180 150 Q170 110 138 102 Z" fill="url(#og-bottleG)"/>
+      <path d="M68 150 Q66 160 66 180 L66 420 Q66 440 76 446" stroke="rgba(196,153,58,.18)" stroke-width="1.5" fill="none"/>
+      <path d="M62 165 L178 165" stroke="rgba(196,153,58,.25)" stroke-width=".8" stroke-dasharray="2,3"/>
+      <rect x="68" y="180" width="104" height="220" fill="url(#og-labelG)" stroke="#C4993A" stroke-width=".8" opacity=".95"/>
+      <rect x="74" y="186" width="92" height="208" fill="none" stroke="rgba(196,153,58,.35)" stroke-width=".6"/>
+      <line x1="98" y1="200" x2="142" y2="200" stroke="#C4993A" stroke-width="1"/>
+      <text x="120" y="232" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="22" font-weight="700" fill="#C4993A" letter-spacing="2">復元</text>
+      <text x="120" y="252" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="9" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="3">FUKWON</text>
+      <line x1="92" y1="266" x2="148" y2="266" stroke="rgba(196,153,58,.35)" stroke-width=".5"/>
+      <text x="120" y="298" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="36" font-weight="700" fill="#C4993A">12</text>
+      <text x="120" y="316" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="9" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="3">YEARS AGED</text>
+      <line x1="92" y1="332" x2="148" y2="332" stroke="rgba(196,153,58,.35)" stroke-width=".5"/>
+      <text x="120" y="352" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="8" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="1.5">산양산삼 발효 드링크</text>
+      <text x="120" y="368" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="7" font-weight="400" fill="rgba(196,153,58,.5)" letter-spacing="2">9×9 NATURAL FERMENTATION</text>
+      <line x1="98" y1="384" x2="142" y2="384" stroke="#C4993A" stroke-width="1"/>
+      <text x="120" y="395" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="6" font-weight="500" fill="rgba(196,153,58,.5)" letter-spacing="2.5">50ml · NET 1.7 FL OZ</text>
+      <rect x="60" y="102" width="14" height="356" fill="url(#og-shineG)" opacity=".5"/>
+    </svg>
+  </div>
+</div>
+
+<div class="url">youngjun1603.github.io/12th-ginseng</div>
+
+</body>
+</html>
