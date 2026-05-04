@@ -1569,24 +1569,10 @@ document.querySelectorAll('.store-link').forEach(el => {
 });
 
 /* ============================================================
-   Local image auto-inject
-   fetch HEAD 방식: 404 응답은 콘솔 빨간 에러 없이 조용히 처리됨
-   images/ 폴더에 파일을 저장하면 placeholder가 실제 사진으로 교체됩니다
+   사진 교체 방법 (촬영 완료 후):
+   images/ 폴더에 파일 저장 후 각 슬롯 div 안에
+   <img src="images/파일명.jpg" alt="설명" class="img-fill"> 추가 → git push
    ============================================================ */
-document.querySelectorAll('[data-local-img]').forEach(slot => {
-  const file = slot.dataset.localImg;
-  fetch('images/' + file, {method: 'HEAD'})
-    .then(r => {
-      if (!r.ok) return;
-      const img = document.createElement('img');
-      img.src = 'images/' + file;
-      img.alt = slot.dataset.localAlt || '';
-      img.className = 'img-fill';
-      img.loading = 'lazy';
-      slot.prepend(img);
-    })
-    .catch(() => {});
-});
 
 /* ============================================================
    Sticky nav background swap
