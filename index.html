@@ -65,11 +65,11 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    TYPE
    ============================================================ */
-.h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,6.5vw,76px);line-height:1.12;letter-spacing:-0.02em}
-.h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.2vw,48px);line-height:1.2;letter-spacing:-0.015em}
-.h3{font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.6vw,30px);line-height:1.3;letter-spacing:-0.01em}
-.h4{font-family:var(--serif);font-weight:600;font-size:clamp(18px,2vw,22px);line-height:1.35}
-.body{font-size:clamp(15px,1.15vw,17px);font-weight:400;line-height:1.75;color:#3a423a}
+.h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,5.6vw,66px);line-height:1.15;letter-spacing:-0.02em;word-break:keep-all}
+.h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.8vw,44px);line-height:1.25;letter-spacing:-0.015em;word-break:keep-all}
+.h3{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.4vw,28px);line-height:1.35;letter-spacing:-0.01em;word-break:keep-all}
+.h4{font-family:var(--serif);font-weight:600;font-size:clamp(17px,1.9vw,21px);line-height:1.4;word-break:keep-all}
+.body{font-size:clamp(15px,1.15vw,17px);font-weight:400;line-height:1.75;color:#3a423a;word-break:keep-all}
 .body-sm{font-size:14px;font-weight:400;line-height:1.7;color:#5a6259}
 .caption{font-size:12px;font-weight:400;color:#7a8278;line-height:1.6}
 .label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
@@ -153,15 +153,15 @@ a{color:inherit;text-decoration:none}
 .hero-vrule.r1{right:14%}
 .hero-vrule.r2{right:28%;background:linear-gradient(to bottom, transparent, rgba(196,153,58,.08) 30%, rgba(196,153,58,.08) 70%, transparent)}
 
-.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;z-index:2}
-.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
-.hero-eyebrow .rule{width:48px;height:1px;background:var(--gold)}
+.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;z-index:2}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.hero-eyebrow .rule{width:40px;height:1px;background:var(--gold)}
 .hero-eyebrow .label{color:var(--gold)}
-.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,6.2vw,76px);line-height:1.1;letter-spacing:-0.02em;color:var(--cr);margin-bottom:24px}
+.hero-h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,4.8vw,58px);line-height:1.18;letter-spacing:-0.02em;color:var(--cr);margin-bottom:22px;word-break:keep-all}
 .hero-h1 .accent{color:var(--gold);position:relative;display:inline-block}
-.hero-h1 .accent::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg, var(--gold), transparent)}
-.hero-sub{font-size:clamp(15px,1.3vw,18px);font-weight:400;line-height:1.85;color:rgba(248,244,236,.7);max-width:480px;margin-bottom:36px}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero-h1 .accent::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:linear-gradient(90deg, var(--gold), transparent)}
+.hero-sub{font-size:clamp(14px,1.2vw,17px);font-weight:400;line-height:1.85;color:rgba(248,244,236,.68);max-width:460px;margin-bottom:32px;word-break:keep-all}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 .hero-cta .btn-secondary{color:var(--cr);border-color:rgba(248,244,236,.25)}
 .hero-cta .btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
 
@@ -173,9 +173,9 @@ a{color:inherit;text-decoration:none}
 .hm-div{width:1px;align-self:stretch;background:rgba(196,153,58,.18)}
 
 /* Bottle SVG side */
-.hero-bottle-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
-.hero-bottle-glow{position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 50%, rgba(196,153,58,.18), transparent 60%);pointer-events:none;filter:blur(20px)}
-.hero-bottle{width:min(320px, 80%);height:auto;position:relative;z-index:2;animation:floaty 6s ease-in-out infinite}
+.hero-bottle-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:480px}
+.hero-bottle-glow{position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 50%, rgba(196,153,58,.22), transparent 58%);pointer-events:none;filter:blur(24px)}
+.hero-bottle{width:min(360px, 88%);height:auto;position:relative;z-index:2;animation:floaty 6s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}}
 
 .hero-bottle-caption{position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;font-size:10px;letter-spacing:.4em;color:rgba(196,153,58,.5);text-transform:uppercase;font-weight:500;white-space:nowrap}
@@ -356,9 +356,9 @@ a{color:inherit;text-decoration:none}
    RESPONSIVE
    ============================================================ */
 @media (max-width: 960px){
-  .hero-inner{grid-template-columns:1fr;gap:32px}
-  .hero-bottle-wrap{min-height:340px;order:-1}
-  .hero-bottle{width:min(220px, 50%)}
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-bottle-wrap{min-height:300px;order:-1}
+  .hero-bottle{width:min(200px, 48%)}
   .sol-grid{grid-template-columns:1fr;gap:40px}
   .prob-grid{grid-template-columns:repeat(2,1fr)}
   .tl-grid{grid-template-columns:repeat(2,1fr);gap:48px}
@@ -371,20 +371,23 @@ a{color:inherit;text-decoration:none}
   .nav-burger{display:flex}
 }
 @media (max-width: 560px){
-  .hero{min-height:auto;padding-top:calc(var(--nav-h) + 24px);padding-bottom:80px}
-  .hero-metrics{flex-wrap:wrap;gap:20px 24px}
+  .hero{min-height:auto;padding-top:calc(var(--nav-h) + 20px);padding-bottom:72px}
+  .hero-metrics{flex-wrap:wrap;gap:16px 20px}
   .hm-div{display:none}
+  .hm-num{font-size:26px}
   .prob-grid{grid-template-columns:1fr}
   .sci-card{padding:36px 28px;min-height:240px}
   .sci-num{font-size:64px}
   .foot-top{grid-template-columns:1fr;gap:36px}
   .scroll-indicator{display:none}
+  .faq-q-text{font-size:15px;word-break:keep-all}
 }
 @media (max-width: 390px){
-  :root{--pad-x:18px}
-  .btn{padding:12px 20px;font-size:12px;letter-spacing:.14em}
+  :root{--pad-x:16px}
+  .btn{padding:12px 18px;font-size:12px;letter-spacing:.12em}
   .hero-cta{flex-direction:column;align-items:stretch}
   .hero-cta .btn{width:100%}
+  .btn-naver-lg{padding:15px 24px;font-size:14px}
 }
 
 /* ============================================================
@@ -552,7 +555,7 @@ a{color:inherit;text-decoration:none}
         <span class="label">12년근 산양산삼 발효 드링크</span>
       </div>
       <h1 class="hero-h1 reveal delay-1">오늘의 피로를<br><span class="accent">12년</span>이 지워드립니다</h1>
-      <p class="hero-sub reveal delay-2">9중 9포 자연 발효, 비배양 산양산삼.<br>지친 현대인의 일상을 회복시키는 프리미엄 웰니스 드링크.</p>
+      <p class="hero-sub reveal delay-2">9중 9포 자연 발효, 비배양 산양산삼. 지친 현대인의 일상을 회복시키는 프리미엄 웰니스 드링크.</p>
       <div class="hero-cta reveal delay-3">
         <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener"><span class="nv-n">N</span>네이버 스토어 구매하기</a>
         <a class="btn btn-secondary btn-lg" href="#science">성분 확인하기</a>
