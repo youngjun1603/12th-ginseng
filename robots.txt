@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youngjun1603.github.io/12th-ginseng/sitemap.xml
