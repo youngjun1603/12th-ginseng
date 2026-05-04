@@ -36,9 +36,41 @@
 <!-- 네이버 서치어드바이저 인증 (searchadvisor.naver.com 에서 발급 후 content 교체) -->
 <!-- <meta name="naver-site-verification" content="NAVER_VERIFICATION_CODE" /> -->
 
+<!-- 폰트 성능 최적화 (preconnect → 렌더 블로킹 제거) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+
 <!-- Favicon (파일 없이 SVG 인라인으로 처리 — 404 방지) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23142414'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-size='18' font-family='serif' fill='%23C4993A'%3E%E5%BE%A9%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23142414'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-size='18' font-family='serif' fill='%23C4993A'%3E%E5%BE%A9%3C/text%3E%3C/svg%3E">
+
+<!-- ============================================================
+     카카오 JavaScript SDK (developers.kakao.com 에서 앱 등록 후 App Key 발급)
+     ============================================================ -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js" defer></script>
+
+<!-- ============================================================
+     네이버 공통 전환 추적 — 네이버 광고 집행 시 주석 해제 후 ID 교체
+     ============================================================ -->
+<!--
+<script src="//wcs.naver.net/wcslog.js"></script>
+<script>if(!wcs_add) var wcs_add={};wcs_add["wa"]="NAVER_WCS_ID";if(window.wcs)wcs.inflow();</script>
+-->
+
+<!-- ============================================================
+     메타(인스타그램) 픽셀 — 인스타그램 광고 집행 시 주석 해제 후 ID 교체
+     ============================================================ -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','INSTAGRAM_PIXEL_ID');fbq('track','PageView');
+</script>
+-->
 
 <!-- ============================================================
      JSON-LD 구조화 데이터 — 구글 리치 결과 (FAQ 카드·제품 정보 노출)
@@ -146,7 +178,7 @@
   });
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+/* 폰트는 <head> <link> 태그로 로드 (preconnect 최적화) */
 
 /* ============================================================
    DESIGN TOKENS
@@ -477,6 +509,26 @@ a{color:inherit;text-decoration:none}
 .foot-col a:hover{color:var(--gold)}
 .foot-bottom{padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:rgba(248,244,236,.4)}
 .foot-bottom .links{display:flex;gap:20px}
+/* SNS 공유 아이콘 */
+.sns-row{display:flex;gap:10px;margin-top:24px}
+.sns-icon{width:38px;height:38px;border:1px solid rgba(196,153,58,.2);display:flex;align-items:center;justify-content:center;color:rgba(248,244,236,.5);transition:border-color .2s,color .2s;cursor:pointer;background:none;text-decoration:none}
+.sns-icon:hover{border-color:var(--gold);color:var(--gold)}
+.sns-icon svg{width:17px;height:17px;fill:currentColor}
+.sns-icon.kakao{background:#FEE500;border-color:#FEE500;color:#3A1D1D}
+.sns-icon.kakao:hover{background:#f0d900;border-color:#f0d900}
+.sns-icon.kakao svg{fill:#3A1D1D}
+/* 공유 버튼 (hero 하단) */
+.share-row{display:flex;align-items:center;gap:8px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(196,153,58,.12)}
+.share-row-lbl{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,244,236,.35)}
+.share-btn{display:flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid rgba(196,153,58,.2);background:none;color:rgba(248,244,236,.55);font-size:11.5px;font-weight:500;cursor:pointer;transition:border-color .2s,color .2s;letter-spacing:.04em}
+.share-btn:hover{border-color:var(--gold);color:var(--gold)}
+.share-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0}
+.share-btn.kakao-btn{background:#FEE500;border-color:#FEE500;color:#3A1D1D}
+.share-btn.kakao-btn:hover{background:#f0d900;border-color:#f0d900;color:#3A1D1D}
+.share-btn.kakao-btn svg{stroke:#3A1D1D}
+/* 토스트 알림 */
+#toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--g-700);color:var(--cr);font-size:12.5px;padding:10px 20px;border:1px solid rgba(196,153,58,.25);pointer-events:none;opacity:0;transition:opacity .3s,transform .3s;z-index:300;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* ============================================================
    ANIMATION
@@ -763,6 +815,17 @@ a{color:inherit;text-decoration:none}
         <div class="hm"><span class="hm-num count-num" data-target="100" data-suffix="%">0<small>%</small></span><span class="hm-lbl">Disclosed</span></div>
         <div class="hm-div"></div>
         <div class="hm"><span class="hm-num">非<small>배양</small></span><span class="hm-lbl">Wild Cultivated</span></div>
+      </div>
+      <div class="share-row reveal delay-4">
+        <span class="share-row-lbl">공유</span>
+        <button class="share-btn kakao-btn" onclick="shareKakao()" aria-label="카카오톡 공유">
+          <svg viewBox="0 0 24 24" style="fill:#3A1D1D;stroke:none"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
+          카카오톡 공유
+        </button>
+        <button class="share-btn" onclick="copyUrl()" aria-label="링크 복사">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          링크 복사
+        </button>
       </div>
     </div>
 
@@ -1604,6 +1667,21 @@ a{color:inherit;text-decoration:none}
           <input class="input" type="email" placeholder="이메일 주소" required />
           <button type="submit">구독</button>
         </form>
+        <div class="sns-row">
+          <!-- TODO: 각 href="#" 을 실제 채널 주소로 교체 -->
+          <a class="sns-icon kakao" href="#" aria-label="카카오채널" target="_blank" rel="noopener" onclick="shareKakao();return false;" title="카카오톡 공유">
+            <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
+          </a>
+          <a class="sns-icon" href="#" aria-label="인스타그램" target="_blank" rel="noopener" title="인스타그램">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="sns-icon" href="#" aria-label="네이버 블로그" target="_blank" rel="noopener" title="네이버 블로그">
+            <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
+          </a>
+          <button class="sns-icon" onclick="copyUrl()" aria-label="링크 복사" title="링크 복사">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </div>
       </div>
       <div class="foot-col">
         <h5>Brand</h5>
@@ -1653,20 +1731,69 @@ a{color:inherit;text-decoration:none}
     <div class="float-cta-name">復元 · 12年</div>
     <div class="float-cta-price">구독 시 33,000원/월부터</div>
   </div>
+  <button class="sns-icon kakao" onclick="shareKakao()" aria-label="카카오톡 공유" style="flex-shrink:0">
+    <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
+  </button>
   <a class="btn btn-naver store-link" href="#" target="_blank" rel="noopener" style="padding:12px 16px;font-size:12px">
     <span class="nv-n" style="width:16px;height:16px;font-size:11px">N</span>구매하기
   </a>
 </div>
+<div id="toast">링크가 복사되었습니다</div>
 
 <script>
 /* ============================================================
    NAVER STORE URL — 스토어 등록 후 아래 URL만 변경하면 모든 버튼에 적용됩니다
    ============================================================ */
 const STORE_URL = 'https://smartstore.naver.com/STORE_ID'; // TODO: 실제 URL로 변경
+const SITE_URL  = 'https://youngjun1603.github.io/12th-ginseng/'; // TODO: 도메인 확정 후 교체
+const KAKAO_APP_KEY = 'YOUR_KAKAO_APP_KEY'; // TODO: developers.kakao.com 에서 JavaScript 키 발급
 
 document.querySelectorAll('.store-link').forEach(el => {
   el.setAttribute('href', STORE_URL);
 });
+
+/* ============================================================
+   카카오톡 공유
+   ============================================================ */
+function shareKakao() {
+  if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
+    if (typeof Kakao !== 'undefined') {
+      Kakao.init(KAKAO_APP_KEY);
+    } else {
+      copyUrl();
+      return;
+    }
+  }
+  Kakao.Share.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '復元 · 12年 — 12년근 산양산삼 발효 드링크',
+      description: '9중 9포 자연 발효, 비배양 산양산삼. 지친 현대인의 일상을 회복시키는 프리미엄 웰니스 드링크.',
+      imageUrl: SITE_URL + 'og-image.png',
+      link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
+    },
+    buttons: [{
+      title: '스토어 바로가기',
+      link: { mobileWebUrl: STORE_URL, webUrl: STORE_URL }
+    }, {
+      title: '홈페이지 보기',
+      link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
+    }]
+  });
+}
+
+/* ============================================================
+   URL 복사 + 토스트 알림
+   ============================================================ */
+function copyUrl() {
+  navigator.clipboard.writeText(SITE_URL).then(() => showToast('링크가 복사되었습니다'));
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
 
 /* ============================================================
    사진 교체 방법 (촬영 완료 후):
