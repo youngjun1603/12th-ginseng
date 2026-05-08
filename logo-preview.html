@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>JINBONSAM Logo Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  body { margin: 0; background: #0f1a0f; font-family: sans-serif; padding: 60px 40px; }
+  h2 { color: rgba(196,153,58,.5); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin: 0 0 20px; font-weight: 400; }
+  .row { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; margin-bottom: 80px; }
+  .variant { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .label { color: rgba(196,153,58,.45); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+  .dark { background: #0D1A0D; padding: 40px 50px; border-radius: 4px; }
+  .light { background: #F8F4EC; padding: 40px 50px; border-radius: 4px; }
+  .divider { width: 100%; height: 1px; background: rgba(196,153,58,.15); margin: 40px 0; }
+</style>
+</head>
+<body>
+
+<h2>Variant A — Emblem (Symbol + Stacked Wordmark)</h2>
+<div class="row">
+
+  <!-- A1: Dark background -->
+  <div class="variant">
+    <div class="dark">
+      <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldA" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A94A"/>
+            <stop offset="100%" stop-color="#9A6E1A"/>
+          </linearGradient>
+        </defs>
+        <!-- Ginseng plant icon -->
+        <!-- Root body (forked, human-like) -->
+        <path d="M100 108 C100 108 100 130 100 145 C95 152 88 162 84 175 C82 181 83 188 87 190 C91 192 95 187 97 182 C98 178 99 170 100 165"
+              stroke="url(#goldA)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M100 145 C105 152 112 162 116 175 C118 181 117 188 113 190 C109 192 105 187 103 182 C102 178 101 170 100 165"
+              stroke="url(#goldA)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <!-- small lateral roots -->
+        <path d="M92 155 C85 153 80 156 77 160" stroke="url(#goldA)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".7"/>
+        <path d="M108 155 C115 153 120 156 123 160" stroke="url(#goldA)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".7"/>
+        <!-- stem -->
+        <line x1="100" y1="75" x2="100" y2="110" stroke="url(#goldA)" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- branch left -->
+        <path d="M100 90 C92 85 82 82 75 78" stroke="url(#goldA)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <!-- branch right -->
+        <path d="M100 90 C108 85 118 82 125 78" stroke="url(#goldA)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <!-- center leaf -->
+        <ellipse cx="100" cy="64" rx="10" ry="15" fill="none" stroke="url(#goldA)" stroke-width="1.5"
+                 transform="rotate(-5 100 64)"/>
+        <line x1="100" y1="75" x2="100" y2="55" stroke="url(#goldA)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <!-- left leaf -->
+        <ellipse cx="68" cy="70" rx="9" ry="13" fill="none" stroke="url(#goldA)" stroke-width="1.3"
+                 transform="rotate(-30 68 70)"/>
+        <line x1="75" y1="78" x2="63" y2="64" stroke="url(#goldA)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <!-- right leaf -->
+        <ellipse cx="132" cy="70" rx="9" ry="13" fill="none" stroke="url(#goldA)" stroke-width="1.3"
+                 transform="rotate(30 132 70)"/>
+        <line x1="125" y1="78" x2="137" y2="64" stroke="url(#goldA)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <!-- divider line -->
+        <line x1="50" y1="202" x2="150" y2="202" stroke="#C4993A" stroke-width=".8" opacity=".5"/>
+        <!-- wordmark -->
+        <text x="100" y="218" text-anchor="middle"
+              font-family="Cinzel, serif" font-size="18" font-weight="600"
+              fill="#C4993A" letter-spacing="4">JINBONSAM</text>
+        <text x="100" y="233" text-anchor="middle"
+              font-family="Cinzel, serif" font-size="8" font-weight="400"
+              fill="rgba(196,153,58,.6)" letter-spacing="6">HERITAGE</text>
+      </svg>
+    </div>
+    <span class="label">Dark BG</span>
+  </div>
+
+  <!-- A2: Light background -->
+  <div class="variant">
+    <div class="light">
+      <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldA2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9A6E1A"/>
+            <stop offset="100%" stop-color="#7A5818"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 108 C100 108 100 130 100 145 C95 152 88 162 84 175 C82 181 83 188 87 190 C91 192 95 187 97 182 C98 178 99 170 100 165"
+              stroke="url(#goldA2)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M100 145 C105 152 112 162 116 175 C118 181 117 188 113 190 C109 192 105 187 103 182 C102 178 101 170 100 165"
+              stroke="url(#goldA2)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M92 155 C85 153 80 156 77 160" stroke="url(#goldA2)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".7"/>
+        <path d="M108 155 C115 153 120 156 123 160" stroke="url(#goldA2)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".7"/>
+        <line x1="100" y1="75" x2="100" y2="110" stroke="url(#goldA2)" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M100 90 C92 85 82 82 75 78" stroke="url(#goldA2)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <path d="M100 90 C108 85 118 82 125 78" stroke="url(#goldA2)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <ellipse cx="100" cy="64" rx="10" ry="15" fill="none" stroke="url(#goldA2)" stroke-width="1.5" transform="rotate(-5 100 64)"/>
+        <line x1="100" y1="75" x2="100" y2="55" stroke="url(#goldA2)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <ellipse cx="68" cy="70" rx="9" ry="13" fill="none" stroke="url(#goldA2)" stroke-width="1.3" transform="rotate(-30 68 70)"/>
+        <line x1="75" y1="78" x2="63" y2="64" stroke="url(#goldA2)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <ellipse cx="132" cy="70" rx="9" ry="13" fill="none" stroke="url(#goldA2)" stroke-width="1.3" transform="rotate(30 132 70)"/>
+        <line x1="125" y1="78" x2="137" y2="64" stroke="url(#goldA2)" stroke-width=".8" stroke-linecap="round" opacity=".5"/>
+        <line x1="50" y1="202" x2="150" y2="202" stroke="#9A6E1A" stroke-width=".8" opacity=".5"/>
+        <text x="100" y="218" text-anchor="middle" font-family="Cinzel, serif" font-size="18" font-weight="600"
+              fill="#7A5818" letter-spacing="4">JINBONSAM</text>
+        <text x="100" y="233" text-anchor="middle" font-family="Cinzel, serif" font-size="8" font-weight="400"
+              fill="#9A6E1A" letter-spacing="6">HERITAGE</text>
+      </svg>
+    </div>
+    <span class="label">Light BG</span>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<h2>Variant B — Horizontal Wordmark</h2>
+<div class="row">
+
+  <div class="variant">
+    <div class="dark" style="padding: 30px 40px;">
+      <svg width="340" height="80" viewBox="0 0 340 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldB" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A94A"/>
+            <stop offset="100%" stop-color="#A07820"/>
+          </linearGradient>
+        </defs>
+        <!-- mini ginseng icon -->
+        <path d="M28 44 C28 44 28 52 28 57 C26 60 23 64 22 68 C21 71 22 73 24 74 C26 75 27 73 28 71 C28 69 28 66 28 64"
+              stroke="url(#goldB)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M28 57 C30 60 33 64 34 68 C35 71 34 73 32 74 C30 75 29 73 28 71 C28 69 28 66 28 64"
+              stroke="url(#goldB)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <line x1="28" y1="28" x2="28" y2="45" stroke="url(#goldB)" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M28 35 C24 33 19 31 16 29" stroke="url(#goldB)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+        <path d="M28 35 C32 33 37 31 40 29" stroke="url(#goldB)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+        <ellipse cx="28" cy="21" rx="6" ry="9" fill="none" stroke="url(#goldB)" stroke-width="1.2" transform="rotate(-3 28 21)"/>
+        <ellipse cx="11" cy="23" rx="5" ry="8" fill="none" stroke="url(#goldB)" stroke-width="1" transform="rotate(-25 11 23)"/>
+        <ellipse cx="45" cy="23" rx="5" ry="8" fill="none" stroke="url(#goldB)" stroke-width="1" transform="rotate(25 45 23)"/>
+        <!-- vertical divider -->
+        <line x1="60" y1="12" x2="60" y2="70" stroke="rgba(196,153,58,.3)" stroke-width="1"/>
+        <!-- main wordmark -->
+        <text x="74" y="36" font-family="Cinzel, serif" font-size="24" font-weight="600"
+              fill="#C4993A" letter-spacing="5">JINBONSAM</text>
+        <!-- italic subtitle -->
+        <text x="75" y="56" font-family="Cormorant Garamond, serif" font-size="13" font-style="italic" font-weight="400"
+              fill="rgba(196,153,58,.65)" letter-spacing="4">Heritage</text>
+        <!-- bottom rule -->
+        <line x1="74" y1="64" x2="320" y2="64" stroke="rgba(196,153,58,.3)" stroke-width=".7"/>
+        <text x="74" y="74" font-family="Cinzel, serif" font-size="7" font-weight="400"
+              fill="rgba(196,153,58,.4)" letter-spacing="5">FERMENTED WILD GINSENG · 12 YEARS</text>
+      </svg>
+    </div>
+    <span class="label">Horizontal — Dark</span>
+  </div>
+
+  <div class="variant">
+    <div class="light" style="padding: 30px 40px;">
+      <svg width="340" height="80" viewBox="0 0 340 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldB2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9A6E1A"/>
+            <stop offset="100%" stop-color="#7A5818"/>
+          </linearGradient>
+        </defs>
+        <path d="M28 44 C28 44 28 52 28 57 C26 60 23 64 22 68 C21 71 22 73 24 74 C26 75 27 73 28 71 C28 69 28 66 28 64"
+              stroke="url(#goldB2)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M28 57 C30 60 33 64 34 68 C35 71 34 73 32 74 C30 75 29 73 28 71 C28 69 28 66 28 64"
+              stroke="url(#goldB2)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <line x1="28" y1="28" x2="28" y2="45" stroke="url(#goldB2)" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M28 35 C24 33 19 31 16 29" stroke="url(#goldB2)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+        <path d="M28 35 C32 33 37 31 40 29" stroke="url(#goldB2)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+        <ellipse cx="28" cy="21" rx="6" ry="9" fill="none" stroke="url(#goldB2)" stroke-width="1.2" transform="rotate(-3 28 21)"/>
+        <ellipse cx="11" cy="23" rx="5" ry="8" fill="none" stroke="url(#goldB2)" stroke-width="1" transform="rotate(-25 11 23)"/>
+        <ellipse cx="45" cy="23" rx="5" ry="8" fill="none" stroke="url(#goldB2)" stroke-width="1" transform="rotate(25 45 23)"/>
+        <line x1="60" y1="12" x2="60" y2="70" stroke="rgba(130,90,20,.25)" stroke-width="1"/>
+        <text x="74" y="36" font-family="Cinzel, serif" font-size="24" font-weight="600"
+              fill="#7A5818" letter-spacing="5">JINBONSAM</text>
+        <text x="75" y="56" font-family="Cormorant Garamond, serif" font-size="13" font-style="italic" font-weight="400"
+              fill="rgba(130,90,20,.7)" letter-spacing="4">Heritage</text>
+        <line x1="74" y1="64" x2="320" y2="64" stroke="rgba(130,90,20,.25)" stroke-width=".7"/>
+        <text x="74" y="74" font-family="Cinzel, serif" font-size="7" font-weight="400"
+              fill="rgba(130,90,20,.45)" letter-spacing="5">FERMENTED WILD GINSENG · 12 YEARS</text>
+      </svg>
+    </div>
+    <span class="label">Horizontal — Light</span>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<h2>Variant C — Badge / Seal</h2>
+<div class="row">
+
+  <div class="variant">
+    <div class="dark">
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldC" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A94A"/>
+            <stop offset="100%" stop-color="#9A6E1A"/>
+          </linearGradient>
+        </defs>
+        <!-- outer circle -->
+        <circle cx="100" cy="100" r="92" stroke="#C4993A" stroke-width=".8" opacity=".4"/>
+        <!-- inner circle -->
+        <circle cx="100" cy="100" r="85" stroke="#C4993A" stroke-width=".5" opacity=".25"/>
+        <!-- top arc text: JINBONSAM -->
+        <path id="topArc" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0" fill="none"/>
+        <text font-family="Cinzel, serif" font-size="11" font-weight="600" fill="#C4993A" letter-spacing="4">
+          <textPath href="#topArc" startOffset="8%">JINBONSAM · HERITAGE</textPath>
+        </text>
+        <!-- bottom arc text -->
+        <path id="botArc" d="M 28,100 a 72,72 0 0,0 144,0" fill="none"/>
+        <text font-family="Cinzel, serif" font-size="8" font-weight="400" fill="rgba(196,153,58,.6)" letter-spacing="4">
+          <textPath href="#botArc" startOffset="12%">FERMENTED WILD GINSENG · 12 YEARS</textPath>
+        </text>
+        <!-- horizontal dividers inside circle -->
+        <line x1="48" y1="68" x2="152" y2="68" stroke="#C4993A" stroke-width=".6" opacity=".4"/>
+        <line x1="48" y1="140" x2="152" y2="140" stroke="#C4993A" stroke-width=".6" opacity=".4"/>
+        <!-- ginseng icon center -->
+        <path d="M100 98 C100 98 100 108 100 115 C97 119 93 125 91 132 C90 136 91 139 93 140 C95 141 97 139 98 136 C99 133 99 129 100 127"
+              stroke="url(#goldC)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M100 115 C103 119 107 125 109 132 C110 136 109 139 107 140 C105 141 103 139 102 136 C101 133 101 129 100 127"
+              stroke="url(#goldC)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M95 120 C90 118 86 120 84 123" stroke="url(#goldC)" stroke-width="1" stroke-linecap="round" opacity=".6"/>
+        <path d="M105 120 C110 118 114 120 116 123" stroke="url(#goldC)" stroke-width="1" stroke-linecap="round" opacity=".6"/>
+        <line x1="100" y1="78" x2="100" y2="99" stroke="url(#goldC)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M100 87 C94 84 86 81 80 78" stroke="url(#goldC)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <path d="M100 87 C106 84 114 81 120 78" stroke="url(#goldC)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <ellipse cx="100" cy="68" rx="8" ry="12" fill="none" stroke="url(#goldC)" stroke-width="1.4" transform="rotate(-3 100 68)"/>
+        <ellipse cx="74" cy="72" rx="7" ry="10" fill="none" stroke="url(#goldC)" stroke-width="1.1" transform="rotate(-28 74 72)"/>
+        <ellipse cx="126" cy="72" rx="7" ry="10" fill="none" stroke="url(#goldC)" stroke-width="1.1" transform="rotate(28 126 72)"/>
+      </svg>
+    </div>
+    <span class="label">Badge / Seal — Dark</span>
+  </div>
+
+  <div class="variant">
+    <div class="dark" style="background:#142414;">
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldC2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A94A"/>
+            <stop offset="100%" stop-color="#9A6E1A"/>
+          </linearGradient>
+        </defs>
+        <!-- filled circle background -->
+        <circle cx="100" cy="100" r="90" fill="#0D1A0D"/>
+        <circle cx="100" cy="100" r="90" stroke="#C4993A" stroke-width="1.2" opacity=".5"/>
+        <circle cx="100" cy="100" r="82" stroke="#C4993A" stroke-width=".5" opacity=".2"/>
+        <!-- arc text top -->
+        <path id="topArc2" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0" fill="none"/>
+        <text font-family="Cinzel, serif" font-size="11" font-weight="600" fill="#C4993A" letter-spacing="4">
+          <textPath href="#topArc2" startOffset="8%">JINBONSAM · HERITAGE</textPath>
+        </text>
+        <!-- arc text bottom -->
+        <path id="botArc2" d="M 28,100 a 72,72 0 0,0 144,0" fill="none"/>
+        <text font-family="Cinzel, serif" font-size="8" font-weight="400" fill="rgba(196,153,58,.55)" letter-spacing="4">
+          <textPath href="#botArc2" startOffset="12%">FERMENTED WILD GINSENG · 12 YEARS</textPath>
+        </text>
+        <line x1="48" y1="68" x2="152" y2="68" stroke="#C4993A" stroke-width=".6" opacity=".35"/>
+        <line x1="48" y1="140" x2="152" y2="140" stroke="#C4993A" stroke-width=".6" opacity=".35"/>
+        <!-- ginseng icon -->
+        <path d="M100 98 C100 98 100 108 100 115 C97 119 93 125 91 132 C90 136 91 139 93 140 C95 141 97 139 98 136 C99 133 99 129 100 127"
+              stroke="url(#goldC2)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M100 115 C103 119 107 125 109 132 C110 136 109 139 107 140 C105 141 103 139 102 136 C101 133 101 129 100 127"
+              stroke="url(#goldC2)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <path d="M95 120 C90 118 86 120 84 123" stroke="url(#goldC2)" stroke-width="1" stroke-linecap="round" opacity=".6"/>
+        <path d="M105 120 C110 118 114 120 116 123" stroke="url(#goldC2)" stroke-width="1" stroke-linecap="round" opacity=".6"/>
+        <line x1="100" y1="78" x2="100" y2="99" stroke="url(#goldC2)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M100 87 C94 84 86 81 80 78" stroke="url(#goldC2)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <path d="M100 87 C106 84 114 81 120 78" stroke="url(#goldC2)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <ellipse cx="100" cy="68" rx="8" ry="12" fill="none" stroke="url(#goldC2)" stroke-width="1.4" transform="rotate(-3 100 68)"/>
+        <ellipse cx="74" cy="72" rx="7" ry="10" fill="none" stroke="url(#goldC2)" stroke-width="1.1" transform="rotate(-28 74 72)"/>
+        <ellipse cx="126" cy="72" rx="7" ry="10" fill="none" stroke="url(#goldC2)" stroke-width="1.1" transform="rotate(28 126 72)"/>
+      </svg>
+    </div>
+    <span class="label">Badge — with fill</span>
+  </div>
+
+</div>
+
+</body>
+</html>
