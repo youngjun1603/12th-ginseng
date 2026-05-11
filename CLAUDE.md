@@ -7,9 +7,9 @@
 - 제품 촬영 미완료 → 현재 placeholder 사용 중
 
 ## 배포
-- **GitHub Pages**: https://youngjun1603.github.io/12th-ginseng/
+- **도메인**: https://jinbonsam.com/ ✅ 확정
+- **GitHub Pages (레거시)**: https://youngjun1603.github.io/12th-ginseng/
 - 작업 후 반드시 `cp 산양산삼_Landing_Page_fixed.html index.html` → `git push`
-- 도메인 등록 예정 — 확정 후 아래 URL 일괄 교체 필요 (항목 참조)
 
 ## 파일 구조
 | 파일 | 역할 |
@@ -55,7 +55,7 @@
 ## 주요 상수 (index.html 하단 스크립트)
 ```js
 const STORE_URL      = 'https://smartstore.naver.com/STORE_ID'; // 스토어 등록 후 교체
-const SITE_URL       = 'https://youngjun1603.github.io/12th-ginseng/'; // 도메인 확정 후 교체
+const SITE_URL       = 'https://jinbonsam.com/'; // ✅ 도메인 확정
 const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발급
 ```
 - `STORE_URL` — `.store-link` 클래스 버튼 전체 자동 업데이트
@@ -72,8 +72,8 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 | 폰트 preconnect 최적화 | ✅ 완료 |
 | OG 이미지 (카카오 공유 썸네일) | ✅ `og-image.svg` 적용 중 |
 | GA4 측정 ID | ⏳ `G-XXXXXXXXXX` 교체 필요 |
-| 네이버 서치어드바이저 인증 | ⏳ 도메인 확정 후 등록 |
-| 구글 서치콘솔 등록 | ⏳ 도메인 확정 후 등록 |
+| 네이버 서치어드바이저 인증 | ⏳ jinbonsam.com 등록 필요 |
+| 구글 서치콘솔 등록 | ⏳ jinbonsam.com 등록 필요 |
 
 ## 마케팅 채널 연동 현황
 | 채널 | 상태 |
@@ -90,13 +90,6 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 2. 우측 상단 **"PNG 저장"** 버튼 클릭 → `og-image.png` 자동 다운로드
 3. `12th-ginseng/` 폴더에 복사 후 `git push`
 4. `index.html` og:image / twitter:image URL을 `og-image.svg` → `og-image.png` 교체
-
-## 도메인 확정 후 일괄 교체 항목
-`youngjun1603.github.io/12th-ginseng` → 새 도메인으로 교체:
-- `index.html`: `canonical`, `og:url`, `og:image`, `twitter:image`, JSON-LD 내 모든 `url`/`@id`
-- `sitemap.xml`: `<loc>` URL
-- `robots.txt`: `Sitemap:` URL
-- JS 상수: `SITE_URL`
 
 ## 섹션 구조 (순서)
 | ID | 레이블 | 배경 |
@@ -119,7 +112,9 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 - [ ] 카카오 App Key 발급 → `KAKAO_APP_KEY` 교체 (developers.kakao.com)
 - [ ] 네이버 스마트스토어 등록 → `STORE_URL` 업데이트
 - [ ] 제품 사진 촬영 → `images/` 폴더에 5종 저장
-- [ ] 도메인 등록 → URL 일괄 교체 + 서치콘솔/서치어드바이저 등록
+- [x] 도메인 등록 → jinbonsam.com ✅ URL 일괄 교체 완료
+- [ ] 구글 서치콘솔 등록 (jinbonsam.com)
+- [ ] 네이버 서치어드바이저 등록 (jinbonsam.com)
 - [ ] OG 이미지 PNG 저장 → `og-image.png` push + og:image URL 교체
 - [ ] Footer SNS 링크 href 교체 (인스타그램, 네이버 블로그 채널 개설 후)
 
