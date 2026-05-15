@@ -350,7 +350,7 @@ a{color:inherit;text-decoration:none}
 /* Bottle SVG side */
 .hero-bottle-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:480px}
 .hero-bottle-glow{position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 50%, rgba(196,153,58,.22), transparent 58%);pointer-events:none;filter:blur(24px)}
-.hero-bottle{width:min(360px, 88%);height:auto;position:relative;z-index:2;animation:floaty 6s ease-in-out infinite}
+.hero-bottle{width:min(360px, 88%);height:auto;position:relative;z-index:2;animation:floaty 6s ease-in-out infinite;filter:drop-shadow(0 40px 60px rgba(0,0,0,.6));border-radius:4px}
 @keyframes floaty{0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}}
 
 .hero-bottle-caption{position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;font-size:10px;letter-spacing:.4em;color:rgba(196,153,58,.5);text-transform:uppercase;font-weight:500;white-space:nowrap}
@@ -850,82 +850,7 @@ a{color:inherit;text-decoration:none}
 
     <div class="hero-bottle-wrap reveal delay-2">
       <div class="hero-bottle-glow"></div>
-      <!-- Premium Bottle SVG -->
-      <svg class="hero-bottle" viewBox="0 0 240 480" xmlns="http://www.w3.org/2000/svg" aria-label="12년근 산양산삼 발효 드링크 병">
-        <defs>
-          <linearGradient id="capG" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#D4A94A"/>
-            <stop offset="50%" stop-color="#C4993A"/>
-            <stop offset="100%" stop-color="#7A5818"/>
-          </linearGradient>
-          <linearGradient id="bottleG" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stop-color="#0D1A0D"/>
-            <stop offset="40%" stop-color="#1C3A1C"/>
-            <stop offset="70%" stop-color="#142414"/>
-            <stop offset="100%" stop-color="#0A0E0A"/>
-          </linearGradient>
-          <linearGradient id="labelG" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#142414"/>
-            <stop offset="100%" stop-color="#0D1A0D"/>
-          </linearGradient>
-          <linearGradient id="shineG" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
-            <stop offset="50%" stop-color="rgba(196,153,58,.18)"/>
-            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-          </linearGradient>
-        </defs>
-        <!-- shadow -->
-        <ellipse cx="120" cy="465" rx="78" ry="6" fill="rgba(0,0,0,.45)"/>
-        <!-- Cap -->
-        <rect x="86" y="14" width="68" height="48" fill="url(#capG)"/>
-        <rect x="86" y="14" width="68" height="3" fill="#E5C77A"/>
-        <rect x="86" y="58" width="68" height="4" fill="#7A5818"/>
-        <!-- cap ridges -->
-        <g stroke="#7A5818" stroke-width=".8" opacity=".5">
-          <line x1="92" y1="22" x2="92" y2="56"/>
-          <line x1="100" y1="22" x2="100" y2="56"/>
-          <line x1="108" y1="22" x2="108" y2="56"/>
-          <line x1="116" y1="22" x2="116" y2="56"/>
-          <line x1="124" y1="22" x2="124" y2="56"/>
-          <line x1="132" y1="22" x2="132" y2="56"/>
-          <line x1="140" y1="22" x2="140" y2="56"/>
-          <line x1="148" y1="22" x2="148" y2="56"/>
-        </g>
-        <!-- Neck -->
-        <path d="M94 62 L94 94 Q94 102 102 102 L138 102 Q146 102 146 94 L146 62 Z" fill="url(#bottleG)"/>
-        <rect x="94" y="62" width="52" height="2" fill="#0A0E0A"/>
-        <!-- Shoulder -->
-        <path d="M102 102 Q70 110 60 150 L60 430 Q60 458 88 458 L152 458 Q180 458 180 430 L180 150 Q170 110 138 102 Z" fill="url(#bottleG)"/>
-        <!-- subtle glass shine -->
-        <path d="M68 150 Q66 160 66 180 L66 420 Q66 440 76 446" stroke="rgba(196,153,58,.18)" stroke-width="1.5" fill="none"/>
-        <path d="M174 150 Q176 160 176 180 L176 420 Q176 440 166 446" stroke="rgba(0,0,0,.4)" stroke-width="2" fill="none"/>
-        <!-- liquid line -->
-        <path d="M62 165 L178 165" stroke="rgba(196,153,58,.25)" stroke-width=".8" stroke-dasharray="2,3"/>
-        <!-- Label -->
-        <rect x="68" y="180" width="104" height="220" fill="url(#labelG)" stroke="#C4993A" stroke-width=".8" opacity=".95"/>
-        <!-- decorative inner border -->
-        <rect x="74" y="186" width="92" height="208" fill="none" stroke="rgba(196,153,58,.35)" stroke-width=".6"/>
-        <!-- Top mark -->
-        <line x1="98" y1="200" x2="142" y2="200" stroke="#C4993A" stroke-width="1"/>
-        <!-- Korean characters (drawn as paths/text) -->
-        <text x="120" y="232" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="22" font-weight="700" fill="#C4993A" letter-spacing="2">진본삼</text>
-        <text x="120" y="252" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="9" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="3">FUKWON</text>
-        <!-- divider -->
-        <line x1="92" y1="266" x2="148" y2="266" stroke="rgba(196,153,58,.35)" stroke-width=".5"/>
-        <!-- Year mark -->
-        <text x="120" y="298" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="36" font-weight="700" fill="#C4993A">12</text>
-        <text x="120" y="316" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="9" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="3">YEARS AGED</text>
-        <!-- divider -->
-        <line x1="92" y1="332" x2="148" y2="332" stroke="rgba(196,153,58,.35)" stroke-width=".5"/>
-        <!-- description -->
-        <text x="120" y="352" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="8" font-weight="500" fill="rgba(196,153,58,.7)" letter-spacing="1.5">발효흑산삼 초미세분말</text>
-        <text x="120" y="368" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="7" font-weight="400" fill="rgba(196,153,58,.5)" letter-spacing="2">FERMENTED BLACK GINSENG SHOT</text>
-        <!-- bottom mark -->
-        <line x1="98" y1="384" x2="142" y2="384" stroke="#C4993A" stroke-width="1"/>
-        <text x="120" y="395" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="6" font-weight="500" fill="rgba(196,153,58,.5)" letter-spacing="2.5">30ml · NET 1.0 FL OZ</text>
-        <!-- shine overlay -->
-        <rect x="60" y="102" width="14" height="356" fill="url(#shineG)" opacity=".5"/>
-      </svg>
+      <img src="images/product-main.jpg" alt="진본삼 산삼명작 12년근 산양산삼 제품 사진" class="hero-bottle">
 
       <div class="hero-bottle-caption">진본삼 산삼명작 샷 · 30ml</div>
     </div>
