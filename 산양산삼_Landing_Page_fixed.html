@@ -1889,12 +1889,12 @@ a{color:inherit;text-decoration:none}
           <a class="sns-icon kakao" href="#" aria-label="카카오채널" target="_blank" rel="noopener" onclick="shareKakao();return false;" title="카카오톡 공유">
             <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
           </a>
-          <a class="sns-icon" href="#" aria-label="인스타그램" target="_blank" rel="noopener" title="인스타그램">
+          <button class="sns-icon" onclick="shareInstagram()" aria-label="인스타그램 공유" title="인스타그램 공유">
             <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a class="sns-icon" href="#" aria-label="네이버 블로그" target="_blank" rel="noopener" title="네이버 블로그">
+          </button>
+          <button class="sns-icon" onclick="shareNaver()" aria-label="네이버 공유" title="네이버 공유">
             <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
-          </a>
+          </button>
           <button class="sns-icon" onclick="copyUrl()" aria-label="링크 복사" title="링크 복사">
             <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
           </button>
@@ -1981,6 +1981,11 @@ document.querySelectorAll('.store-link').forEach(el => {
    카카오톡 공유
    ============================================================ */
 function shareKakao() {
+  if (KAKAO_APP_KEY === 'YOUR_KAKAO_APP_KEY') {
+    copyUrl();
+    showToast('링크가 복사되었습니다 (카카오 앱 키 설정 후 공유 가능)');
+    return;
+  }
   if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
     if (typeof Kakao !== 'undefined') {
       Kakao.init(KAKAO_APP_KEY);
@@ -1989,6 +1994,7 @@ function shareKakao() {
       return;
     }
   }
+  try {
   Kakao.Share.sendDefault({
     objectType: 'feed',
     content: {
@@ -2005,6 +2011,26 @@ function shareKakao() {
       link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
     }]
   });
+  } catch(e) { copyUrl(); showToast('링크가 복사되었습니다'); }
+}
+
+function shareInstagram() {
+  if (navigator.share) {
+    navigator.share({
+      title: '진본삼 산삼명작 샷 — 12년근 산양산삼',
+      text: '대한민국 활력 프로젝트. 30ml × 30병, 하루 8,200원.',
+      url: SITE_URL
+    }).catch(() => {});
+  } else {
+    copyUrl();
+    showToast('링크가 복사되었습니다 (인스타그램 앱에서 붙여넣기)');
+  }
+}
+
+function shareNaver() {
+  const title = encodeURIComponent('진본삼 산삼명작 샷 — 12년근 산양산삼 발효흑산삼 초미세분말');
+  const url   = encodeURIComponent(SITE_URL);
+  window.open('https://share.naver.com/web/shareView?url=' + url + '&title=' + title, '_blank', 'width=500,height=500');
 }
 
 /* ============================================================
