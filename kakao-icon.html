@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>카카오 앱 아이콘 생성 — 128px</title>
+<style>
+  body{background:#1a1a1a;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;font-family:sans-serif;gap:24px}
+  #icon{width:128px;height:128px}
+  canvas{display:none}
+  .btn{padding:12px 28px;background:#C4993A;color:#0A0E0A;font-weight:700;font-size:14px;border:none;cursor:pointer;letter-spacing:.08em}
+  .btn:hover{background:#D4A94A}
+  p{color:#888;font-size:12px;margin:0}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 미리보기 SVG (128×128) -->
+<svg id="icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="128" height="128" fill="#0D1A0D"/>
+  <!-- 외곽 골드 테두리 -->
+  <rect x="4" y="4" width="120" height="120" fill="none" stroke="#C4993A" stroke-width="1.2"/>
+  <!-- 내부 얇은 선 -->
+  <rect x="8" y="8" width="112" height="112" fill="none" stroke="rgba(196,153,58,.3)" stroke-width=".6"/>
+
+  <!-- 상단 장식선 -->
+  <line x1="32" y1="34" x2="96" y2="34" stroke="#C4993A" stroke-width="1"/>
+
+  <!-- 진본삼 -->
+  <text x="64" y="62"
+    text-anchor="middle"
+    font-family="'Noto Serif KR', serif"
+    font-size="26"
+    font-weight="700"
+    fill="#C4993A"
+    letter-spacing="3">진본삼</text>
+
+  <!-- 구분선 -->
+  <line x1="36" y1="72" x2="92" y2="72" stroke="rgba(196,153,58,.4)" stroke-width=".6"/>
+
+  <!-- 산삼명작 -->
+  <text x="64" y="88"
+    text-anchor="middle"
+    font-family="'Noto Serif KR', serif"
+    font-size="14"
+    font-weight="400"
+    fill="rgba(196,153,58,.85)"
+    letter-spacing="2">산삼명작</text>
+
+  <!-- 12 YEARS -->
+  <text x="64" y="103"
+    text-anchor="middle"
+    font-family="'Noto Serif KR', serif"
+    font-size="9"
+    font-weight="400"
+    fill="rgba(196,153,58,.5)"
+    letter-spacing="3">12 YEARS</text>
+
+  <!-- 하단 장식선 -->
+  <line x1="32" y1="111" x2="96" y2="111" stroke="#C4993A" stroke-width="1"/>
+</svg>
+
+<canvas id="canvas" width="128" height="128"></canvas>
+<button class="btn" onclick="savePNG()">PNG 저장 (128px)</button>
+<p>저장 후 kakao-icon.png 파일을 카카오 개발자 콘솔에 업로드하세요</p>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+function savePNG() {
+  const svg = document.getElementById('icon');
+  const serializer = new XMLSerializer();
+  const svgStr = serializer.serializeToString(svg);
+  const svgBlob = new Blob([svgStr], {type:'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(svgBlob);
+
+  const img = new Image();
+  img.onload = function() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, 128, 128);
+    ctx.drawImage(img, 0, 0, 128, 128);
+    URL.revokeObjectURL(url);
+
+    canvas.toBlob(function(blob) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'kakao-icon.png';
+      a.click();
+    }, 'image/png');
+  };
+  img.src = url;
+}
+</script>
+</body>
+</html>
