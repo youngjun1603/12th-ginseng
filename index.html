@@ -1905,7 +1905,7 @@ a{color:inherit;text-decoration:none}
         <h5>Brand</h5>
         <ul>
           <li><a href="#why">브랜드 스토리</a></li>
-          <li><a href="#process">원료 산지</a></li>
+          <li><a href="#origin">원료 산지</a></li>
           <li><a href="#solution">발효 공정</a></li>
           <li><a href="#science">검사 성적서</a></li>
         </ul>
@@ -1939,7 +1939,7 @@ a{color:inherit;text-decoration:none}
       <span><strong>통신판매업 신고번호</strong>제 2025-성남수정-0111 호</span>
       <span><strong>주소</strong>경기도 성남시 수정구 창업로 43, 글로벌 비즈센터 업무동 1층 39호 (시흥동)</span>
       <span><strong>호스팅 제공</strong>GitHub, Inc.</span>
-      <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=8278602969" target="_blank" rel="noopener" style="color:rgba(248,244,236,.38);font-size:12px;text-decoration:underline;text-underline-offset:2px;white-space:nowrap;margin-right:16px;">사업자정보확인</a>
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8278602969" target="_blank" rel="noopener" style="color:rgba(248,244,236,.38);font-size:12px;text-decoration:underline;text-underline-offset:2px;white-space:nowrap;margin-right:16px;">사업자정보확인</a>
     </div>
     <div class="foot-bottom">
       <div>© 2026 진본삼 산삼명작 샷. All rights reserved.</div>
@@ -2038,7 +2038,23 @@ function shareNaver() {
    URL 복사 + 토스트 알림
    ============================================================ */
 function copyUrl() {
-  navigator.clipboard.writeText(SITE_URL).then(() => showToast('링크가 복사되었습니다'));
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(SITE_URL)
+      .then(() => showToast('링크가 복사되었습니다'))
+      .catch(() => fallbackCopy());
+  } else {
+    fallbackCopy();
+  }
+}
+function fallbackCopy() {
+  const ta = document.createElement('textarea');
+  ta.value = SITE_URL;
+  ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); showToast('링크가 복사되었습니다'); }
+  catch(e) { showToast('주소: ' + SITE_URL); }
+  document.body.removeChild(ta);
 }
 function showToast(msg) {
   const t = document.getElementById('toast');
