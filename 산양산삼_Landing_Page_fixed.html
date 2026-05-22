@@ -231,7 +231,7 @@ fbq('init','INSTAGRAM_PIXEL_ID');fbq('track','PageView');
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--cr);color:var(--bk);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html,body{background:var(--cr);color:var(--bk);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 p,li,td,th,h1,h2,h3,h4,h5,h6{word-break:keep-all;overflow-wrap:break-word}
 section[id],header[id]{scroll-margin-top:var(--nav-h)}
 img,svg{display:block;max-width:100%}
@@ -555,6 +555,7 @@ a{color:inherit;text-decoration:none}
    RESPONSIVE
    ============================================================ */
 @media (max-width: 960px){
+  .nav{background:rgba(10,14,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,153,58,.15)}
   .hero-inner{grid-template-columns:1fr;gap:28px}
   .hero-bottle-wrap{min-height:300px;order:-1}
   .hero-bottle{width:min(200px, 48%)}
