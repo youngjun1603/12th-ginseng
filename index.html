@@ -386,6 +386,7 @@ a{color:inherit;text-decoration:none}
    PROBLEM SECTION
    ============================================================ */
 .prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cr-3);border:1px solid var(--cr-3)}
+.experts-grid{grid-template-columns:repeat(3,1fr)}
 .prob-card{background:var(--cr);padding:36px 28px;display:flex;flex-direction:column;gap:18px;transition:background .4s var(--ease)}
 .prob-card:hover{background:#fff}
 .prob-num{font-family:var(--serif);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.18em}
@@ -560,7 +561,7 @@ a{color:inherit;text-decoration:none}
   .hero-bottle-wrap{min-height:300px;order:-1}
   .hero-bottle{width:min(200px, 48%)}
   .sol-grid{grid-template-columns:1fr;gap:40px}
-  .prob-grid{grid-template-columns:repeat(2,1fr)}
+  .prob-grid,.experts-grid{grid-template-columns:repeat(2,1fr)}
   .tl-grid{grid-template-columns:repeat(2,1fr);gap:48px}
   .tl-line{display:none}
   .sci-grid{grid-template-columns:1fr}
@@ -576,7 +577,7 @@ a{color:inherit;text-decoration:none}
   .hero-metrics{flex-wrap:wrap;gap:16px 20px}
   .hm-div{display:none}
   .hm-num{font-size:26px}
-  .prob-grid{grid-template-columns:1fr}
+  .prob-grid,.experts-grid{grid-template-columns:1fr}
   .sci-card{padding:36px 28px;min-height:240px}
   .sci-num{font-size:64px}
   .foot-top{grid-template-columns:1fr;gap:36px}
@@ -1684,7 +1685,7 @@ a{color:inherit;text-decoration:none}
       <h2 class="h2" style="color:var(--cr)">대한민국 최고 전문가들이<br>함께합니다</h2>
     </div>
 
-    <div class="prob-grid reveal" style="grid-template-columns:repeat(3,1fr)">
+    <div class="prob-grid experts-grid reveal">
       <div class="prob-card" style="background:var(--g-800);border:1px solid rgba(196,153,58,.18)">
         <span class="prob-num">01</span>
         <h4 style="color:var(--cr)">성대동 공학박사</h4>
