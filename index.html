@@ -2037,11 +2037,11 @@ function shareKakao() {
       link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
     },
     buttons: [{
-      title: '지금 구매하기',
-      link: { mobileWebUrl: STORE_URL, webUrl: STORE_URL }
-    }, {
       title: '제품 자세히 보기',
       link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
+    }, {
+      title: '구매 문의하기',
+      link: { mobileWebUrl: SITE_URL + '#pricing', webUrl: SITE_URL + '#pricing' }
     }]
   });
   } catch(e) { copyUrl(); showToast('링크가 복사되었습니다'); }
