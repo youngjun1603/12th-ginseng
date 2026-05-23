@@ -165,6 +165,65 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 - [ ] OG 이미지 PNG 저장 → `og-image.png` push + og:image URL 교체
 - [ ] Footer SNS 링크 href 교체 (인스타그램, 네이버 블로그 채널 개설 후)
 
+## 다국어(i18n) 확장 계획
+
+### 방식: JS 기반 i18n (확정)
+- HTML에 `data-i18n` 속성 키만 남기고 텍스트는 JSON으로 분리
+- 선택한 언어 JSON만 lazy load → 파일 크기 문제 없음
+- 새 언어 추가 = `lang/xx.json` 파일 1개 + Nav 버튼 1개
+
+### 파일 구조
+```
+12th-ginseng/
+├── index.html        ← data-i18n 속성 추가 (HTML은 오히려 가벼워짐)
+├── i18n.js           ← 언어 전환 로직 (~50줄)
+└── lang/
+    ├── ko.json       ← 한국어 (기준)
+    ├── en.json       ← 영어
+    ├── zh.json       ← 중국어
+    ├── ja.json       ← (향후) 일본어
+    ├── de.json       ← (향후) 독일어
+    ├── fr.json       ← (향후) 프랑스어
+    └── es.json       ← (향후) 스페인어
+```
+
+### URL 구조
+- 한국어: `jinbonsam.com/`
+- 영어: `jinbonsam.com/?lang=en`
+- 중국어: `jinbonsam.com/?lang=zh`
+- 선택 언어 `localStorage` 저장 → 재방문 시 유지
+- SEO: `<link rel="alternate" hreflang>` 태그 추가
+
+### 번역 대상 언어 및 우선순위
+| 우선순위 | 언어 | 비고 |
+|----------|------|------|
+| 1차 | 영어 | 글로벌 공통 |
+| 1차 | 중국어 간체 | 중국 본토 타겟 |
+| 2차 | 일본어 | 한국 건강식품 수요 높음 |
+| 3차 | 독일어·프랑스어·스페인어 | 유럽·중남미 |
+
+### 핵심 번역 용어 (한방 용어 — 번역기 오역 주의)
+| 한국어 | 영어 | 중국어 |
+|--------|------|--------|
+| 산양산삼 | Wild-simulated mountain ginseng | 山养山参 |
+| 구증구포 | Nine-steam nine-dry process | 九蒸九曝 |
+| 발효흑산삼 | Fermented black mountain ginseng | 发酵黑山参 |
+| 컴파운드K | Compound-K | 化合物K |
+| 초미세분말 | Ultra-fine powder | 超微细粉末 |
+| 비배양 | Non-cultivated | 非培养 |
+
+### 구현 시작 조건 (모두 충족 후 시작 권장)
+- [ ] 한국어 콘텐츠 최종 확정 (가격·스토어 URL 포함)
+- [ ] 중국어 간체 vs 번체 타겟 결정
+- [ ] 해외 배송·결제 방식 확정
+- [ ] 번역 후 원어민 검수 계획 수립 (특히 효능 표현 규제 확인)
+
+### 주의사항
+- 효능·의학 관련 문구는 현지 규제(FDA·중국 위생부 등)에 맞게 조정 필요
+- 최종 게시 전 원어민 1회 검수 권장
+
+---
+
 ## 기술 스택
 - 순수 HTML/CSS/JS (빌드 도구 없음)
 - Google Fonts: Noto Serif KR + Noto Sans KR (preconnect 최적화)
