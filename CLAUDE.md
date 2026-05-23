@@ -107,6 +107,53 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 | `#reviews` | 08 Reviews | cream |
 | `#faq` | 09 FAQ | cream-2 |
 
+## 2026-05-22 주요 변경 내역
+
+### 콘텐츠·가격
+- 산양산삼 **6뿌리 → 7뿌리**, **6g → 7g** 전체 교체
+- 하루 비용 **8,200원 → 7,900원**
+- 소비자가 **600,000원 → 660,000원** (전체)
+- 프로젝트 할인가 **248,000원 → 237,000원** (전체)
+- Why 섹션 01카드 원료 가치 **660,000원 → 약 3,500,000원**
+- Pricing 섹션 "프리미엄" → **"진본삼 산삼명작 샷"**
+- 자문교수 정승필 **"교수 역임"** 추가
+- Sci 섹션 제목 **"단 한 병에 담긴 '진짜' 원료" → "진본삼 산삼명작의 '진짜' 원료"**
+
+### 섹션·레이아웃
+- **Business & Drinking** 타겟 카드 추가 (부모님↔Student 사이)
+- Business & Drinking / Student 카드 **좌우 배치**로 변경
+- **Trust bar** 1행 가로 → **3열×2행 그리드**로 변경
+- 히어로+Trust bar **배경 통일(g-800)** 및 자연스럽게 연결
+- **Pricing 카드 하단** 이메일 구독폼 + SNS 공유 아이콘 추가
+
+### 이미지 교체
+| 슬롯 | 적용 이미지 |
+|------|------------|
+| 히어로 | `Gemini_Generated_Image_sjni7jsjni7jsjni.png` |
+| Photos 슬롯1 | `Gemini_Generated_Image_jbdcjnjbdcjnjbdc.png` (896×1200) |
+| Photos 슬롯2 | `KakaoTalk_20260522_175345255.png` |
+| Photos 슬롯3 | `KakaoTalk_20260522_180027296.png` |
+| Photos 슬롯4 | `Gemini_Generated_Image_rgqldwrgqldwrgql.png` |
+| Solution | `KakaoTalk_20260522_184239689.png` |
+| Compound-K 하단 | `KakaoTalk_20260522_204317681.png` |
+
+### UI·스타일 강조
+- `target-tag`: 10.5px→13px, bold
+- `price-feat-tag` ("대한민국 활력 프로젝트 특별가"): 10px→13px, bold
+- 구매 버튼 텍스트 전체 → **"진본삼 산삼명작 구매하기"**
+- Nav CTA **금색 → 녹색(#03C75A)**, nav-logo **18px→21px**
+- Nav 메뉴 글자 **13px→15px**, bold
+- 히어로 `accent` (진본삼 산삼명작 샷) 아래 **줄간격 확대**
+
+### 모바일 최적화
+- Nav `구매하기` 버튼 **960px 이하에서 숨김** (햄버거 메뉴로 대체)
+- 모바일 드로어 메뉴 글자 **28px→20px** 축소
+- "지금 구매하기" 버튼 **녹색**으로 통일
+- 히어로 우측 세로 라인·세로 캡션 텍스트 **모바일 숨김**
+- `photo-main-v2` 모바일 비율 **4/3→3/4** (상품 이미지 온전 노출)
+
+---
+
 ## 대기 중인 작업
 - [ ] GA4 측정 ID 발급 → `G-XXXXXXXXXX` 2곳 교체
 - [ ] 카카오 App Key 발급 → `KAKAO_APP_KEY` 교체 (developers.kakao.com)
