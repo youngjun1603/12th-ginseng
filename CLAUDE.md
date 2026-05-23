@@ -56,7 +56,7 @@
 ```js
 const STORE_URL      = 'https://smartstore.naver.com/STORE_ID'; // 스토어 등록 후 교체
 const SITE_URL       = 'https://jinbonsam.com/'; // ✅ 도메인 확정
-const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발급
+const KAKAO_APP_KEY  = '15a29c6b6d22bdeeb302efe709248e8a'; // ✅ 적용 완료
 ```
 - `STORE_URL` — `.store-link` 클래스 버튼 전체 자동 업데이트
 - `KAKAO_APP_KEY` — 카카오톡 공유 기능 (Hero, Footer, Floating CTA 3곳)
@@ -70,7 +70,7 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 | JSON-LD (Product + FAQPage + Organization + WebSite) | ✅ 완료 |
 | `sitemap.xml` + `robots.txt` | ✅ 완료 |
 | 폰트 preconnect 최적화 | ✅ 완료 |
-| OG 이미지 (카카오 공유 썸네일) | ✅ `og-image.svg` 적용 중 |
+| OG 이미지 | ✅ `og-image.png` (1200×630) 적용 완료 |
 | GA4 측정 ID | ⏳ `G-XXXXXXXXXX` 교체 필요 |
 | 네이버 서치어드바이저 인증 | ⏳ jinbonsam.com 등록 필요 |
 | 구글 서치콘솔 등록 | ⏳ jinbonsam.com 등록 필요 |
@@ -78,18 +78,17 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 ## 마케팅 채널 연동 현황
 | 채널 | 상태 |
 |------|------|
-| 카카오톡 공유 버튼 | ✅ 구현 (App Key 교체 필요) |
+| 카카오톡 공유 버튼 | ✅ 정상 작동 (공유 + 링크 이동 모두 확인) |
 | URL 복사 + 토스트 | ✅ 구현 |
+| 네이버 공유 | ✅ 구현 |
+| 인스타그램 공유 (Web Share API) | ✅ 구현 (미지원 시 URL 복사 fallback) |
 | Footer SNS 아이콘 (카카오·인스타·네이버블로그) | ✅ 구현 (각 채널 URL 교체 필요) |
 | 네이버 전환 추적 스크립트 | ⏳ 주석 처리 — 광고 집행 시 활성화 |
 | 인스타그램(메타) 픽셀 | ⏳ 주석 처리 — 광고 집행 시 활성화 |
 
-## OG 이미지 PNG 업그레이드 방법
-현재 SVG → PNG로 교체하면 모든 플랫폼 호환성 향상
-1. `og-image.html`을 브라우저에서 열기
-2. 우측 상단 **"PNG 저장"** 버튼 클릭 → `og-image.png` 자동 다운로드
-3. `12th-ginseng/` 폴더에 복사 후 `git push`
-4. `index.html` og:image / twitter:image URL을 `og-image.svg` → `og-image.png` 교체
+## OG 이미지
+- `og-image.png` (1200×630) ✅ 배포 완료 — og:image, twitter:image 모두 적용
+- 갱신 방법: `og-image.html` → "PNG 저장" 버튼 → `og-image.png` 덮어쓰기 → git push
 
 ## 섹션 구조 (순서)
 | ID | 레이블 | 배경 |
@@ -126,16 +125,18 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 - 히어로+Trust bar **배경 통일(g-800)** 및 자연스럽게 연결
 - **Pricing 카드 하단** 이메일 구독폼 + SNS 공유 아이콘 추가
 
-### 이미지 교체
-| 슬롯 | 적용 이미지 |
-|------|------------|
-| 히어로 | `Gemini_Generated_Image_sjni7jsjni7jsjni.png` |
-| Photos 슬롯1 | `Gemini_Generated_Image_jbdcjnjbdcjnjbdc.png` (896×1200) |
-| Photos 슬롯2 | `KakaoTalk_20260522_175345255.png` |
-| Photos 슬롯3 | `KakaoTalk_20260522_180027296.png` |
-| Photos 슬롯4 | `Gemini_Generated_Image_rgqldwrgqldwrgql.png` |
-| Solution | `KakaoTalk_20260522_184239689.png` |
-| Compound-K 하단 | `KakaoTalk_20260522_204317681.png` |
+### 이미지 교체 (모두 WebP로 최적화 완료)
+| 슬롯 | 적용 이미지 | 원본 크기 |
+|------|------------|-----------|
+| 히어로 | `Gemini_Generated_Image_sjni7jsjni7jsjni.webp` | 656×1611 |
+| Photos 슬롯1 | `Gemini_Generated_Image_jbdcjnjbdcjnjbdc.webp` | 896×1200 |
+| Photos 슬롯2 | `KakaoTalk_20260522_175345255.webp` | 2528×1696→900px |
+| Photos 슬롯3 | `KakaoTalk_20260522_180027296.webp` | 2528×1696→900px |
+| Photos 슬롯4 | `Gemini_Generated_Image_rgqldwrgqldwrgql.webp` | 1589×672 |
+| Solution | `KakaoTalk_20260522_184239689.webp` | 928×1152 |
+| Compound-K 하단 | `KakaoTalk_20260522_204317681.webp` | 2754×1536→1400px |
+
+**이미지 최적화**: PNG→WebP 변환 + 리사이즈로 **27MB → 662KB (97.5% 감소)**, 히어로 제외 `loading="lazy"` 적용
 
 ### UI·스타일 강조
 - `target-tag`: 10.5px→13px, bold
@@ -156,13 +157,14 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 
 ## 대기 중인 작업
 - [ ] GA4 측정 ID 발급 → `G-XXXXXXXXXX` 2곳 교체
-- [ ] 카카오 App Key 발급 → `KAKAO_APP_KEY` 교체 (developers.kakao.com)
 - [ ] 네이버 스마트스토어 등록 → `STORE_URL` 업데이트
-- [ ] 제품 사진 촬영 → `images/` 폴더에 5종 저장
-- [x] 도메인 등록 → jinbonsam.com ✅ URL 일괄 교체 완료
+- [ ] 제품 사진 촬영 → `images/` 폴더에 5종 저장 (WebP로도 변환할 것)
+- [x] 도메인 등록 → jinbonsam.com ✅
+- [x] KAKAO_APP_KEY 발급 및 적용 ✅ (`15a29c6b6d22bdeeb302efe709248e8a`)
+- [x] 카카오 공유 링크 이동 오류 수정 ✅ (제품 링크 관리 > 웹 도메인 등록)
+- [x] OG 이미지 → `og-image.png` (1200×630) 적용 ✅
 - [ ] 구글 서치콘솔 등록 (jinbonsam.com)
 - [ ] 네이버 서치어드바이저 등록 (jinbonsam.com)
-- [ ] OG 이미지 PNG 저장 → `og-image.png` push + og:image URL 교체
 - [ ] Footer SNS 링크 href 교체 (인스타그램, 네이버 블로그 채널 개설 후)
 
 ## 다국어(i18n) 확장 계획
@@ -223,6 +225,45 @@ const KAKAO_APP_KEY  = 'YOUR_KAKAO_APP_KEY'; // developers.kakao.com 에서 발�
 - 최종 게시 전 원어민 1회 검수 권장
 
 ---
+
+## 카카오톡 공유 설정 (트러블슈팅 기록)
+
+### 현재 구현
+```js
+Kakao.Share.sendDefault({
+  objectType: 'feed',
+  content: {
+    title: '진본삼 산삼명작 샷 — 12년근 산양산삼',
+    description: '배양근 0%. 12년근 산양산삼 7뿌리를...',
+    imageUrl: SITE_URL + 'images/Gemini_Generated_Image_sjni7jsjni7jsjni.webp',
+    imageWidth: 656, imageHeight: 1611,
+    link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL }
+  },
+  buttons: [{ title: '진본삼 산삼명작 샷에서 확인', link: { mobileWebUrl: SITE_URL, webUrl: SITE_URL } }]
+});
+```
+
+### 카카오 개발자 콘솔 필수 설정 2가지 (혼동 주의)
+
+| 항목 | 위치 | 용도 |
+|------|------|------|
+| JavaScript SDK 도메인 | 앱 > 플랫폼 키 > JavaScript 키 > JavaScript SDK 도메인 | Kakao.init() 허용 도메인 |
+| **공유 링크 웹 도메인** | **앱 > 제품 링크 관리 > 웹 도메인** | 공유 메시지 내 URL 허용 도메인 |
+
+→ **두 곳 모두** `https://jinbonsam.com` 등록 필요. 하나만 등록하면 공유는 되지만 클릭 시 이동 불가.
+
+### 오류 이력 및 원인
+
+| 증상 | 원인 | 해결 |
+|------|------|------|
+| 공유는 되나 클릭 시 아무 반응 없음 | **Error 4002**: 제품 링크 관리 > 웹 도메인 미등록 | developers.kakao.com > 앱 > 제품 링크 관리 > 웹 도메인에 `https://jinbonsam.com` 등록 |
+| 카드 형식 없이 텍스트만 전송됨 | imageUrl 이미지가 200px 미만 (193px) | 200px 이상 이미지로 교체 |
+| PC 카카오에서 "모바일에서 확인해주세요." | 정상 — PC 카카오의 기본 버튼 텍스트 | 해당 없음 |
+
+### 이미지 최소 요건
+- 최소 너비: **200px** (미달 시 카드 형식 렌더링 실패, 링크 제거됨)
+- 권장: 600px 이상, 비율 1:1~2:1 (가로형)
+- WebP 지원: ✅
 
 ## 기술 스택
 - 순수 HTML/CSS/JS (빌드 도구 없음)
