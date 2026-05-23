@@ -48,7 +48,7 @@
 <!-- ============================================================
      카카오 JavaScript SDK (developers.kakao.com 에서 앱 등록 후 App Key 발급)
      ============================================================ -->
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js" defer></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <!-- ============================================================
      네이버 공통 전환 추적 — 네이버 광고 집행 시 주석 해제 후 ID 교체
@@ -2004,19 +2004,26 @@ document.querySelectorAll('.store-link').forEach(el => {
 /* ============================================================
    카카오톡 공유
    ============================================================ */
+/* 페이지 로드 시 카카오 SDK 초기화 */
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Kakao !== 'undefined' && !Kakao.isInitialized() && KAKAO_APP_KEY !== 'YOUR_KAKAO_APP_KEY') {
+    Kakao.init(KAKAO_APP_KEY);
+  }
+});
+
 function shareKakao() {
   if (KAKAO_APP_KEY === 'YOUR_KAKAO_APP_KEY') {
     copyUrl();
     showToast('링크가 복사되었습니다 (카카오 앱 키 설정 후 공유 가능)');
     return;
   }
-  if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
-    if (typeof Kakao !== 'undefined') {
-      Kakao.init(KAKAO_APP_KEY);
-    } else {
-      copyUrl();
-      return;
-    }
+  if (typeof Kakao === 'undefined') {
+    copyUrl();
+    showToast('링크가 복사되었습니다');
+    return;
+  }
+  if (!Kakao.isInitialized()) {
+    Kakao.init(KAKAO_APP_KEY);
   }
   try {
   Kakao.Share.sendDefault({
