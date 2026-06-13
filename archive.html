@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<script>if(location.protocol==='http:'&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'){location.replace('https:'+location.href.slice(5))}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>자료실 — 진본삼 산삼명작</title>
+<meta name="description" content="진본삼 산삼명작 공식 자료실. 검사 성적서, 사포닌 분석 자료, 보도자료, 연구 논문 등 객관적 근거 자료를 제공합니다." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://jinbonsam.com/archive.html" />
+<link rel="icon" href="https://jinbonsam.com/og-image-product.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --g-900:#0D1A0D;--g-800:#142414;--g-700:#1C3A1C;--g-200:#8FA48F;
+  --gold:#C4993A;--gold-light:#D4A94A;--gold-darker:#7A5818;
+  --cr:#F8F4EC;--cr-2:#F2EDE0;--cr-3:#E8E0CE;--bk:#0A0E0A;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;
+  --maxw:1200px;--pad-x:clamp(20px,5vw,56px);--nav-h:64px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--g-900);color:var(--cr);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p,li,td,th,h1,h2,h3,h4,h5,h6{word-break:keep-all;overflow-wrap:break-word}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;background:rgba(10,14,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,153,58,.18)}
+.nav-inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:21px;letter-spacing:.12em;display:flex;align-items:baseline;gap:8px}
+.nav-logo .dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block;transform:translateY(-3px)}
+.nav-menu{display:flex;gap:32px}
+.nav-menu a{font-size:15px;font-weight:600;color:rgba(248,244,236,.88);letter-spacing:.06em;transition:color .2s}
+.nav-menu a:hover,.nav-menu a.active{color:var(--gold)}
+.nav-cta{padding:11px 22px;background:#03C75A;color:#fff;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.nav-cta:hover{background:#02b050}
+.nav-burger{display:none;width:28px;height:20px;flex-direction:column;justify-content:space-between;cursor:pointer;background:none;border:none;padding:0}
+.nav-burger span{display:block;height:1.5px;background:var(--gold);transition:transform .35s var(--ease),opacity .25s var(--ease)}
+.nav-burger.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:0;z-index:99;background:rgba(10,14,10,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;pointer-events:none;opacity:0;transition:opacity .4s var(--ease)}
+.mob-nav.open{opacity:1;pointer-events:all}
+.mob-nav a{font-family:var(--serif);font-size:20px;font-weight:600;color:rgba(248,244,236,.7);padding:12px 32px;letter-spacing:.04em;transition:transform .45s var(--ease),opacity .45s var(--ease),color .2s;text-align:center;transform:translateY(16px);opacity:0}
+.mob-nav.open a{transform:translateY(0);opacity:1}
+.mob-nav.open a:nth-child(1){transition-delay:.08s}
+.mob-nav.open a:nth-child(2){transition-delay:.14s}
+.mob-nav.open a:nth-child(3){transition-delay:.20s}
+.mob-nav.open a:nth-child(4){transition-delay:.26s}
+.mob-nav.open a:nth-child(5){transition-delay:.32s}
+.mob-nav.open a:nth-child(6){transition-delay:.38s}
+.mob-nav.open a:nth-child(7){transition-delay:.44s}
+.mob-nav.open a:nth-child(8){transition-delay:.50s}
+.mob-nav a:hover{color:var(--gold)}
+.mob-nav .mob-rule{width:48px;height:1px;background:rgba(196,153,58,.3);margin:16px 0}
+.mob-nav .mob-cta{margin-top:12px;background:#03C75A;color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px 36px}
+
+/* PAGE HEADER */
+.page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
+.page-header .label{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.page-header h1{font-family:var(--serif);font-size:clamp(28px,3.8vw,44px);font-weight:700;color:var(--cr);line-height:1.25;margin-bottom:16px}
+.page-header p{font-size:15px;color:rgba(248,244,236,.6);line-height:1.75;max-width:600px}
+.header-rule{width:48px;height:2px;background:var(--gold);margin-bottom:20px}
+
+/* FILTER TABS */
+.filter-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 32px;display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{padding:8px 20px;font-size:13px;font-weight:600;letter-spacing:.08em;border:1px solid rgba(196,153,58,.3);color:rgba(248,244,236,.6);background:transparent;cursor:pointer;transition:all .2s var(--ease)}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--g-900)}
+
+/* ARCHIVE GRID */
+.archive-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 80px}
+.archive-section{margin-bottom:56px}
+.archive-section-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--gold);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(196,153,58,.2);display:flex;align-items:center;gap:10px}
+.archive-section-title svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;flex-shrink:0}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.doc-card{background:rgba(28,58,28,.4);border:1px solid rgba(196,153,58,.15);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.doc-card:hover{border-color:rgba(196,153,58,.45);background:rgba(28,58,28,.7)}
+.doc-icon{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(196,153,58,.1);border:1px solid rgba(196,153,58,.2)}
+.doc-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.doc-body{flex:1;min-width:0}
+.doc-title{font-size:14px;font-weight:600;color:var(--cr);line-height:1.45;margin-bottom:6px;word-break:keep-all}
+.doc-meta{font-size:11px;color:rgba(248,244,236,.4);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.doc-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;background:rgba(196,153,58,.15);color:var(--gold);border:1px solid rgba(196,153,58,.2)}
+.doc-actions{display:flex;gap:8px;margin-top:10px}
+.doc-btn{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(196,153,58,.35);color:rgba(248,244,236,.7);background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .2s}
+.doc-btn:hover{border-color:var(--gold);color:var(--gold)}
+.doc-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+.doc-btn.primary{background:var(--gold);border-color:var(--gold);color:var(--g-900)}
+.doc-btn.primary:hover{background:var(--gold-light)}
+
+/* COMING SOON placeholder */
+.doc-card.coming{opacity:.5;pointer-events:none}
+.doc-card.coming .doc-btn{display:none}
+.coming-badge{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(248,244,236,.35);margin-top:8px}
+
+/* NOTICE BANNER */
+.notice{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 32px}
+.notice-inner{background:rgba(196,153,58,.07);border:1px solid rgba(196,153,58,.2);border-left:3px solid var(--gold);padding:16px 20px;font-size:13px;color:rgba(248,244,236,.6);line-height:1.75}
+.notice-inner strong{color:var(--gold)}
+
+/* FOOTER */
+.footer{background:var(--g-900);border-top:1px solid rgba(196,153,58,.12);padding:48px 0 0}
+.footer .section-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x)}
+.foot-top{display:grid;grid-template-columns:1fr auto;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(196,153,58,.1)}
+.foot-brand .logo{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--gold);margin-bottom:10px;letter-spacing:.1em}
+.foot-brand p{font-size:13px;color:rgba(248,244,236,.45);line-height:1.75;max-width:320px}
+.foot-cols{display:flex;gap:48px}
+.foot-col h5{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,244,236,.35);margin-bottom:14px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-col ul a{font-size:13px;color:rgba(248,244,236,.5);transition:color .2s}
+.foot-col ul a:hover{color:var(--gold)}
+.foot-disclaimer{font-size:11px;color:rgba(248,244,236,.3);line-height:1.7;padding:20px 0 16px;border-bottom:1px solid rgba(196,153,58,.08)}
+.foot-bizinfo{font-size:11px;color:rgba(248,244,236,.35);display:flex;flex-wrap:wrap;gap:8px 20px;padding:16px 0;line-height:1.6}
+.foot-bizinfo strong{font-weight:600;color:rgba(248,244,236,.45);margin-right:4px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:12px;color:rgba(248,244,236,.28);border-top:1px solid rgba(196,153,58,.08)}
+.foot-bottom .links{display:flex;gap:20px}
+.foot-bottom .links a{color:rgba(248,244,236,.35);transition:color .2s}
+.foot-bottom .links a:hover{color:var(--gold)}
+
+@media(max-width:960px){
+  .nav-menu,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .foot-top{grid-template-columns:1fr}
+  .foot-cols{flex-wrap:wrap;gap:28px}
+  .doc-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .filter-wrap{gap:8px}
+  .filter-btn{padding:7px 14px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="dot"></span>진본삼 산삼명작</a>
+    <div class="nav-menu">
+      <a href="/#hero">브랜드</a>
+      <a href="/#photos">제품</a>
+      <a href="/#compound-k">과학</a>
+      <a href="/#experts">Compound-K</a>
+      <a href="/#pricing">구독</a>
+      <a href="/#reviews">후기</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/archive.html" class="active">자료실</a>
+    </div>
+    <a class="nav-cta" href="/" style="font-size:12px">구매하기</a>
+    <button class="nav-burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- 모바일 드로어 -->
+<div class="mob-nav" id="mobNav">
+  <a href="/#hero" onclick="closeMobNav()">브랜드</a>
+  <div class="mob-rule"></div>
+  <a href="/#photos" onclick="closeMobNav()">제품</a>
+  <a href="/#compound-k" onclick="closeMobNav()">과학</a>
+  <a href="/#experts" onclick="closeMobNav()">Compound-K</a>
+  <a href="/#pricing" onclick="closeMobNav()">구독</a>
+  <a href="/#reviews" onclick="closeMobNav()">후기</a>
+  <a href="/#faq" onclick="closeMobNav()">FAQ</a>
+  <a href="/archive.html" onclick="closeMobNav()" style="color:var(--gold)">자료실</a>
+  <a class="mob-cta" href="/" onclick="closeMobNav()">지금 구매하기</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="label">Resource Archive</div>
+  <div class="header-rule"></div>
+  <h1>자료실</h1>
+  <p>진본삼 산삼명작의 원료·성분·안전성에 관한 객관적 검사 성적서, 분석 자료, 보도자료를 투명하게 공개합니다.</p>
+</div>
+
+<!-- NOTICE -->
+<div class="notice">
+  <div class="notice-inner">
+    <strong>자료 업로드 안내</strong> — 검사 성적서 및 분석 자료는 순차적으로 업로드됩니다.
+    자료 요청 또는 문의사항은 <a href="mailto:jinbonsam@gmail.com" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">jinbonsam@gmail.com</a>으로 연락해 주십시오.
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-wrap">
+  <button class="filter-btn active" onclick="filterDocs('all')">전체</button>
+  <button class="filter-btn" onclick="filterDocs('cert')">검사 성적서</button>
+  <button class="filter-btn" onclick="filterDocs('analysis')">성분 분석</button>
+  <button class="filter-btn" onclick="filterDocs('press')">보도자료</button>
+  <button class="filter-btn" onclick="filterDocs('research')">논문 · 연구</button>
+</div>
+
+<!-- ARCHIVE CONTENT -->
+<div class="archive-wrap">
+
+  <!-- 검사 성적서 -->
+  <div class="archive-section" data-category="cert">
+    <div class="archive-section-title">
+      <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      검사 성적서
+    </div>
+    <div class="doc-grid">
+
+      <div class="doc-card" data-tag="cert">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">잔류농약 463종 검사 성적서<br>(발효흑산삼 초미세분말)</div>
+          <div class="doc-meta">
+            <span>공인 검사 기관</span>
+            <span>전 항목 불검출</span>
+          </div>
+          <div class="doc-actions">
+            <a class="doc-btn primary" href="docs/pesticide-test.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              다운로드
+            </a>
+          </div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="cert">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">중금속 검사 성적서<br>(산양산삼 원물)</div>
+          <div class="doc-meta"><span>공인 검사 기관</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="cert">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">미생물 안전성 검사 성적서<br>(완제품 기준)</div>
+          <div class="doc-meta"><span>공인 검사 기관</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 성분 분석 -->
+  <div class="archive-section" data-category="analysis">
+    <div class="archive-section-title">
+      <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      성분 분석 자료
+    </div>
+    <div class="doc-grid">
+
+      <div class="doc-card" data-tag="analysis">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">38종 사포닌 함량 분석표<br>(PPD계 · PPT계 · 올레아난계)</div>
+          <div class="doc-meta">
+            <span>총 사포닌 110mg/g</span>
+            <span>Rb3 24.55mg/g</span>
+          </div>
+          <div class="doc-actions">
+            <a class="doc-btn primary" href="docs/saponin-analysis.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              다운로드
+            </a>
+          </div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="analysis">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">Compound-K 함량 분석<br>(3단계 공법 전·후 비교)</div>
+          <div class="doc-meta"><span>흡수율 비교 데이터 포함</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="analysis">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">PDF</div>
+          <div class="doc-title">배양근 vs 비배양 산양산삼<br>유효 성분 비교 분석</div>
+          <div class="doc-meta"><span>원료 차별성 근거</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 보도자료 -->
+  <div class="archive-section" data-category="press">
+    <div class="archive-section-title">
+      <svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
+      보도자료
+    </div>
+    <div class="doc-grid">
+
+      <div class="doc-card coming" data-tag="press">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">보도자료</div>
+          <div class="doc-title">진본삼 산삼명작 론칭 보도자료</div>
+          <div class="doc-meta"><span>2026</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 논문 · 연구 -->
+  <div class="archive-section" data-category="research">
+    <div class="archive-section-title">
+      <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      논문 · 연구 자료
+    </div>
+    <div class="doc-grid">
+
+      <div class="doc-card coming" data-tag="research">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">논문</div>
+          <div class="doc-title">Compound-K의 NK세포 활성화 효과에 관한 연구</div>
+          <div class="doc-meta"><span>관련 학술 자료</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="research">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">논문</div>
+          <div class="doc-title">산양산삼 진세노사이드 Rb3의 기억력 개선 연구</div>
+          <div class="doc-meta"><span>관련 학술 자료</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+      <div class="doc-card coming" data-tag="research">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">논문</div>
+          <div class="doc-title">구증구포 흑삼의 사포닌 전환 및 흡수율 비교 연구</div>
+          <div class="doc-meta"><span>관련 학술 자료</span></div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /archive-wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">진본삼 산삼명작</div>
+        <p>대한민국 활력 프로젝트. 12년근 산양산삼 발효흑산삼 초미세분말.<br>누구나 진짜 몸에 좋은 12년근 산삼을 드시고 건강해지는 그날까지 진본삼이 함께합니다.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Brand</h5>
+          <ul>
+            <li><a href="/#hero">브랜드 스토리</a></li>
+            <li><a href="/#origin">원료 산지</a></li>
+            <li><a href="/#solution">발효 공정</a></li>
+            <li><a href="/#science">검사 성적서</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="/#faq">자주 묻는 질문</a></li>
+            <li><a href="/#footer">배송 안내</a></li>
+            <li><a href="/#footer">교환 · 환불</a></li>
+            <li><a href="mailto:jinbonsam@gmail.com">고객센터</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-disclaimer">
+      ※ 본 제품은 건강기능식품이 아닌 일반 식품이며, 이 페이지의 내용은 식품에 관한 일반적인 정보 제공을 목적으로 합니다. 질병의 예방·진단·치료·개선 또는 의학적 효능·효과를 주장하는 것이 아닙니다.
+    </div>
+    <div class="foot-bizinfo">
+      <span><strong>상호</strong>진본삼 주식회사</span>
+      <span><strong>대표</strong>조소영</span>
+      <span><strong>사업자등록번호</strong>827-86-02969</span>
+      <span><strong>통신판매업 신고번호</strong>제 2025-성남수정-0111 호</span>
+      <span><strong>주소</strong>경기도 성남시 수정구 창업로 43, 글로벌 비즈센터 업무동 1층 39호 (시흥동)</span>
+      <span><strong>호스팅 제공</strong>GitHub, Inc.</span>
+      <span><strong>이메일</strong><a href="mailto:jinbonsam@gmail.com" style="color:rgba(248,244,236,.55)">jinbonsam@gmail.com</a></span>
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8278602969" target="_blank" rel="noopener" style="color:rgba(248,244,236,.38);font-size:12px;text-decoration:underline;text-underline-offset:2px;white-space:nowrap">사업자정보확인</a>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 진본삼 산삼명작. All rights reserved.</div>
+      <div class="links">
+        <a href="/terms.html">이용약관</a>
+        <a href="/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const burger = document.querySelector('.nav-burger');
+const mobNav = document.getElementById('mobNav');
+function closeMobNav(){
+  burger.classList.remove('open');
+  mobNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
+burger.addEventListener('click', () => {
+  const isOpen = mobNav.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+function filterDocs(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.archive-section').forEach(sec => {
+    if(cat === 'all' || sec.dataset.category === cat){
+      sec.style.display = '';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
