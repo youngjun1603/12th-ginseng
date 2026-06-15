@@ -63,6 +63,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .mob-nav .mob-rule{width:48px;height:1px;background:rgba(196,153,58,.3);margin:16px 0}
 .mob-nav .mob-cta{margin-top:12px;background:#03C75A;color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px 36px}
 
+/* 언어 전환 버튼 */
+.lang-switch{display:flex;gap:3px;margin-left:8px;flex-shrink:0}
+.lang-btn{font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 9px;background:transparent;border:1px solid rgba(196,153,58,.22);color:rgba(248,244,236,.5);cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.lang-btn:hover,.lang-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(196,153,58,.08)}
+@media(max-width:960px){.lang-switch{margin-left:0;margin-right:8px}}
+
 /* PAGE HEADER */
 .page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
 .page-header .label{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
@@ -190,6 +196,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <a href="/#faq">FAQ</a>
       <a href="/products.html" class="active">상품</a>
       <a href="/archive.html">자료실</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">KR</button>
+      <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
     </div>
     <a class="nav-cta" href="/" style="font-size:12px">구매하기</a>
     <button class="nav-burger" aria-label="menu"><span></span><span></span><span></span></button>
@@ -445,5 +455,6 @@ function filterProds(btn, cat) {
   });
 }
 </script>
+<script src="/i18n.js"></script>
 </body>
 </html>

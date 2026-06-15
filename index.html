@@ -316,6 +316,12 @@ a{color:inherit;text-decoration:none}
 .mob-nav .mob-cta{margin-top:12px;background:#03C75A;color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px 36px}
 .mob-nav .mob-rule{width:48px;height:1px;background:rgba(196,153,58,.3);margin:16px 0}
 
+/* 언어 전환 버튼 */
+.lang-switch{display:flex;gap:3px;margin-left:8px;flex-shrink:0}
+.lang-btn{font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 9px;background:transparent;border:1px solid rgba(196,153,58,.22);color:rgba(248,244,236,.5);cursor:pointer;transition:all .2s var(--ease);font-family:var(--sans)}
+.lang-btn:hover,.lang-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(196,153,58,.08)}
+@media(max-width:960px){.lang-switch{margin-left:0;margin-right:8px}}
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -805,6 +811,10 @@ a{color:inherit;text-decoration:none}
       <a href="#faq">FAQ</a>
       <a href="/products.html">상품</a>
       <a href="/archive.html">자료실</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">KR</button>
+      <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
     </div>
     <a class="nav-cta store-link" href="#" target="_blank" rel="noopener">구매하기</a>
     <button class="nav-burger" aria-label="menu"><span></span><span></span><span></span></button>
@@ -2348,6 +2358,7 @@ if(floatCta && heroSection){
 }
 </script>
 
+<script src="/i18n.js"></script>
 </body>
 </html>
 
