@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<script>if(location.protocol==='http:'&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1'){location.replace('https:'+location.href.slice(5))}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>상품 — 진본삼 산삼명작</title>
+<meta name="description" content="진본삼 산삼명작 공식 상품 페이지. 12년근 산양산삼 발효 드링크부터 파트너 프리미엄 제품까지 동일 공법으로 만든 프리미엄 산삼 제품을 소개합니다." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://jinbonsam.com/products.html" />
+<link rel="icon" href="https://jinbonsam.com/og-image-product.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --g-900:#0D1A0D;--g-800:#142414;--g-700:#1C3A1C;--g-200:#8FA48F;
+  --gold:#C4993A;--gold-light:#D4A94A;--gold-darker:#7A5818;
+  --cr:#F8F4EC;--cr-2:#F2EDE0;--cr-3:#E8E0CE;--bk:#0A0E0A;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;
+  --maxw:1200px;--pad-x:clamp(20px,5vw,56px);--nav-h:64px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--g-900);color:var(--cr);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p,li,td,th,h1,h2,h3,h4,h5,h6{word-break:keep-all;overflow-wrap:break-word}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;background:rgba(10,14,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,153,58,.18)}
+.nav-inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:21px;letter-spacing:.12em;display:flex;align-items:baseline;gap:8px}
+.nav-logo .dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block;transform:translateY(-3px)}
+.nav-menu{display:flex;gap:32px}
+.nav-menu a{font-size:15px;font-weight:600;color:rgba(248,244,236,.88);letter-spacing:.06em;transition:color .2s}
+.nav-menu a:hover,.nav-menu a.active{color:var(--gold)}
+.nav-cta{padding:11px 22px;background:#03C75A;color:#fff;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.nav-cta:hover{background:#02b050}
+.nav-burger{display:none;width:28px;height:20px;flex-direction:column;justify-content:space-between;cursor:pointer;background:none;border:none;padding:0}
+.nav-burger span{display:block;height:1.5px;background:var(--gold);transition:transform .35s var(--ease),opacity .25s var(--ease)}
+.nav-burger.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:0;z-index:99;background:rgba(10,14,10,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;pointer-events:none;opacity:0;transition:opacity .4s var(--ease)}
+.mob-nav.open{opacity:1;pointer-events:all}
+.mob-nav a{font-family:var(--serif);font-size:20px;font-weight:600;color:rgba(248,244,236,.7);padding:12px 32px;letter-spacing:.04em;transition:transform .45s var(--ease),opacity .45s var(--ease),color .2s;text-align:center;transform:translateY(16px);opacity:0}
+.mob-nav.open a{transform:translateY(0);opacity:1}
+.mob-nav.open a:nth-child(1){transition-delay:.08s}
+.mob-nav.open a:nth-child(2){transition-delay:.14s}
+.mob-nav.open a:nth-child(3){transition-delay:.20s}
+.mob-nav.open a:nth-child(4){transition-delay:.26s}
+.mob-nav.open a:nth-child(5){transition-delay:.32s}
+.mob-nav.open a:nth-child(6){transition-delay:.38s}
+.mob-nav.open a:nth-child(7){transition-delay:.44s}
+.mob-nav.open a:nth-child(8){transition-delay:.50s}
+.mob-nav.open a:nth-child(9){transition-delay:.56s}
+.mob-nav a:hover{color:var(--gold)}
+.mob-nav .mob-rule{width:48px;height:1px;background:rgba(196,153,58,.3);margin:16px 0}
+.mob-nav .mob-cta{margin-top:12px;background:#03C75A;color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px 36px}
+
+/* PAGE HEADER */
+.page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
+.page-header .label{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.page-header h1{font-family:var(--serif);font-size:clamp(28px,3.8vw,44px);font-weight:700;color:var(--cr);line-height:1.25;margin-bottom:16px}
+.page-header p{font-size:15px;color:rgba(248,244,236,.6);line-height:1.75;max-width:600px}
+.header-rule{width:48px;height:2px;background:var(--gold);margin-bottom:20px}
+
+/* FILTER TABS */
+.filter-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 32px;display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{padding:8px 20px;font-size:13px;font-weight:600;letter-spacing:.08em;border:1px solid rgba(196,153,58,.3);color:rgba(248,244,236,.6);background:transparent;cursor:pointer;transition:all .2s var(--ease)}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--g-900)}
+
+/* PRODUCTS WRAP */
+.products-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 80px}
+.prod-section{margin-bottom:64px}
+.prod-section-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--gold);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(196,153,58,.2);display:flex;align-items:center;gap:10px}
+.prod-section-title svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;flex-shrink:0}
+.prod-section-desc{font-size:13px;color:rgba(248,244,236,.45);margin-top:-16px;margin-bottom:24px;line-height:1.75}
+
+/* PRODUCT GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* PRODUCT CARD */
+.prod-card{background:rgba(28,58,28,.35);border:1px solid rgba(196,153,58,.15);display:flex;flex-direction:column;overflow:hidden;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.prod-card:hover{border-color:rgba(196,153,58,.4);transform:translateY(-3px)}
+.prod-img{aspect-ratio:1/1;background:rgba(20,36,20,.8);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.prod-img img{width:100%;height:100%;object-fit:cover;display:block}
+.prod-img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;background:linear-gradient(135deg,rgba(28,58,28,.6) 0%,rgba(20,36,20,.9) 100%)}
+.prod-img-ph svg{width:36px;height:36px;stroke:rgba(196,153,58,.35);fill:none;stroke-width:1.2}
+.prod-img-ph span{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,153,58,.4)}
+.prod-badge-wrap{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.prod-badge{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;backdrop-filter:blur(6px)}
+.prod-badge.own{background:rgba(196,153,58,.85);color:var(--bk)}
+.prod-badge.partner{background:rgba(20,36,20,.85);color:var(--gold);border:1px solid rgba(196,153,58,.4)}
+.prod-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.prod-name{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--cr);line-height:1.4}
+.prod-spec{font-size:12px;color:rgba(248,244,236,.45);line-height:1.6}
+.prod-price{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold);margin-top:4px}
+.prod-price .unit{font-size:13px;font-weight:400;color:rgba(248,244,236,.5);margin-left:2px;font-family:var(--sans)}
+.prod-buy{margin-top:auto;padding-top:14px;display:flex;gap:8px}
+.btn-buy{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 16px;background:#03C75A;color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;white-space:nowrap}
+.btn-buy:hover{background:#02b050}
+.btn-buy svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;flex-shrink:0}
+.btn-buy.disabled{background:rgba(248,244,236,.1);color:rgba(248,244,236,.3);pointer-events:none}
+.coming-badge{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(248,244,236,.3);padding-top:6px}
+
+/* NOTICE */
+.notice{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x) 32px}
+.notice-inner{background:rgba(196,153,58,.07);border:1px solid rgba(196,153,58,.2);border-left:3px solid var(--gold);padding:16px 20px;font-size:13px;color:rgba(248,244,236,.6);line-height:1.75}
+.notice-inner strong{color:var(--gold)}
+
+/* FOOTER */
+.footer{background:var(--g-900);border-top:1px solid rgba(196,153,58,.12);padding:48px 0 0}
+.footer .section-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x)}
+.foot-top{display:grid;grid-template-columns:1fr auto;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(196,153,58,.1)}
+.foot-brand .logo{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--gold);margin-bottom:10px;letter-spacing:.1em}
+.foot-brand p{font-size:13px;color:rgba(248,244,236,.45);line-height:1.75;max-width:320px}
+.foot-cols{display:flex;gap:48px}
+.foot-col h5{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,244,236,.35);margin-bottom:14px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-col ul a{font-size:13px;color:rgba(248,244,236,.5);transition:color .2s}
+.foot-col ul a:hover{color:var(--gold)}
+.foot-disclaimer{font-size:11px;color:rgba(248,244,236,.3);line-height:1.7;padding:20px 0 16px;border-bottom:1px solid rgba(196,153,58,.08)}
+.foot-bizinfo{font-size:11px;color:rgba(248,244,236,.35);display:flex;flex-wrap:wrap;gap:8px 20px;padding:16px 0;line-height:1.6}
+.foot-bizinfo strong{font-weight:600;color:rgba(248,244,236,.45);margin-right:4px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:12px;color:rgba(248,244,236,.28);border-top:1px solid rgba(196,153,58,.08)}
+.foot-bottom .links{display:flex;gap:20px}
+.foot-bottom .links a{color:rgba(248,244,236,.35);transition:color .2s}
+.foot-bottom .links a:hover{color:var(--gold)}
+
+@media(max-width:960px){
+  .nav-menu,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .foot-top{grid-template-columns:1fr}
+  .foot-cols{flex-wrap:wrap;gap:28px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .filter-wrap{gap:8px}
+  .filter-btn{padding:7px 14px;font-size:12px}
+  .prod-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="dot"></span>진본삼 산삼명작</a>
+    <div class="nav-menu">
+      <a href="/#hero">브랜드</a>
+      <a href="/#photos">제품</a>
+      <a href="/#compound-k">과학</a>
+      <a href="/#experts">Compound-K</a>
+      <a href="/#pricing">구독</a>
+      <a href="/#reviews">후기</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/products.html" class="active">상품</a>
+      <a href="/archive.html">자료실</a>
+    </div>
+    <a class="nav-cta" href="/" style="font-size:12px">구매하기</a>
+    <button class="nav-burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- 모바일 드로어 -->
+<div class="mob-nav" id="mobNav">
+  <a href="/#hero" onclick="closeMobNav()">브랜드</a>
+  <div class="mob-rule"></div>
+  <a href="/#photos" onclick="closeMobNav()">제품</a>
+  <a href="/#compound-k" onclick="closeMobNav()">과학</a>
+  <a href="/#experts" onclick="closeMobNav()">Compound-K</a>
+  <a href="/#pricing" onclick="closeMobNav()">구독</a>
+  <a href="/#reviews" onclick="closeMobNav()">후기</a>
+  <a href="/#faq" onclick="closeMobNav()">FAQ</a>
+  <a href="/products.html" onclick="closeMobNav()" style="color:var(--gold)">상품</a>
+  <a href="/archive.html" onclick="closeMobNav()">자료실</a>
+  <a class="mob-cta" href="/" onclick="closeMobNav()">지금 구매하기</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="label">Product Catalog</div>
+  <div class="header-rule"></div>
+  <h1>상품</h1>
+  <p>진본삼 산삼명작 자체 제품과 동일 공법으로 제조된 파트너 프리미엄 제품을 소개합니다. 모든 제품은 12년근 이상 산양산삼을 기반으로 구증구포 발효 공법을 적용하였습니다.</p>
+</div>
+
+<!-- NOTICE -->
+<div class="notice">
+  <div class="notice-inner">
+    <strong>구매 안내</strong> — 네이버 스마트스토어 등록 후 구매 링크가 순차적으로 연결됩니다.
+    구매 문의는 <a href="mailto:jinbonsam@gmail.com" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">jinbonsam@gmail.com</a>으로 연락해 주십시오.
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-wrap">
+  <button class="filter-btn active" onclick="filterProds(this,'all')">전체</button>
+  <button class="filter-btn" onclick="filterProds(this,'own')">진본삼 산삼명작</button>
+  <button class="filter-btn" onclick="filterProds(this,'partner')">파트너 프리미엄</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products-wrap">
+
+  <!-- 진본삼 산삼명작 -->
+  <div class="prod-section" data-category="own">
+    <div class="prod-section-title">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      진본삼 산삼명작
+    </div>
+    <p class="prod-section-desc">12년근 비배양 산양산삼 7뿌리 · 구증구포 발효흑산삼 · 초미세분말 · 30병 구성</p>
+    <div class="prod-grid">
+
+      <div class="prod-card" data-tag="own">
+        <div class="prod-img">
+          <div class="prod-img-ph">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>제품 이미지</span>
+          </div>
+          <div class="prod-badge-wrap"><span class="prod-badge own">진본삼</span></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">진본삼 산삼명작 샷</div>
+          <div class="prod-spec">12년근 산양산삼 7뿌리 · 발효흑산삼 초미세분말<br>30mL × 30병 (1개월분)</div>
+          <div class="prod-price">237,000<span class="unit">원</span></div>
+          <div class="prod-buy">
+            <a class="btn-buy disabled" href="#" id="mainBuyBtn">
+              <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+              네이버에서 구매하기
+            </a>
+          </div>
+          <div class="coming-badge">스토어 오픈 준비 중</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 파트너 프리미엄 -->
+  <div class="prod-section" data-category="partner">
+    <div class="prod-section-title">
+      <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      파트너 프리미엄
+    </div>
+    <p class="prod-section-desc">동일 구증구포 발효 공법 적용 · 한국산삼공사 공급 · 진본삼과 유통 협력</p>
+    <div class="prod-grid">
+
+      <div class="prod-card" data-tag="partner">
+        <div class="prod-img">
+          <img src="images/KakaoTalk_20260612_135124333.jpg" alt="발효흑산삼 컴파운드K" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prod-img-ph" style="display:none">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>제품 이미지</span>
+          </div>
+          <div class="prod-badge-wrap"><span class="prod-badge partner">파트너</span></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">발효흑산삼 컴파운드K</div>
+          <div class="prod-spec">350mg × 3캡슐 × 10본, 1박스<br>구증구포 발효 · 고농도 컴파운드K</div>
+          <div class="prod-price">4,800,000<span class="unit">원</span></div>
+          <div class="prod-buy">
+            <a class="btn-buy disabled" href="#" data-store="partner">
+              <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+              네이버에서 구매하기
+            </a>
+          </div>
+          <div class="coming-badge">구매 링크 연결 예정</div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-tag="partner">
+        <div class="prod-img">
+          <div class="prod-img-ph">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>제품 이미지</span>
+          </div>
+          <div class="prod-badge-wrap"><span class="prod-badge partner">파트너</span></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">초미세 산양산삼 분말</div>
+          <div class="prod-spec">12년근 10뿌리 · 초미세분말 공법<br>생체이용률 극대화</div>
+          <div class="prod-price">1,500,000<span class="unit">원</span></div>
+          <div class="prod-buy">
+            <a class="btn-buy disabled" href="#" data-store="partner">
+              <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+              네이버에서 구매하기
+            </a>
+          </div>
+          <div class="coming-badge">구매 링크 연결 예정</div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-tag="partner">
+        <div class="prod-img">
+          <div class="prod-img-ph">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>제품 이미지</span>
+          </div>
+          <div class="prod-badge-wrap"><span class="prod-badge partner">파트너</span></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">산삼 침향환</div>
+          <div class="prod-spec">산삼 · 침향 배합 · 전통 환 제형<br>고급 선물용 패키지</div>
+          <div class="prod-price">2,500,000<span class="unit">원</span></div>
+          <div class="prod-buy">
+            <a class="btn-buy disabled" href="#" data-store="partner">
+              <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+              네이버에서 구매하기
+            </a>
+          </div>
+          <div class="coming-badge">구매 링크 연결 예정</div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-tag="partner" style="opacity:.5;pointer-events:none">
+        <div class="prod-img">
+          <div class="prod-img-ph">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Coming Soon</span>
+          </div>
+          <div class="prod-badge-wrap"><span class="prod-badge partner">파트너</span></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">추가 상품</div>
+          <div class="prod-spec">순차 업로드 예정</div>
+          <div class="prod-price" style="color:rgba(248,244,236,.3)">— —</div>
+          <div class="coming-badge">업로드 예정</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /products-wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">진본삼 산삼명작</div>
+        <p>대한민국 활력 프로젝트. 12년근 산양산삼 발효흑산삼 초미세분말.<br>누구나 진짜 몸에 좋은 12년근 산삼을 드시고 건강해지는 그날까지 진본삼이 함께합니다.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Brand</h5>
+          <ul>
+            <li><a href="/#hero">브랜드 스토리</a></li>
+            <li><a href="/#origin">원료 산지</a></li>
+            <li><a href="/#solution">발효 공정</a></li>
+            <li><a href="/#science">검사 성적서</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="/#faq">자주 묻는 질문</a></li>
+            <li><a href="/#footer">배송 안내</a></li>
+            <li><a href="/#footer">교환 · 환불</a></li>
+            <li><a href="mailto:jinbonsam@gmail.com">고객센터</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-disclaimer">
+      ※ 본 제품은 건강기능식품이 아닌 일반 식품이며, 이 페이지의 내용은 식품에 관한 일반적인 정보 제공을 목적으로 합니다. 질병의 예방·진단·치료·개선 또는 의학적 효능·효과를 주장하는 것이 아닙니다.
+    </div>
+    <div class="foot-bizinfo">
+      <span><strong>상호</strong>진본삼 주식회사</span>
+      <span><strong>대표</strong>조소영</span>
+      <span><strong>사업자등록번호</strong>827-86-02969</span>
+      <span><strong>통신판매업 신고번호</strong>제 2025-성남수정-0111 호</span>
+      <span><strong>주소</strong>경기도 성남시 수정구 창업로 43, 글로벌 비즈센터 업무동 1층 39호 (시흥동)</span>
+      <span><strong>호스팅 제공</strong>GitHub, Inc.</span>
+      <span><strong>이메일</strong><a href="mailto:jinbonsam@gmail.com" style="color:rgba(248,244,236,.55)">jinbonsam@gmail.com</a></span>
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8278602969" target="_blank" rel="noopener" style="color:rgba(248,244,236,.38);font-size:12px;text-decoration:underline;text-underline-offset:2px;white-space:nowrap">사업자정보확인</a>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 진본삼 산삼명작. All rights reserved.</div>
+      <div class="links">
+        <a href="/terms.html">이용약관</a>
+        <a href="/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STORE_URL = 'https://smartstore.naver.com/STORE_ID';
+
+const burger = document.querySelector('.nav-burger');
+const mobNav = document.getElementById('mobNav');
+function closeMobNav(){
+  burger.classList.remove('open');
+  mobNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
+burger.addEventListener('click', () => {
+  const isOpen = mobNav.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+/* 스토어 URL 등록 후 버튼 활성화 */
+if(STORE_URL && !STORE_URL.includes('STORE_ID')){
+  document.querySelectorAll('#mainBuyBtn').forEach(btn => {
+    btn.href = STORE_URL;
+    btn.classList.remove('disabled');
+  });
+}
+
+function filterProds(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prod-section').forEach(sec => {
+    sec.style.display = (cat === 'all' || sec.dataset.category === cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
