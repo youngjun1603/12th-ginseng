@@ -91,6 +91,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .prod-card:hover{border-color:rgba(196,153,58,.4);transform:translateY(-3px)}
 .prod-img{aspect-ratio:1/1;background:rgba(20,36,20,.8);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .prod-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* FEATURED CARD (진본삼 메인 상품) */
+.prod-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:var(--g-800);border:1px solid rgba(196,153,58,.35)}
+.prod-card.featured:hover{transform:translateY(-4px);border-color:rgba(196,153,58,.65)}
+.prod-card.featured .prod-img{aspect-ratio:unset;min-height:420px}
+.prod-card.featured .prod-body{padding:40px 44px;justify-content:center;gap:16px}
+.prod-card.featured .prod-name{font-size:22px}
+.prod-card.featured .prod-spec{font-size:13.5px;color:rgba(248,244,236,.55);line-height:1.8}
+.prod-card.featured .prod-price{font-size:32px;margin-top:8px}
+.prod-card.featured .prod-buy{padding-top:20px}
+.prod-card.featured .btn-buy{padding:14px 24px;font-size:13px}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:10px;padding:4px 0}
+.feat-list li{font-size:13px;color:rgba(248,244,236,.62);line-height:1.7;padding-left:18px;position:relative}
+.feat-list li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1.5px;background:var(--gold)}
 .prod-img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;background:linear-gradient(135deg,rgba(28,58,28,.6) 0%,rgba(20,36,20,.9) 100%)}
 .prod-img-ph svg{width:36px;height:36px;stroke:rgba(196,153,58,.35);fill:none;stroke-width:1.2}
 .prod-img-ph span{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,153,58,.4)}
@@ -140,11 +154,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .foot-top{grid-template-columns:1fr}
   .foot-cols{flex-wrap:wrap;gap:28px}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-card.featured{grid-template-columns:1fr}
+  .prod-card.featured .prod-img{min-height:320px}
+  .prod-card.featured .prod-body{padding:28px 32px}
 }
 @media(max-width:560px){
   .filter-wrap{gap:8px}
   .filter-btn{padding:7px 14px;font-size:12px}
   .prod-grid{grid-template-columns:1fr}
+  .prod-card.featured .prod-img{min-height:260px}
+  .prod-card.featured .prod-body{padding:24px 20px}
+  .prod-card.featured .prod-name{font-size:18px}
+  .prod-card.featured .prod-price{font-size:26px}
 }
 </style>
 </head>
@@ -220,7 +241,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <p class="prod-section-desc">12년근 비배양 산양산삼 7뿌리 · 구증구포 발효흑산삼 · 초미세분말 · 30병 구성</p>
     <div class="prod-grid">
 
-      <div class="prod-card" data-tag="own">
+      <div class="prod-card featured" data-tag="own">
         <div class="prod-img">
           <img src="images/Gemini_Generated_Image_sjni7jsjni7jsjni.webp" alt="진본삼 산삼명작 샷" style="object-position:center 55%">
           <div class="prod-badge-wrap"><span class="prod-badge own">진본삼</span></div>
@@ -228,7 +249,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div class="prod-body">
           <div class="prod-name">진본삼 산삼명작 샷</div>
           <div class="prod-spec">12년근 비배양 산양산삼 7뿌리 · 구증구포 발효흑산삼 초미세분말<br>30mL × 30병 (1개월분)</div>
-          <div class="prod-price">237,000<span class="unit">원</span></div>
+          <ul class="feat-list">
+            <li>배양근 0% — 12년 이상 자연 산지에서 직접 재배한 비배양 산양산삼만 사용</li>
+            <li>구증구포 발효흑산삼 공법으로 진세노사이드 Compound-K 전환율 극대화</li>
+            <li>초미세분말 기술로 위장에서 바로 흡수 — 기존 산삼 대비 20배 흡수율</li>
+            <li>30mL 1병에 산양산삼 7뿌리 함유 · 하루 1병 간편 섭취</li>
+          </ul>
+          <div class="prod-price">237,000<span class="unit">원 / 30병</span></div>
           <div class="prod-buy">
             <a class="btn-buy disabled" href="#" id="mainBuyBtn">
               <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
