@@ -98,6 +98,13 @@
       .then(function (data) {
         translations = data;
         applyTranslations(translations);
+        /* count-num 애니메이션 완료 후 small 태그 재번역 (딜레이 400ms + 지속 1400ms) */
+        setTimeout(function () {
+          document.querySelectorAll('.count-num small').forEach(function (el) {
+            var txt = el.textContent.trim();
+            if (translations[txt] !== undefined) el.textContent = translations[txt];
+          });
+        }, 2500);
       })
       .catch(function (e) {
         console.warn('i18n: could not load', lang, e);
