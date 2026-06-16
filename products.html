@@ -123,6 +123,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .prod-spec{font-size:12px;color:rgba(248,244,236,.45);line-height:1.6}
 .prod-price{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold);margin-top:4px}
 .prod-price .unit{font-size:13px;font-weight:400;color:rgba(248,244,236,.5);margin-left:2px;font-family:var(--sans)}
+.prod-price-area{margin-top:8px;display:flex;flex-direction:column;gap:5px}
+.prod-price-area .prod-price{margin-top:0}
+.prod-msrp{font-size:13px;color:rgba(248,244,236,.4);font-family:var(--sans)}
+.prod-msrp .msrp-price{text-decoration:line-through;text-decoration-style:double;color:rgba(248,244,236,.4)}
+.prod-launch-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-left:2px solid rgba(196,153,58,.55);padding-left:7px;margin-bottom:2px}
 .prod-buy{margin-top:auto;padding-top:14px;display:flex;gap:8px}
 .btn-buy{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 16px;background:#03C75A;color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;white-space:nowrap}
 .btn-buy:hover{background:#02b050}
@@ -269,7 +274,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
             <li>초미세분말 기술로 위장에서 바로 흡수 — 기존 산삼 대비 20배 흡수율</li>
             <li>30mL 1병에 산양산삼 7뿌리 함유 · 하루 1병 간편 섭취</li>
           </ul>
-          <div class="prod-price">237,000<span class="unit">원 / 30병</span></div>
+          <div class="prod-price-area">
+            <div class="prod-msrp">소비자가 <span class="msrp-price">670,000원</span></div>
+            <div class="prod-launch-label">론칭 가격</div>
+            <div class="prod-price">237,000<span class="unit">원 / 30병</span></div>
+          </div>
           <div class="prod-buy">
             <a class="btn-buy disabled" href="#" id="mainBuyBtn">
               <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
