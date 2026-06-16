@@ -39,7 +39,7 @@
 <!-- 폰트 성능 최적화 (preconnect → 렌더 블로킹 제거) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap">
 
 <!-- Favicon (파일 없이 SVG 인라인으로 처리 — 404 방지) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23142414'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-size='14' font-family='serif' fill='%23C4993A'%3E%EC%A7%84%3C/text%3E%3C/svg%3E">
@@ -616,6 +616,48 @@ a{color:inherit;text-decoration:none}
   .hero-cta{flex-direction:column;align-items:stretch}
   .hero-cta .btn{width:100%}
   .btn-naver-lg{padding:15px 24px;font-size:14px}
+}
+
+/* ============================================================
+   i18n: 중국어(zh-CN) 모드 보완
+   — 원인: Noto SC 폰트 메트릭 차이 + word-break:keep-all 충돌
+   ============================================================ */
+html[lang="zh-CN"]{
+  --serif:'Noto Serif SC','Noto Serif KR',serif;
+  --sans:'Noto Sans SC','Noto Sans KR',sans-serif;
+}
+/* keep-all은 중국어 공백 없는 텍스트에서 줄바꿈 불가 → normal 재정의 */
+html[lang="zh-CN"] p,
+html[lang="zh-CN"] li,
+html[lang="zh-CN"] td,
+html[lang="zh-CN"] th,
+html[lang="zh-CN"] h1,html[lang="zh-CN"] h2,html[lang="zh-CN"] h3,
+html[lang="zh-CN"] h4,html[lang="zh-CN"] h5,html[lang="zh-CN"] h6,
+html[lang="zh-CN"] .faq-q-text,
+html[lang="zh-CN"] .trust-lbl{word-break:normal}
+/* 자간: 중국어 자체 간격 있어 큰 letter-spacing 불필요 */
+html[lang="zh-CN"] .trust-lbl{letter-spacing:.02em}
+html[lang="zh-CN"] .hm-lbl{letter-spacing:.05em}
+html[lang="zh-CN"] .float-cta-name{letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[lang="zh-CN"] .float-cta-price{letter-spacing:0}
+html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:normal}
+/* ── 모바일(560px 이하) 중국어 보완 ── */
+@media(max-width:560px){
+  html[lang="zh-CN"] .trust-lbl{font-size:9.5px;word-break:break-word}
+  html[lang="zh-CN"] .trust-num{font-size:clamp(14px,3.8vw,20px)}
+  html[lang="zh-CN"] .hm-num{font-size:22px}
+  html[lang="zh-CN"] .hm-num small{font-size:11px}
+  html[lang="zh-CN"] .hm-lbl{font-size:9px}
+  html[lang="zh-CN"] .faq-q{padding:16px 16px;gap:12px}
+  html[lang="zh-CN"] .faq-q-text{font-size:14px}
+  html[lang="zh-CN"] .faq-a-inner{font-size:13px}
+  html[lang="zh-CN"] .cmp{font-size:11px}
+  html[lang="zh-CN"] .cmp th,html[lang="zh-CN"] .cmp td{padding:8px 5px;word-break:break-word}
+  html[lang="zh-CN"] .price-list li{font-size:12px;padding-left:18px}
+  html[lang="zh-CN"] .price-card{padding:22px 18px}
+  html[lang="zh-CN"] .prob-card{padding:28px 20px}
+  html[lang="zh-CN"] .sol-item h3{font-size:18px}
+  html[lang="zh-CN"] .target-list li{font-size:13px;gap:10px}
 }
 
 /* ============================================================
