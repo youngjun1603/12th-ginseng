@@ -335,6 +335,16 @@ html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
+/* GT 모바일: 이미지 넘침·과대노출 방지 */
+@media(max-width:960px){
+  html.gt-active .hero{padding-top:calc(var(--nav-h) + 55px)}
+  html.gt-active .hero-bottle-wrap{max-height:55vh;overflow:hidden;align-items:flex-start}
+  html.gt-active .hero-bottle-wrap img{max-width:70%!important;width:70%!important;height:auto!important;display:block;margin:0 auto}
+}
+@media(max-width:560px){
+  html.gt-active .hero{padding-top:calc(var(--nav-h) + 49px)}
+  html.gt-active .hero-bottle-wrap img{max-width:65%!important;width:65%!important}
+}
 
 /* ============================================================
    HERO
