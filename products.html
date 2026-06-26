@@ -77,6 +77,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .lang-flag{font-size:14px;line-height:1}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
 .goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
+html.gt-active .nav{top:39px!important}
 
 /* PAGE HEADER */
 .page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
@@ -535,17 +536,7 @@ function selectLang(lang){closeLangDrop();clearGTCookies();var u=new URL(locatio
 document.addEventListener('click',function(e){var d=document.getElementById('langDrop');if(d&&!d.contains(e.target))closeLangDrop();});
 document.addEventListener('DOMContentLoaded',updateLangUI);
 
-if(getGTCookieLang()){
-  var _gtNavTimer=setInterval(function(){
-    var banner=document.querySelector('.goog-te-banner-frame');
-    var navEl=document.querySelector('.nav');
-    if(banner&&navEl&&banner.offsetHeight>0){
-      navEl.style.top=banner.offsetHeight+'px';
-      clearInterval(_gtNavTimer);
-    }
-  },200);
-  setTimeout(function(){clearInterval(_gtNavTimer);},5000);
-}
+if(getGTCookieLang()){document.documentElement.classList.add('gt-active');}
 </script>
 </body>
 </html>
