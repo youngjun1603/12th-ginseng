@@ -335,18 +335,32 @@ html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
-/* GT PC 가로 오버플로우 방지: 번역 font 요소가 레이아웃 틀어지는 것 차단 */
+/* GT PC 가로 오버플로우 방지: 번역 font 요소 + 텍스트 줄바꿈 */
 html.gt-active body{overflow-x:hidden}
 html.gt-active font{display:inline!important;max-width:100%}
-/* GT 모바일: 이미지 넘침·과대노출 방지 */
+/* 테이블·nowrap 요소 일본어 등 번역 시 오버플로우 방지 */
+html.gt-active .cmp{table-layout:fixed}
+html.gt-active .cmp th,html.gt-active .cmp td{word-break:break-word;white-space:normal}
+html.gt-active .ck-val{white-space:normal;word-break:break-all}
+html.gt-active .foot-bizinfo span{white-space:normal}
+html.gt-active .foot-bizinfo{flex-wrap:wrap}
+/* GT 모바일: hero 1컬럼 강제 + 이미지 넘침·과대노출 방지 */
 @media(max-width:960px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 55px)}
-  html.gt-active .hero-bottle-wrap{max-height:55vh;overflow:hidden;align-items:flex-start}
-  html.gt-active .hero-bottle-wrap img{max-width:70%!important;width:70%!important;height:auto!important;display:block;margin:0 auto}
+  html.gt-active .hero-inner{grid-template-columns:1fr!important}
+  html.gt-active .hero-bottle-wrap{
+    order:-1!important;min-height:unset!important;
+    margin-left:0!important;margin-right:0!important;
+    max-height:55vh!important;overflow:hidden!important;align-items:flex-start!important
+  }
+  html.gt-active .hero-bottle-wrap img{
+    width:70%!important;max-width:70%!important;height:auto!important;
+    display:block!important;margin:0 auto!important
+  }
 }
 @media(max-width:560px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 49px)}
-  html.gt-active .hero-bottle-wrap img{max-width:65%!important;width:65%!important}
+  html.gt-active .hero-bottle-wrap img{width:65%!important;max-width:65%!important}
 }
 
 /* ============================================================
