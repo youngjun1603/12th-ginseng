@@ -76,8 +76,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .lang-item.active{color:var(--gold)}
 .lang-flag{font-size:14px;line-height:1}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
-.goog-te-banner-frame,.goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
-body{top:0!important}
+.goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
 
 /* PAGE HEADER */
 .page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
@@ -535,6 +534,18 @@ function clearGTCookies(){var past='Thu, 01 Jan 1970 00:00:00 UTC';document.cook
 function selectLang(lang){closeLangDrop();clearGTCookies();var u=new URL(location.href);if(lang==='ko'){localStorage.setItem('jinbonsam_lang','ko');u.searchParams.delete('lang');location.href=u.toString();}else if(lang==='zh'){localStorage.setItem('jinbonsam_lang','zh');u.searchParams.set('lang','zh');location.href=u.toString();}else{localStorage.setItem('jinbonsam_lang','ko');document.cookie='googtrans=/ko/'+lang+'; path=/';document.cookie='googtrans=/ko/'+lang+'; path=/; domain=.jinbonsam.com';u.searchParams.delete('lang');location.href=u.toString();}}
 document.addEventListener('click',function(e){var d=document.getElementById('langDrop');if(d&&!d.contains(e.target))closeLangDrop();});
 document.addEventListener('DOMContentLoaded',updateLangUI);
+
+if(getGTCookieLang()){
+  var _gtNavTimer=setInterval(function(){
+    var banner=document.querySelector('.goog-te-banner-frame');
+    var navEl=document.querySelector('.nav');
+    if(banner&&navEl&&banner.offsetHeight>0){
+      navEl.style.top=banner.offsetHeight+'px';
+      clearInterval(_gtNavTimer);
+    }
+  },200);
+  setTimeout(function(){clearInterval(_gtNavTimer);},5000);
+}
 </script>
 </body>
 </html>
