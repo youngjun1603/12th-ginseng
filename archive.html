@@ -152,6 +152,44 @@ html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
   .filter-wrap{gap:8px}
   .filter-btn{padding:7px 14px;font-size:12px}
 }
+
+/* ============================================================
+   VIEWER MODAL + DOWNLOAD LOCK
+   ============================================================ */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.88);display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--g-800);border:1px solid rgba(196,153,58,.25);width:100%;max-width:900px;display:flex;flex-direction:column;margin:auto;flex-shrink:0;max-height:calc(100vh - 40px)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid rgba(196,153,58,.15);flex-shrink:0;gap:12px}
+.modal-title{font-family:var(--serif);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.06em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.modal-notice{font-size:11px;color:rgba(248,244,236,.35);padding:8px 20px;border-bottom:1px solid rgba(196,153,58,.08);flex-shrink:0;display:flex;align-items:center;gap:6px;letter-spacing:.04em}
+.modal-close{width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:rgba(248,244,236,.4);font-size:18px;cursor:pointer;transition:color .2s;background:none;border:none;flex-shrink:0}
+.modal-close:hover{color:var(--cr)}
+.modal-viewer{position:relative;flex:1;min-height:420px;overflow:hidden}
+.modal-viewer iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block}
+.modal-watermark{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.modal-watermark::before,.modal-watermark::after{content:'진본삼 산삼명작 · jinbonsam.com · 무단배포금지';position:absolute;width:260%;font-size:13px;font-weight:600;color:rgba(196,153,58,.09);letter-spacing:.15em;white-space:nowrap;pointer-events:none;text-align:center}
+.modal-watermark::before{top:28%;left:-80%;transform:rotate(-25deg)}
+.modal-watermark::after{top:68%;left:-80%;transform:rotate(-25deg)}
+.modal-viewer,.modal-viewer *{-webkit-user-select:none;-moz-user-select:none;user-select:none}
+
+/* Password Modal */
+.pw-modal-overlay{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px}
+.pw-modal-overlay.open{display:flex}
+.pw-box{background:var(--g-800);border:1px solid rgba(196,153,58,.3);padding:36px 28px;width:100%;max-width:360px;text-align:center}
+.pw-lock-icon{width:50px;height:50px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;background:rgba(196,153,58,.1);border:1px solid rgba(196,153,58,.22);border-radius:50%}
+.pw-lock-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.8}
+.pw-title{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--cr);margin-bottom:8px}
+.pw-desc{font-size:13px;color:rgba(248,244,236,.5);margin-bottom:24px;line-height:1.7}
+.pw-input{width:100%;padding:13px 16px;background:rgba(0,0,0,.35);border:1px solid rgba(196,153,58,.25);border-bottom:2px solid rgba(196,153,58,.4);color:var(--cr);font-size:16px;font-family:var(--sans);letter-spacing:.3em;text-align:center;outline:none;margin-bottom:6px}
+.pw-input:focus{border-color:rgba(196,153,58,.6);border-bottom-color:var(--gold)}
+.pw-error{font-size:12px;color:#e07070;margin-bottom:14px;min-height:18px;text-align:left;padding-left:2px}
+.pw-actions{display:flex;gap:8px}
+.pw-btn{flex:1;padding:12px;font-size:13px;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.pw-btn.confirm{background:var(--gold);border:1px solid var(--gold);color:var(--g-900)}
+.pw-btn.confirm:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.pw-btn.cancel{background:transparent;border:1px solid rgba(196,153,58,.25);color:rgba(248,244,236,.55)}
+.pw-btn.cancel:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:600px){.modal-viewer{min-height:300px}.pw-box{padding:28px 20px}}
 </style>
 </head>
 <body>
@@ -286,10 +324,14 @@ html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
             <span>전 항목 불검출</span>
           </div>
           <div class="doc-actions">
-            <a class="doc-btn primary" href="docs/pesticide-test.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <button class="doc-btn" onclick="openViewModal('docs/pesticide-test.pdf','잔류농약 463종 검사 성적서')">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              뷰어
+            </button>
+            <button class="doc-btn primary" onclick="openDownloadLock('docs/pesticide-test.pdf')">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
               다운로드
-            </a>
+            </button>
           </div>
           <div class="coming-badge">업로드 예정</div>
         </div>
@@ -342,10 +384,14 @@ html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
             <span>Rb3 24.55mg/g</span>
           </div>
           <div class="doc-actions">
-            <a class="doc-btn primary" href="docs/saponin-analysis.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <button class="doc-btn" onclick="openViewModal('docs/saponin-analysis.pdf','38종 사포닌 함량 분석표')">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              뷰어
+            </button>
+            <button class="doc-btn primary" onclick="openDownloadLock('docs/saponin-analysis.pdf')">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
               다운로드
-            </a>
+            </button>
           </div>
           <div class="coming-badge">업로드 예정</div>
         </div>
@@ -502,6 +548,40 @@ html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
   </div>
 </footer>
 
+<!-- ============ VIEWER MODAL ============ -->
+<div class="modal-overlay" id="viewModal" onclick="if(event.target===this)closeViewModal()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title" id="viewModalTitle">문서 뷰어</span>
+      <button class="modal-close" onclick="closeViewModal()">✕</button>
+    </div>
+    <div class="modal-notice">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      열람 전용 — 복사·인쇄·저장은 제한됩니다
+    </div>
+    <div class="modal-viewer" id="viewModalViewer">
+      <div class="modal-watermark"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DOWNLOAD LOCK MODAL ============ -->
+<div class="pw-modal-overlay" id="pwModal" onclick="if(event.target===this)closePwModal()">
+  <div class="pw-box">
+    <div class="pw-lock-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+    </div>
+    <div class="pw-title">다운로드 인증</div>
+    <div class="pw-desc">자료 다운로드는 담당자 인증 후 가능합니다.<br>관리자에게 비밀번호를 문의하세요.<br><span style="color:rgba(196,153,58,.7)">jinbonsam@gmail.com</span></div>
+    <input type="password" class="pw-input" id="pwInput" placeholder="· · · · · · · ·" autocomplete="off" onkeydown="if(event.key==='Enter')checkPw()">
+    <div class="pw-error" id="pwError"></div>
+    <div class="pw-actions">
+      <button class="pw-btn cancel" onclick="closePwModal()">취소</button>
+      <button class="pw-btn confirm" onclick="checkPw()">확인</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const burger = document.querySelector('.nav-burger');
 const mobNav = document.getElementById('mobNav');
@@ -527,6 +607,72 @@ function filterDocs(cat) {
     }
   });
 }
+
+/* ======= Viewer Modal ======= */
+function openViewModal(url, title) {
+  document.getElementById('viewModalTitle').textContent = title || '문서 뷰어';
+  var viewer = document.getElementById('viewModalViewer');
+  var old = viewer.querySelector('iframe');
+  if(old) old.remove();
+  var iframe = document.createElement('iframe');
+  iframe.src = url + '#toolbar=0&navpanes=0&view=FitH';
+  iframe.title = 'Document Viewer';
+  viewer.appendChild(iframe);
+  document.getElementById('viewModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeViewModal() {
+  document.getElementById('viewModal').classList.remove('open');
+  document.body.style.overflow = '';
+  var viewer = document.getElementById('viewModalViewer');
+  var old = viewer.querySelector('iframe');
+  if(old){ old.src='about:blank'; setTimeout(function(){ if(old.parentNode) old.remove(); },100); }
+}
+
+/* ======= Download Lock ======= */
+var _dlT = '';
+var _C = [106,105,110,98,111,110,115,97,109,50,48,50,54]; /* jinbonsam2026 */
+function _K(){ return _C.map(function(c){ return String.fromCharCode(c); }).join(''); }
+function openDownloadLock(url) {
+  _dlT = url;
+  document.getElementById('pwError').textContent = '';
+  document.getElementById('pwInput').value = '';
+  document.getElementById('pwModal').classList.add('open');
+  setTimeout(function(){ document.getElementById('pwInput').focus(); }, 80);
+}
+function closePwModal() {
+  document.getElementById('pwModal').classList.remove('open');
+  _dlT = '';
+}
+function checkPw() {
+  var v = document.getElementById('pwInput').value;
+  if(v === _K()) {
+    closePwModal();
+    var a = document.createElement('a');
+    a.href = _dlT;
+    a.download = '';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ document.body.removeChild(a); }, 200);
+  } else {
+    document.getElementById('pwError').textContent = '비밀번호가 올바르지 않습니다.';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+}
+
+/* ======= Copy protection in viewer ======= */
+document.addEventListener('keydown', function(e) {
+  if(!document.getElementById('viewModal').classList.contains('open')) return;
+  if((e.ctrlKey || e.metaKey) && ['c','a','p','s','u'].indexOf(e.key.toLowerCase()) !== -1) {
+    e.preventDefault(); e.stopPropagation(); return false;
+  }
+}, true);
+document.addEventListener('contextmenu', function(e) {
+  if(!document.getElementById('viewModal').classList.contains('open')) return;
+  e.preventDefault(); return false;
+});
 </script>
 <script src="/i18n.js"></script>
 
