@@ -77,10 +77,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
-html.gt-active body{overflow-x:hidden}
-html.gt-active font{display:inline!important;max-width:100%}
+html.gt-active font{display:inline!important;max-width:100%;word-break:break-word;overflow-wrap:anywhere}
 html.gt-active .foot-bizinfo span{white-space:normal}
 html.gt-active .foot-bizinfo{flex-wrap:wrap}
+html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-word;overflow-wrap:anywhere}
+@media(max-width:960px){
+  html.gt-active .nav-logo{font-size:13px!important;letter-spacing:.02em!important;flex-shrink:1;min-width:0;max-width:calc(100vw - 160px);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+}
 
 /* PAGE HEADER */
 .page-header{padding:calc(var(--nav-h) + 48px) var(--pad-x) 48px;max-width:var(--maxw);margin:0 auto}
