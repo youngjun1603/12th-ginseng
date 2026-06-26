@@ -337,8 +337,7 @@ html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
-/* GT body 오버플로우 방지 + font 요소 인라인화 */
-html.gt-active body{overflow-x:hidden}
+/* font 요소 인라인화 + 오버플로우 방지 (body overflow-x:hidden은 base에 이미 적용) */
 html.gt-active font{display:inline!important;max-width:100%;word-break:break-word;overflow-wrap:anywhere}
 /* 테이블·nowrap 요소 오버플로우 방지 */
 html.gt-active .cmp{table-layout:fixed}
@@ -350,8 +349,7 @@ html.gt-active .foot-bizinfo{flex-wrap:wrap}
 html.gt-active .sol-item,html.gt-active .rev-card{overflow:hidden}
 html.gt-active .section-inner p,html.gt-active .section-inner h2,
 html.gt-active .section-inner h3,html.gt-active .section-inner h4,
-html.gt-active .section-inner li,
-html.gt-active .section-inner .sol-item-title{word-break:break-word;overflow-wrap:anywhere}
+html.gt-active .section-inner li{word-break:break-word;overflow-wrap:anywhere}
 /* sci-card·tl-step 오버플로우 방지 + tl-step p max-width 제약 해제 */
 html.gt-active .sci-card,html.gt-active .tl-step{overflow:hidden}
 html.gt-active .tl-step p{max-width:100%!important}
@@ -381,8 +379,8 @@ html.gt-active .why-body{min-width:0;overflow:hidden}
   html[lang="zh-CN"] .hero-bottle-wrap{
     order:-1!important;min-height:unset!important;overflow:hidden!important
   }
-  html.gt-active .hero-title,
-  html[lang="zh-CN"] .hero-title{word-break:break-word;overflow-wrap:anywhere}
+  html.gt-active .hero-h1,html.gt-active .hero-sub,
+  html[lang="zh-CN"] .hero-h1,html[lang="zh-CN"] .hero-sub{word-break:break-word;overflow-wrap:anywhere}
   html.gt-active .hero-text,
   html[lang="zh-CN"] .hero-text{overflow:hidden;max-width:100%}
 }
