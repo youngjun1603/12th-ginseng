@@ -357,22 +357,17 @@ html.gt-active .section-inner .sol-item-title{word-break:break-word;overflow-wra
     overflow:hidden;white-space:nowrap;text-overflow:ellipsis
   }
 }
-/* GT + 중국어(i18n) 모바일: hero 1컬럼 강제 + 이미지 크기 제약
-   html[lang="zh-CN"]: i18n.js가 중문 선택 시 설정 → GT active 없이 동일 규칙 적용 */
+/* GT + 중국어(i18n) 모바일: hero 1컬럼 강제 + 풀블리드 복원
+   핵심: grid-template-columns:1fr → 2컬럼 렌더링 방지 (우측 밀림 근본 원인)
+   margin 제약 제거 → 한국어와 동일한 full-bleed 이미지 복원
+   html[lang="zh-CN"]: i18n.js 중문 모드에서도 동일 적용 */
 @media(max-width:960px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 55px)}
   html.gt-active .hero-inner,
   html[lang="zh-CN"] .hero-inner{grid-template-columns:1fr!important}
   html.gt-active .hero-bottle-wrap,
   html[lang="zh-CN"] .hero-bottle-wrap{
-    order:-1!important;min-height:unset!important;
-    margin-left:0!important;margin-right:0!important;overflow:hidden!important
-  }
-  html.gt-active .hero-bottle,
-  html[lang="zh-CN"] .hero-bottle{
-    width:70%!important;max-width:70%!important;
-    height:50vh!important;object-fit:cover!important;object-position:center 10%!important;
-    display:block!important;margin:0 auto!important
+    order:-1!important;min-height:unset!important;overflow:hidden!important
   }
   html.gt-active .hero-title,
   html[lang="zh-CN"] .hero-title{word-break:break-word;overflow-wrap:anywhere}
@@ -381,10 +376,6 @@ html.gt-active .section-inner .sol-item-title{word-break:break-word;overflow-wra
 }
 @media(max-width:560px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 49px)}
-  html.gt-active .hero-bottle,
-  html[lang="zh-CN"] .hero-bottle{
-    width:65%!important;max-width:65%!important;height:45vh!important
-  }
 }
 
 /* ============================================================
