@@ -335,6 +335,9 @@ html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
+/* GT PC 가로 오버플로우 방지: 번역 font 요소가 레이아웃 틀어지는 것 차단 */
+html.gt-active body{overflow-x:hidden}
+html.gt-active font{display:inline!important;max-width:100%}
 /* GT 모바일: 이미지 넘침·과대노출 방지 */
 @media(max-width:960px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 55px)}
