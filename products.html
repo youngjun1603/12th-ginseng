@@ -69,7 +69,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .lang-trigger:hover,.lang-drop.open .lang-trigger{border-color:var(--gold);color:var(--gold);background:rgba(196,153,58,.08)}
 .lang-trigger .lang-arrow{font-size:8px;opacity:.6;transition:transform .2s}
 .lang-drop.open .lang-arrow{transform:rotate(180deg)}
-.lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:132px;background:#142414;border:1px solid rgba(196,153,58,.25);box-shadow:0 8px 24px rgba(0,0,0,.55);opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s;z-index:200}
+.lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:140px;max-height:340px;overflow-y:auto;background:#142414;border:1px solid rgba(196,153,58,.25);box-shadow:0 8px 24px rgba(0,0,0,.55);opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s;z-index:200}
 .lang-drop.open .lang-menu{opacity:1;pointer-events:all;transform:translateY(0)}
 .lang-item{display:flex;align-items:center;gap:8px;width:100%;padding:9px 14px;background:transparent;border:none;color:rgba(248,244,236,.65);font-size:12px;font-weight:600;letter-spacing:.04em;cursor:pointer;font-family:var(--sans);text-align:left;transition:all .18s;white-space:nowrap;line-height:1}
 .lang-item:hover{background:rgba(196,153,58,.1);color:var(--gold)}
@@ -223,6 +223,20 @@ body{top:0!important}
         <button class="lang-item" data-lang="zh" onclick="selectLang('zh')"><span class="lang-flag">🇨🇳</span>中文</button>
         <button class="lang-item" data-lang="en" onclick="selectLang('en')"><span class="lang-flag">🇺🇸</span>English</button>
         <button class="lang-item" data-lang="ja" onclick="selectLang('ja')"><span class="lang-flag">🇯🇵</span>日本語</button>
+        <button class="lang-item" data-lang="vi" onclick="selectLang('vi')"><span class="lang-flag">🇻🇳</span>Tiếng Việt</button>
+        <button class="lang-item" data-lang="id" onclick="selectLang('id')"><span class="lang-flag">🇮🇩</span>Bahasa</button>
+        <button class="lang-item" data-lang="th" onclick="selectLang('th')"><span class="lang-flag">🇹🇭</span>ภาษาไทย</button>
+        <button class="lang-item" data-lang="hi" onclick="selectLang('hi')"><span class="lang-flag">🇮🇳</span>हिन्दी</button>
+        <button class="lang-item" data-lang="ar" onclick="selectLang('ar')"><span class="lang-flag">🇸🇦</span>العربية</button>
+        <button class="lang-item" data-lang="de" onclick="selectLang('de')"><span class="lang-flag">🇩🇪</span>Deutsch</button>
+        <button class="lang-item" data-lang="fr" onclick="selectLang('fr')"><span class="lang-flag">🇫🇷</span>Français</button>
+        <button class="lang-item" data-lang="it" onclick="selectLang('it')"><span class="lang-flag">🇮🇹</span>Italiano</button>
+        <button class="lang-item" data-lang="es" onclick="selectLang('es')"><span class="lang-flag">🇪🇸</span>Español</button>
+        <button class="lang-item" data-lang="pt" onclick="selectLang('pt')"><span class="lang-flag">🇧🇷</span>Português</button>
+        <button class="lang-item" data-lang="nl" onclick="selectLang('nl')"><span class="lang-flag">🇳🇱</span>Nederlands</button>
+        <button class="lang-item" data-lang="pl" onclick="selectLang('pl')"><span class="lang-flag">🇵🇱</span>Polski</button>
+        <button class="lang-item" data-lang="tr" onclick="selectLang('tr')"><span class="lang-flag">🇹🇷</span>Türkçe</button>
+        <button class="lang-item" data-lang="ru" onclick="selectLang('ru')"><span class="lang-flag">🇷🇺</span>Русский</button>
       </div>
     </div>
     <a class="nav-cta" href="/" style="font-size:12px">구매하기</a>
@@ -245,10 +259,24 @@ body{top:0!important}
   <a class="mob-cta" href="/" onclick="closeMobNav()">지금 구매하기</a>
   <div class="mob-rule"></div>
   <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:0 16px">
-    <button class="lang-item" data-lang="ko" onclick="selectLang('ko');closeMobNav()" style="justify-content:center;flex:1;min-width:80px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇰🇷</span>한국어</button>
-    <button class="lang-item" data-lang="zh" onclick="selectLang('zh');closeMobNav()" style="justify-content:center;flex:1;min-width:80px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇨🇳</span>中文</button>
-    <button class="lang-item" data-lang="en" onclick="selectLang('en');closeMobNav()" style="justify-content:center;flex:1;min-width:80px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇺🇸</span>English</button>
-    <button class="lang-item" data-lang="ja" onclick="selectLang('ja');closeMobNav()" style="justify-content:center;flex:1;min-width:80px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇯🇵</span>日本語</button>
+    <button class="lang-item" data-lang="ko" onclick="selectLang('ko');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇰🇷</span>한국어</button>
+    <button class="lang-item" data-lang="zh" onclick="selectLang('zh');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇨🇳</span>中文</button>
+    <button class="lang-item" data-lang="en" onclick="selectLang('en');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇺🇸</span>English</button>
+    <button class="lang-item" data-lang="ja" onclick="selectLang('ja');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇯🇵</span>日本語</button>
+    <button class="lang-item" data-lang="vi" onclick="selectLang('vi');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇻🇳</span>Tiếng Việt</button>
+    <button class="lang-item" data-lang="id" onclick="selectLang('id');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇮🇩</span>Bahasa</button>
+    <button class="lang-item" data-lang="th" onclick="selectLang('th');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇹🇭</span>ภาษาไทย</button>
+    <button class="lang-item" data-lang="hi" onclick="selectLang('hi');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇮🇳</span>हिन्दी</button>
+    <button class="lang-item" data-lang="ar" onclick="selectLang('ar');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇸🇦</span>العربية</button>
+    <button class="lang-item" data-lang="de" onclick="selectLang('de');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇩🇪</span>Deutsch</button>
+    <button class="lang-item" data-lang="fr" onclick="selectLang('fr');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇫🇷</span>Français</button>
+    <button class="lang-item" data-lang="it" onclick="selectLang('it');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇮🇹</span>Italiano</button>
+    <button class="lang-item" data-lang="es" onclick="selectLang('es');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇪🇸</span>Español</button>
+    <button class="lang-item" data-lang="pt" onclick="selectLang('pt');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇧🇷</span>Português</button>
+    <button class="lang-item" data-lang="nl" onclick="selectLang('nl');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇳🇱</span>Nederlands</button>
+    <button class="lang-item" data-lang="pl" onclick="selectLang('pl');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇵🇱</span>Polski</button>
+    <button class="lang-item" data-lang="tr" onclick="selectLang('tr');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇹🇷</span>Türkçe</button>
+    <button class="lang-item" data-lang="ru" onclick="selectLang('ru');closeMobNav()" style="justify-content:center;flex:1;min-width:90px;border:1px solid rgba(196,153,58,.2)"><span class="lang-flag">🇷🇺</span>Русский</button>
   </div>
 </div>
 
@@ -497,7 +525,7 @@ function filterProds(btn, cat) {
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <script>
-var LANG_META={ko:{flag:'🇰🇷',label:'KR'},zh:{flag:'🇨🇳',label:'中'},en:{flag:'🇺🇸',label:'EN'},ja:{flag:'🇯🇵',label:'日'}};
+var LANG_META={ko:{flag:'🇰🇷',label:'KR'},zh:{flag:'🇨🇳',label:'中'},en:{flag:'🇺🇸',label:'EN'},ja:{flag:'🇯🇵',label:'日'},vi:{flag:'🇻🇳',label:'VI'},id:{flag:'🇮🇩',label:'ID'},th:{flag:'🇹🇭',label:'TH'},hi:{flag:'🇮🇳',label:'HI'},ar:{flag:'🇸🇦',label:'AR'},de:{flag:'🇩🇪',label:'DE'},fr:{flag:'🇫🇷',label:'FR'},it:{flag:'🇮🇹',label:'IT'},es:{flag:'🇪🇸',label:'ES'},pt:{flag:'🇧🇷',label:'PT'},nl:{flag:'🇳🇱',label:'NL'},pl:{flag:'🇵🇱',label:'PL'},tr:{flag:'🇹🇷',label:'TR'},ru:{flag:'🇷🇺',label:'RU'}};
 function getGTCookieLang(){var m=document.cookie.match(/googtrans=\/ko\/([^;]+)/);return m?m[1].trim():null;}
 function getCurrentDisplayLang(){var p=new URLSearchParams(location.search);if(p.get('lang')==='zh')return 'zh';var s=localStorage.getItem('jinbonsam_lang');if(s==='zh')return 'zh';var gt=getGTCookieLang();if(gt&&LANG_META[gt])return gt;return 'ko';}
 function updateLangUI(){var lang=getCurrentDisplayLang();var m=LANG_META[lang]||LANG_META.ko;var f=document.getElementById('langFlag'),l=document.getElementById('langLabel');if(f)f.textContent=m.flag;if(l)l.textContent=m.label;document.querySelectorAll('.lang-item').forEach(function(btn){btn.classList.toggle('active',btn.dataset.lang===lang);});}
