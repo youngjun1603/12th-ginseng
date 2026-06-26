@@ -331,8 +331,10 @@ a{color:inherit;text-decoration:none}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
 /* Google Translate 부가 UI 숨기기 (번역 바는 표시) */
 .goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
-/* GT 번역 바 활성 시 nav 아래로 이동 */
+/* GT 번역 바 활성 시 nav 아래로 이동 + 메뉴 항목 줄바꿈 방지 */
 html.gt-active .nav{top:45px!important}
+html.gt-active .nav-menu{gap:16px;overflow:hidden}
+html.gt-active .nav-menu a{font-size:12px;letter-spacing:0;white-space:nowrap}
 
 /* ============================================================
    HERO
@@ -2520,18 +2522,15 @@ function selectLang(lang){
 document.addEventListener('click',function(e){var d=document.getElementById('langDrop');if(d&&!d.contains(e.target))closeLangDrop();});
 document.addEventListener('DOMContentLoaded',updateLangUI);
 
-/* GT 번역 바 활성 시 nav 즉시 45px 아래로 + 로드 후 실제 높이로 재조정 */
+/* GT 번역 바 활성 시 즉시 클래스 추가 + 실제 높이 폴링 (window.load 대기 없이 즉시 시작) */
 if(getGTCookieLang()){
   document.documentElement.classList.add('gt-active');
-  window.addEventListener('load',function(){
-    var tries=0;
-    var tid=setInterval(function(){
-      var b=document.querySelector('.goog-te-banner-frame');
-      var n=document.querySelector('.nav');
-      if(b&&n&&b.offsetHeight>0){n.style.top=b.offsetHeight+'px';clearInterval(tid);}
-      if(++tries>20)clearInterval(tid);
-    },200);
-  });
+  var _gt=0,_gtid=setInterval(function(){
+    var b=document.querySelector('.goog-te-banner-frame');
+    var n=document.querySelector('.nav');
+    if(b&&n&&b.offsetHeight>0){n.style.top=b.offsetHeight+'px';clearInterval(_gtid);}
+    if(++_gt>40)clearInterval(_gtid);
+  },200);
 }
 </script>
 </body>
