@@ -335,32 +335,49 @@ html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
-/* GT PC 가로 오버플로우 방지: 번역 font 요소 + 텍스트 줄바꿈 */
+/* GT body 오버플로우 방지 + font 요소 인라인화 */
 html.gt-active body{overflow-x:hidden}
 html.gt-active font{display:inline!important;max-width:100%}
-/* 테이블·nowrap 요소 일본어 등 번역 시 오버플로우 방지 */
+/* 테이블·nowrap 요소 오버플로우 방지 */
 html.gt-active .cmp{table-layout:fixed}
 html.gt-active .cmp th,html.gt-active .cmp td{word-break:break-word;white-space:normal}
 html.gt-active .ck-val{white-space:normal;word-break:break-all}
 html.gt-active .foot-bizinfo span{white-space:normal}
 html.gt-active .foot-bizinfo{flex-wrap:wrap}
-/* GT 모바일: hero 1컬럼 강제 + 이미지 넘침·과대노출 방지 */
+/* 섹션 카드 텍스트 오버플로우 방지 (PC/모바일 공통) */
+html.gt-active .sol-item,html.gt-active .rev-card{overflow:hidden}
+html.gt-active .section-inner p,html.gt-active .section-inner h2,
+html.gt-active .section-inner h3,html.gt-active .section-inner li,
+html.gt-active .section-inner .sol-item-title{word-break:break-word;overflow-wrap:anywhere}
+/* GT 모바일: nav 로고 2줄 줄바꿈 방지 (일본어 등 번역 시 길어짐) */
+@media(max-width:960px){
+  html.gt-active .nav-logo{
+    font-size:13px!important;letter-spacing:.02em!important;
+    flex-shrink:1;min-width:0;max-width:calc(100vw - 160px);
+    overflow:hidden;white-space:nowrap;text-overflow:ellipsis
+  }
+}
+/* GT 모바일: hero 1컬럼 강제 + 이미지 크기 제약 */
 @media(max-width:960px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 55px)}
   html.gt-active .hero-inner{grid-template-columns:1fr!important}
   html.gt-active .hero-bottle-wrap{
     order:-1!important;min-height:unset!important;
-    margin-left:0!important;margin-right:0!important;
-    max-height:55vh!important;overflow:hidden!important;align-items:flex-start!important
+    margin-left:0!important;margin-right:0!important;overflow:hidden!important
   }
-  html.gt-active .hero-bottle-wrap img{
-    width:70%!important;max-width:70%!important;height:auto!important;
+  html.gt-active .hero-bottle{
+    width:70%!important;max-width:70%!important;
+    height:50vh!important;object-fit:cover!important;object-position:center 10%!important;
     display:block!important;margin:0 auto!important
   }
+  html.gt-active .hero-title{word-break:break-word;overflow-wrap:anywhere}
+  html.gt-active .hero-text{overflow:hidden;max-width:100%}
 }
 @media(max-width:560px){
   html.gt-active .hero{padding-top:calc(var(--nav-h) + 49px)}
-  html.gt-active .hero-bottle-wrap img{width:65%!important;max-width:65%!important}
+  html.gt-active .hero-bottle{
+    width:65%!important;max-width:65%!important;height:45vh!important
+  }
 }
 
 /* ============================================================
