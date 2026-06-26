@@ -327,6 +327,8 @@ a{color:inherit;text-decoration:none}
 .lang-item:hover{background:rgba(196,153,58,.1);color:var(--gold)}
 .lang-item.active{color:var(--gold)}
 .lang-flag{width:20px;height:15px;object-fit:cover;vertical-align:middle;border-radius:2px;flex-shrink:0;display:inline-block}
+/* 드로어·드롭다운 언어 목록의 국기 이미지 숨김 (구매 버튼과 시각적 충돌 방지) */
+.lang-item .lang-flag{display:none}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
 /* Google Translate 부가 UI 숨기기 (번역 바는 표시) */
 .goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
@@ -337,7 +339,7 @@ html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active .hero{padding-top:calc(var(--nav-h) + 77px)}
 /* GT body 오버플로우 방지 + font 요소 인라인화 */
 html.gt-active body{overflow-x:hidden}
-html.gt-active font{display:inline!important;max-width:100%}
+html.gt-active font{display:inline!important;max-width:100%;word-break:break-word;overflow-wrap:anywhere}
 /* 테이블·nowrap 요소 오버플로우 방지 */
 html.gt-active .cmp{table-layout:fixed}
 html.gt-active .cmp th,html.gt-active .cmp td{word-break:break-word;white-space:normal}
@@ -347,8 +349,18 @@ html.gt-active .foot-bizinfo{flex-wrap:wrap}
 /* 섹션 카드 텍스트 오버플로우 방지 (PC/모바일 공통) */
 html.gt-active .sol-item,html.gt-active .rev-card{overflow:hidden}
 html.gt-active .section-inner p,html.gt-active .section-inner h2,
-html.gt-active .section-inner h3,html.gt-active .section-inner li,
+html.gt-active .section-inner h3,html.gt-active .section-inner h4,
+html.gt-active .section-inner li,
 html.gt-active .section-inner .sol-item-title{word-break:break-word;overflow-wrap:anywhere}
+/* sci-card·tl-step 오버플로우 방지 + tl-step p max-width 제약 해제 */
+html.gt-active .sci-card,html.gt-active .tl-step{overflow:hidden}
+html.gt-active .tl-step p{max-width:100%!important}
+/* why-body: 플렉스 아이템 min-width:auto 해제 → 긴 번역 텍스트 축소 허용 */
+html.gt-active .why-body{min-width:0;overflow:hidden}
+/* GT 모바일: tl-grid(STEP 카드) 2컬럼→1컬럼 강제 (번역 텍스트 넘침 방지) */
+@media(max-width:960px){
+  html.gt-active .tl-grid{grid-template-columns:1fr!important}
+}
 /* GT 모바일: nav 로고 2줄 줄바꿈 방지 (일본어 등 번역 시 길어짐) */
 @media(max-width:960px){
   html.gt-active .nav-logo{
