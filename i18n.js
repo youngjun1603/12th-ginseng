@@ -62,7 +62,7 @@
 
   /* 버튼 active 상태 업데이트 */
   function updateButtons(lang) {
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    document.querySelectorAll('.lang-item').forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
   }
