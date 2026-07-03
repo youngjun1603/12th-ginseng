@@ -629,6 +629,8 @@ html.gt-active font,html.translated-active font{display:inline!important;max-wid
 .reveal.delay-2{transition-delay:.16s}
 .reveal.delay-3{transition-delay:.24s}
 .reveal.delay-4{transition-delay:.32s}
+.reveal.delay-5{transition-delay:.40s}
+.reveal.delay-6{transition-delay:.48s}
 
 /* ============================================================
    RESPONSIVE
@@ -762,6 +764,7 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
 .trust-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:22px 12px;text-align:center;border-bottom:1px solid rgba(196,153,58,.1)}
 .trust-item:nth-child(1),.trust-item:nth-child(2),.trust-item:nth-child(4),.trust-item:nth-child(5){border-right:1px solid rgba(196,153,58,.1)}
 .trust-num{font-family:var(--serif);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--gold);line-height:1;letter-spacing:.02em}
+.trust-num small{font-size:.55em;font-weight:600;letter-spacing:.03em;margin-left:2px;color:rgba(196,153,58,.8)}
 .trust-lbl{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(196,153,58,.55)}
 .trust-sep{display:none}
 
@@ -1036,33 +1039,33 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
      ======================================================== -->
 <div class="trust-bar" data-screen-label="01-B Trust">
   <div class="trust-inner">
-    <div class="trust-item">
-      <span class="trust-num">12년근</span>
+    <div class="trust-item reveal">
+      <span class="trust-num trust-count" data-target="12">12<small>년근</small></span>
       <span class="trust-lbl">산양산삼 6뿌리</span>
     </div>
     <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">200mg</span>
+    <div class="trust-item reveal delay-1">
+      <span class="trust-num trust-count" data-target="200">200<small>mg</small></span>
       <span class="trust-lbl">발효흑산삼 초미세분말/병 당</span>
     </div>
     <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">38종</span>
+    <div class="trust-item reveal delay-2">
+      <span class="trust-num trust-count" data-target="38">38<small>종</small></span>
       <span class="trust-lbl">산삼 사포닌 검출</span>
     </div>
     <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">24배</span>
+    <div class="trust-item reveal delay-3">
+      <span class="trust-num trust-count" data-target="24">24<small>배</small></span>
       <span class="trust-lbl">초미세 흡수율</span>
     </div>
     <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">463종</span>
+    <div class="trust-item reveal delay-4">
+      <span class="trust-num trust-count" data-target="463">463<small>종</small></span>
       <span class="trust-lbl">잔류농약 전 항목 불검출</span>
     </div>
     <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">30병</span>
+    <div class="trust-item reveal delay-5">
+      <span class="trust-num trust-count" data-target="30">30<small>병</small></span>
       <span class="trust-lbl">1개월 집중 케어 세트</span>
     </div>
   </div>
@@ -2463,7 +2466,7 @@ const countObserver = new IntersectionObserver((entries) => {
     }
   });
 }, {threshold: 0.5});
-document.querySelectorAll('.count-num').forEach(el => countObserver.observe(el));
+document.querySelectorAll('.count-num,.trust-count').forEach(el => countObserver.observe(el));
 
 /* ============================================================
    FAQ Accordion
