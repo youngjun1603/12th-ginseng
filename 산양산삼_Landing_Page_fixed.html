@@ -330,14 +330,13 @@ a{color:inherit;text-decoration:none}
 /* 드로어·드롭다운 언어 목록의 국기 이미지 숨김 (구매 버튼과 시각적 충돌 방지) */
 .lang-item .lang-flag{display:none}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
-/* Google Translate 부가 UI 숨기기 (번역 바 포함) */
+/* Google Translate 부가 UI 숨기기 (번역 바는 표시) */
 .goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
-.goog-te-banner-frame{display:none!important}
-html.gt-active body,html.translated-ltr body,html.translated-rtl body{top:0!important}
-/* GT 번역 활성 시 nav는 원위치 유지 (배너 숨겼으므로 이동 불필요) */
+/* GT 번역 바 활성 시 nav 아래로 이동 + 메뉴 항목 줄바꿈 방지 */
+html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
-html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,0px) + 32px)}
+html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,45px) + 32px)}
 /* font 요소 인라인화 + 오버플로우 방지 (body overflow-x:hidden은 base에 이미 적용) */
 /* html.translated-active: Chrome/Firefox 브라우저 내장 번역 감지 시 JS가 추가하는 클래스 (nav 위치 제외) */
 html.gt-active font,html.translated-active font{display:inline!important;max-width:100%;word-break:break-word;overflow-wrap:anywhere}
@@ -371,7 +370,7 @@ html.gt-active font,html.translated-active font{display:inline!important;max-wid
    margin 제약 제거 → 한국어와 동일한 full-bleed 이미지 복원
    html[lang="zh-CN"]: i18n.js 중문 모드에서도 동일 적용 */
 @media(max-width:960px){
-  html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,0px) + 10px)}
+  html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,45px) + 10px)}
   html.gt-active .hero-inner,
   html[lang="zh-CN"] .hero-inner{grid-template-columns:1fr!important}
   html.gt-active .hero-bottle-wrap,
@@ -385,7 +384,7 @@ html.gt-active font,html.translated-active font{display:inline!important;max-wid
   html[lang="zh-CN"] .hero-text{overflow:hidden;max-width:100%}
 }
 @media(max-width:560px){
-  html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,0px) + 4px)}
+  html.gt-active .hero{padding-top:calc(var(--nav-h) + var(--gt-bar-h,45px) + 4px)}
 }
 
 /* ============================================================
@@ -2565,10 +2564,15 @@ function selectLang(lang){
 document.addEventListener('click',function(e){var d=document.getElementById('langDrop');if(d&&!d.contains(e.target))closeLangDrop();});
 document.addEventListener('DOMContentLoaded',updateLangUI);
 
-/* GT 번역 활성 시 클래스 추가 (배너 숨기므로 높이 폴링 불필요) */
+/* GT 번역 바 활성 시 즉시 클래스 추가 + 실제 높이 폴링 (window.load 대기 없이 즉시 시작) */
 if(getGTCookieLang()){
   document.documentElement.classList.add('gt-active');
-  document.documentElement.style.setProperty('--gt-bar-h','0px');
+  var _gt=0,_gtid=setInterval(function(){
+    var b=document.querySelector('.goog-te-banner-frame');
+    var n=document.querySelector('.nav');
+    if(b&&n&&b.offsetHeight>0){n.style.top=b.offsetHeight+'px';document.documentElement.style.setProperty('--gt-bar-h',b.offsetHeight+'px');clearInterval(_gtid);}
+    if(++_gt>40)clearInterval(_gtid);
+  },200);
 }
 /* Chrome/Firefox 브라우저 내장 번역 감지 (translated-ltr/rtl → translated-active 추가) */
 (function(){

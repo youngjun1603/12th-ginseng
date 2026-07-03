@@ -76,8 +76,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .lang-flag{width:20px;height:15px;object-fit:cover;vertical-align:middle;border-radius:2px;flex-shrink:0;display:inline-block}
 @media(max-width:960px){.lang-drop{margin-left:0;margin-right:8px}}
 .goog-te-gadget,#goog-gt-tt,.goog-tooltip,.goog-te-balloon-frame{display:none!important}
-.goog-te-banner-frame{display:none!important}
-html.gt-active body,html.translated-ltr body,html.translated-rtl body{top:0!important}
+html.gt-active .nav{top:45px!important}
 html.gt-active .nav-menu{gap:12px}
 html.gt-active .nav-menu a{font-size:12px;letter-spacing:0}
 html.gt-active font{display:inline!important;max-width:100%;word-break:break-word;overflow-wrap:anywhere}
@@ -547,7 +546,12 @@ document.addEventListener('DOMContentLoaded',updateLangUI);
 
 if(getGTCookieLang()){
   document.documentElement.classList.add('gt-active');
-  document.documentElement.style.setProperty('--gt-bar-h','0px');
+  var _gt=0,_gtid=setInterval(function(){
+    var b=document.querySelector('.goog-te-banner-frame');
+    var n=document.querySelector('.nav');
+    if(b&&n&&b.offsetHeight>0){n.style.top=b.offsetHeight+'px';clearInterval(_gtid);}
+    if(++_gt>40)clearInterval(_gtid);
+  },200);
 }
 </script>
 </body>
