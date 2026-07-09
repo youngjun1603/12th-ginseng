@@ -565,6 +565,19 @@ html.gt-active font,html.translated-active font{display:inline!important;max-wid
 .price-card .btn{margin-top:auto;width:100%}
 
 /* ============================================================
+   SUBSCRIPTION TABS
+   ============================================================ */
+.sub-tabs{display:flex;max-width:520px;margin:0 auto 16px;background:var(--g-800);border-radius:8px;overflow:hidden;border:1px solid rgba(196,153,58,.28)}
+.sub-tab{flex:1;padding:14px 8px;background:transparent;border:none;color:rgba(248,244,236,.42);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.04em;font-family:var(--sans);line-height:1.3;text-align:center}
+.sub-tab:not(:last-child){border-right:1px solid rgba(196,153,58,.15)}
+.sub-tab:hover{color:rgba(248,244,236,.75);background:rgba(196,153,58,.08)}
+.sub-tab.active{background:rgba(196,153,58,.18);color:var(--gold)}
+.sub-tab .tab-badge{display:block;font-size:10.5px;font-weight:700;color:rgba(196,153,58,.6);letter-spacing:.06em;margin-top:3px}
+.sub-tab.active .tab-badge{color:var(--gold-light)}
+.sub-panel{display:none}
+.sub-panel.active{display:block}
+
+/* ============================================================
    REVIEWS
    ============================================================ */
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -1796,48 +1809,118 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
       <p style="margin-top:12px;font-size:clamp(13px,1vw,14px);color:rgba(196,153,58,.8);line-height:1.75;word-break:keep-all">⚠️ 추후 가격은 올라갈 수 있습니다. 12년근 야생 산삼 원물 한정 소진 시 본 프로젝트 특별가는 예고 없이 종료되며 정상가로 환원됩니다.</p>
     </div>
 
+    <!-- 구독 플랜 탭 -->
+    <div class="sub-tabs reveal">
+      <button class="sub-tab active" onclick="switchSubTab('1m')" data-tab="1m">1개월<span class="tab-badge">30병</span></button>
+      <button class="sub-tab" onclick="switchSubTab('6m')" data-tab="6m">6개월<span class="tab-badge">10% 할인</span></button>
+      <button class="sub-tab" onclick="switchSubTab('1y')" data-tab="1y">1년<span class="tab-badge">15% 할인</span></button>
+    </div>
+
     <div style="max-width:520px;margin:0 auto">
-      <div class="price-card feat reveal" style="border:2px solid rgba(196,153,58,.5)">
-        <span class="price-feat-tag">대한민국 활력 프로젝트 특별가</span>
-        <div>
-          <div class="price-name">산삼명작 샷 30병 세트</div>
-          <div class="price-desc">30ml × 30병 · 1개월 집중 케어</div>
-        </div>
-        <div class="price-amount" style="flex-direction:column;align-items:flex-start;gap:8px">
-          <div style="font-size:13px;color:rgba(248,244,236,.4);text-decoration:line-through">소비자가 670,000원</div>
-          <div style="display:flex;align-items:baseline;gap:6px">
-            <span class="num">359,000</span>
-            <span class="unit">원 / 세트</span>
+      <!-- 1개월 -->
+      <div class="sub-panel active" id="sub-1m">
+        <div class="price-card feat reveal" style="border:2px solid rgba(196,153,58,.5)">
+          <span class="price-feat-tag">대한민국 활력 프로젝트 특별가</span>
+          <div>
+            <div class="price-name">산삼명작 샷 30병 세트</div>
+            <div class="price-desc">30ml × 30병 · 1개월 집중 케어</div>
           </div>
-        </div>
-        <ul class="price-list">
-          <li>발효흑산삼 초미세분말 30ml × 30병</li>
-          <li>최고급 패키지 + 전용 쇼핑백 + 품질보증서</li>
-          <li>잔류농약 463종 전 항목 불검출 성적서</li>
-          <li>무료배송</li>
-        </ul>
-        <p style="text-align:center;font-size:13px;color:rgba(248,244,236,.5);font-style:italic;line-height:1.8;padding:12px 0;border-top:1px solid rgba(196,153,58,.15)">우리는 12년근 산삼을 파는 것이 아니라,<br>당신의 100년의 세월을 함께 건강하게 지켜드리는 것입니다.</p>
-        <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:8px"><span class="nv-n">N</span>진본삼 산삼명작 구매하기</a>
-        <a class="btn btn-secondary store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;color:var(--gold);border-color:rgba(196,153,58,.4)">수고한 나에게 산삼명작 샷 선물하기</a>
-        <div style="margin-top:24px;border-top:1px solid rgba(196,153,58,.15);padding-top:20px">
-          <form class="foot-news" onsubmit="event.preventDefault();this.querySelector('input').value='';alert('구독 신청이 완료되었습니다')" style="margin-bottom:16px">
-            <input class="input" type="email" placeholder="이메일 주소" required />
-            <button type="submit">구독</button>
-          </form>
-          <div class="sns-row" style="justify-content:center">
-            <a class="sns-icon kakao" href="#" aria-label="카카오톡 공유" onclick="shareKakao();return false;" title="카카오톡 공유">
-              <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
-            </a>
-            <button class="sns-icon" onclick="shareInstagram()" aria-label="인스타그램 공유" title="인스타그램 공유">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </button>
-            <button class="sns-icon" onclick="shareNaver()" aria-label="네이버 공유" title="네이버 공유">
-              <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
-            </button>
-            <button class="sns-icon" onclick="copyUrl()" aria-label="링크 복사" title="링크 복사">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-            </button>
+          <div class="price-amount" style="flex-direction:column;align-items:flex-start;gap:8px">
+            <div style="font-size:13px;color:rgba(248,244,236,.4);text-decoration:line-through">소비자가 670,000원</div>
+            <div style="display:flex;align-items:baseline;gap:6px">
+              <span class="num">359,000</span>
+              <span class="unit">원 / 세트</span>
+            </div>
           </div>
+          <ul class="price-list">
+            <li>발효흑산삼 초미세분말 30ml × 30병</li>
+            <li>최고급 패키지 + 전용 쇼핑백 + 품질보증서</li>
+            <li>잔류농약 463종 전 항목 불검출 성적서</li>
+            <li>무료배송</li>
+          </ul>
+          <p style="text-align:center;font-size:13px;color:rgba(248,244,236,.5);font-style:italic;line-height:1.8;padding:12px 0;border-top:1px solid rgba(196,153,58,.15)">우리는 12년근 산삼을 파는 것이 아니라,<br>당신의 100년의 세월을 함께 건강하게 지켜드리는 것입니다.</p>
+          <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:8px"><span class="nv-n">N</span>진본삼 산삼명작 구매하기</a>
+          <a class="btn btn-secondary store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;color:var(--gold);border-color:rgba(196,153,58,.4)">수고한 나에게 산삼명작 샷 선물하기</a>
+        </div>
+      </div>
+
+      <!-- 6개월 구독 -->
+      <div class="sub-panel" id="sub-6m">
+        <div class="price-card feat" style="border:2px solid rgba(196,153,58,.5)">
+          <span class="price-feat-tag">대한민국 활력 프로젝트 특별가</span>
+          <div>
+            <div class="price-name">산삼명작 샷 180병 세트</div>
+            <div class="price-desc">30ml × 30병 × 6회 · 6개월 정기 구독</div>
+          </div>
+          <div class="price-amount" style="flex-direction:column;align-items:flex-start;gap:8px">
+            <div style="font-size:13px;color:rgba(248,244,236,.4);text-decoration:line-through">정가 2,154,000원</div>
+            <div style="display:flex;align-items:baseline;gap:6px">
+              <span class="num" style="font-size:36px">1,938,000</span>
+              <span class="unit">원 / 6개월</span>
+            </div>
+            <div style="font-size:13px;color:rgba(196,153,58,.8);font-weight:600">월 323,000원 · <span style="color:rgba(248,244,236,.45);font-weight:400">216,000원 절약</span></div>
+          </div>
+          <ul class="price-list">
+            <li>발효흑산삼 초미세분말 30ml × 30병 × 6회 정기 발송</li>
+            <li>최고급 패키지 + 전용 쇼핑백 + 품질보증서</li>
+            <li>잔류농약 463종 전 항목 불검출 성적서</li>
+            <li>무료배송 (6회)</li>
+            <li>구독 취소 언제든 가능</li>
+          </ul>
+          <p style="text-align:center;font-size:13px;color:rgba(248,244,236,.5);font-style:italic;line-height:1.8;padding:12px 0;border-top:1px solid rgba(196,153,58,.15)">우리는 12년근 산삼을 파는 것이 아니라,<br>당신의 100년의 세월을 함께 건강하게 지켜드리는 것입니다.</p>
+          <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:8px"><span class="nv-n">N</span>6개월 구독 신청하기</a>
+          <a class="btn btn-secondary store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;color:var(--gold);border-color:rgba(196,153,58,.4)">수고한 나에게 산삼명작 샷 선물하기</a>
+        </div>
+      </div>
+
+      <!-- 1년 구독 -->
+      <div class="sub-panel" id="sub-1y">
+        <div class="price-card feat" style="border:2px solid rgba(196,153,58,.5)">
+          <span class="price-feat-tag">대한민국 활력 프로젝트 특별가</span>
+          <div>
+            <div class="price-name">산삼명작 샷 360병 세트</div>
+            <div class="price-desc">30ml × 30병 × 12회 · 1년 정기 구독</div>
+          </div>
+          <div class="price-amount" style="flex-direction:column;align-items:flex-start;gap:8px">
+            <div style="font-size:13px;color:rgba(248,244,236,.4);text-decoration:line-through">정가 4,308,000원</div>
+            <div style="display:flex;align-items:baseline;gap:6px">
+              <span class="num" style="font-size:36px">3,660,000</span>
+              <span class="unit">원 / 1년</span>
+            </div>
+            <div style="font-size:13px;color:rgba(196,153,58,.8);font-weight:600">월 305,000원 · <span style="color:rgba(248,244,236,.45);font-weight:400">648,000원 절약</span></div>
+          </div>
+          <ul class="price-list">
+            <li>발효흑산삼 초미세분말 30ml × 30병 × 12회 정기 발송</li>
+            <li>최고급 패키지 + 전용 쇼핑백 + 품질보증서</li>
+            <li>잔류농약 463종 전 항목 불검출 성적서</li>
+            <li>무료배송 (12회)</li>
+            <li>구독 취소 언제든 가능</li>
+          </ul>
+          <p style="text-align:center;font-size:13px;color:rgba(248,244,236,.5);font-style:italic;line-height:1.8;padding:12px 0;border-top:1px solid rgba(196,153,58,.15)">우리는 12년근 산삼을 파는 것이 아니라,<br>당신의 100년의 세월을 함께 건강하게 지켜드리는 것입니다.</p>
+          <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:8px"><span class="nv-n">N</span>1년 구독 신청하기</a>
+          <a class="btn btn-secondary store-link" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center;color:var(--gold);border-color:rgba(196,153,58,.4)">수고한 나에게 산삼명작 샷 선물하기</a>
+        </div>
+      </div>
+
+      <!-- 이메일 구독 + SNS 공유 (공통) -->
+      <div style="margin-top:12px;border:2px solid rgba(196,153,58,.28);border-top:1px solid rgba(196,153,58,.15);background:var(--g-800);padding:20px 28px">
+        <form class="foot-news" onsubmit="event.preventDefault();this.querySelector('input').value='';alert('구독 신청이 완료되었습니다')" style="margin-bottom:16px">
+          <input class="input" type="email" placeholder="이메일 주소" required />
+          <button type="submit">구독</button>
+        </form>
+        <div class="sns-row" style="justify-content:center">
+          <a class="sns-icon kakao" href="#" aria-label="카카오톡 공유" onclick="shareKakao();return false;" title="카카오톡 공유">
+            <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
+          </a>
+          <button class="sns-icon" onclick="shareInstagram()" aria-label="인스타그램 공유" title="인스타그램 공유">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </button>
+          <button class="sns-icon" onclick="shareNaver()" aria-label="네이버 공유" title="네이버 공유">
+            <svg viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
+          </button>
+          <button class="sns-icon" onclick="copyUrl()" aria-label="링크 복사" title="링크 복사">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -2290,6 +2373,15 @@ document.addEventListener('DOMContentLoaded', function() {
     Kakao.init(KAKAO_APP_KEY);
   }
 });
+
+function switchSubTab(tab) {
+  document.querySelectorAll('.sub-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.tab === tab);
+  });
+  document.querySelectorAll('.sub-panel').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'sub-' + tab);
+  });
+}
 
 function shareKakao() {
   if (KAKAO_APP_KEY === 'YOUR_KAKAO_APP_KEY') {
