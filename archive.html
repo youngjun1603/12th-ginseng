@@ -341,6 +341,19 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
   -webkit-user-select:none;user-select:none;
   pointer-events:none;
 }
+.cert-modal-mat.dual{
+  display:flex;gap:10px;align-items:flex-start;
+}
+.cert-modal-mat.dual img{
+  flex:1;width:0;max-height:65vh;
+}
+/* 듀얼 썸네일 */
+.cert-thumb-img.dual-thumb{
+  display:flex;gap:4px;
+}
+.cert-thumb-img.dual-thumb img{
+  flex:1;width:0;height:100%;object-fit:contain;padding:6px;
+}
 
 /* 캡션 */
 .cert-modal-caption{
@@ -561,39 +574,23 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
       </div>
     </div>
 
-    <!-- 이력관리 — 재배자 정보 -->
+    <!-- 이력관리 — 두 화면 합산 카드 -->
     <div class="cert-thumb"
-         onclick="openCertModal(
+         onclick="openCertModalDual(
            'down/KakaoTalk_20260719_200309400_01.jpg',
-           '산양삼 이력관리시스템 ①',
-           '재배자 정보 · 생산신고 내역<br>충청남도 서천군 / 재배면적 60,200㎡')">
-      <div class="cert-thumb-img">
-        <img src="down/KakaoTalk_20260719_200309400_01.jpg" alt="이력관리시스템 재배자 정보" loading="lazy">
-        <div class="cert-thumb-expand">
-          <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        </div>
-      </div>
-      <div class="cert-thumb-info">
-        <strong>산양삼 이력관리시스템 ①</strong>
-        <span>재배자 정보 · 생산신고 내역</span>
-      </div>
-    </div>
-
-    <!-- 이력관리 — 생산과정확인 -->
-    <div class="cert-thumb"
-         onclick="openCertModal(
            'down/KakaoTalk_20260719_200309400.jpg',
-           '산양삼 이력관리시스템 ②',
-           '생산과정확인 내역 · 품질검사 이력<br>한국임업진흥원 현장 확인')">
-      <div class="cert-thumb-img">
+           '산양삼 이력관리시스템',
+           '재배자 정보 · 생산신고 · 생산과정확인 · 품질검사 이력<br>충청남도 서천군 · 한국임업진흥원 현장 확인')">
+      <div class="cert-thumb-img dual-thumb">
+        <img src="down/KakaoTalk_20260719_200309400_01.jpg" alt="이력관리시스템 재배자 정보" loading="lazy">
         <img src="down/KakaoTalk_20260719_200309400.jpg" alt="이력관리시스템 생산과정확인" loading="lazy">
         <div class="cert-thumb-expand">
           <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
         </div>
       </div>
       <div class="cert-thumb-info">
-        <strong>산양삼 이력관리시스템 ②</strong>
-        <span>생산과정확인 · 품질검사 이력</span>
+        <strong>산양삼 이력관리시스템</strong>
+        <span>재배자 정보 · 생산신고 · 생산과정확인 · 품질검사</span>
       </div>
     </div>
 
@@ -607,8 +604,9 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
     <button class="cert-modal-close" onclick="closeCertModal()">✕</button>
     <div class="cert-modal-wire"></div>
     <div class="cert-modal-frame">
-      <div class="cert-modal-mat">
+      <div class="cert-modal-mat" id="certModalMat">
         <img id="certModalImg" src="" alt="">
+        <img id="certModalImg2" src="" alt="" style="display:none">
       </div>
     </div>
     <div class="cert-modal-caption">
@@ -991,17 +989,38 @@ function checkPw() {
 /* ======= 황금 액자 모달 ======= */
 function openCertModal(src, title, desc) {
   var img = document.getElementById('certModalImg');
-  img.src = src;
-  img.alt = title;
+  var img2 = document.getElementById('certModalImg2');
+  var mat = document.getElementById('certModalMat');
+  img.src = src; img.alt = title;
+  img2.src = ''; img2.style.display = 'none';
+  mat.classList.remove('dual');
+  document.getElementById('certModalTitle').textContent = title;
+  document.getElementById('certModalDesc').innerHTML = desc;
+  document.getElementById('certModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function openCertModalDual(src1, src2, title, desc) {
+  var img = document.getElementById('certModalImg');
+  var img2 = document.getElementById('certModalImg2');
+  var mat = document.getElementById('certModalMat');
+  img.src = src1; img.alt = title + ' ①';
+  img2.src = src2; img2.alt = title + ' ②'; img2.style.display = 'block';
+  mat.classList.add('dual');
   document.getElementById('certModalTitle').textContent = title;
   document.getElementById('certModalDesc').innerHTML = desc;
   document.getElementById('certModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeCertModal() {
+  var mat = document.getElementById('certModalMat');
   document.getElementById('certModal').classList.remove('open');
   document.body.style.overflow = '';
-  setTimeout(function(){ document.getElementById('certModalImg').src = ''; }, 300);
+  setTimeout(function(){
+    document.getElementById('certModalImg').src = '';
+    document.getElementById('certModalImg2').src = '';
+    document.getElementById('certModalImg2').style.display = 'none';
+    mat.classList.remove('dual');
+  }, 300);
 }
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') closeCertModal();
