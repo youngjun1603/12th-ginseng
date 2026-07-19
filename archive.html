@@ -355,6 +355,89 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
   flex:1;width:0;height:100%;object-fit:contain;padding:6px;
 }
 
+/* ── 아이콘 카드 (프리미엄 버전) ── */
+@keyframes cert-shimmer{
+  0%  {background-position:-220% 0}
+  100%{background-position: 220% 0}
+}
+.cert-thumb-icon{
+  position:relative;
+  width:100%;aspect-ratio:4/3;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(28,54,28,.95) 0%, rgba(6,10,6,1) 100%);
+  border-bottom:1px solid rgba(196,153,58,.18);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:14px;overflow:hidden;
+  transition:background .35s var(--ease);
+}
+/* 내부 금색 이중 테두리 */
+.cert-thumb-icon::before{
+  content:'';position:absolute;
+  inset:9px;
+  border:1px solid rgba(196,153,58,.22);
+  box-shadow:
+    inset 0 0 0 4px rgba(196,153,58,.04),
+    0 0 0 1px rgba(196,153,58,.06);
+  pointer-events:none;
+  transition:border-color .35s var(--ease),box-shadow .35s var(--ease);
+}
+/* 호버 shimmer 광택 */
+.cert-thumb-icon::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(196,153,58,.07) 50%,
+    transparent 62%
+  );
+  background-size:220% 100%;
+  background-position:-220% 0;
+  pointer-events:none;
+}
+.cert-thumb:hover .cert-thumb-icon{
+  background:radial-gradient(ellipse at 50% 40%, rgba(36,66,36,.95) 0%, rgba(8,14,8,1) 100%);
+}
+.cert-thumb:hover .cert-thumb-icon::before{
+  border-color:rgba(196,153,58,.52);
+  box-shadow:
+    inset 0 0 0 4px rgba(196,153,58,.07),
+    0 0 22px rgba(196,153,58,.08);
+}
+.cert-thumb:hover .cert-thumb-icon::after{
+  animation:cert-shimmer 1.1s ease forwards;
+}
+/* SVG 아이콘 — 금빛 글로우 */
+.cert-thumb-icon svg{
+  width:52px;height:52px;
+  stroke:var(--gold);fill:none;
+  stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 5px rgba(196,153,58,.35)) drop-shadow(0 1px 2px rgba(240,200,74,.3));
+  transition:filter .35s var(--ease),transform .35s var(--ease);
+}
+.cert-thumb:hover .cert-thumb-icon svg{
+  filter:
+    drop-shadow(0 0 10px rgba(196,153,58,.65))
+    drop-shadow(0 0 3px rgba(240,200,74,.75))
+    drop-shadow(0 2px 6px rgba(0,0,0,.5));
+  transform:translateY(-4px) scale(1.06);
+}
+/* 하단 태그 텍스트 */
+.cert-thumb-icon-tag{
+  font-family:'Noto Serif KR',serif;
+  font-size:9.5px;letter-spacing:.22em;
+  color:rgba(196,153,58,.42);
+  transition:color .35s var(--ease);
+  white-space:nowrap;
+}
+.cert-thumb-icon-tag::before,
+.cert-thumb-icon-tag::after{
+  content:' — ';opacity:.45;
+}
+.cert-thumb:hover .cert-thumb-icon-tag{
+  color:rgba(196,153,58,.9);
+}
+
 /* 캡션 */
 .cert-modal-caption{
   margin-top:20px;text-align:center;padding-bottom:8px;
@@ -526,11 +609,13 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
            'down/KakaoTalk_20260719_200201837.jpg',
            '한국산삼감정평가협회 인증서',
            '산양삼 비배양 정품 · 12년~15년근 추정<br>충남 서천 · 2025년 07월 11일')">
-      <div class="cert-thumb-img">
-        <img src="down/KakaoTalk_20260719_200201837.jpg" alt="한국산삼감정평가협회 인증서" loading="lazy">
-        <div class="cert-thumb-expand">
-          <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        </div>
+      <div class="cert-thumb-icon">
+        <!-- award / seal icon -->
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="5"/>
+          <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>
+        </svg>
+        <span class="cert-thumb-icon-tag">인증서 · 클릭하여 보기</span>
       </div>
       <div class="cert-thumb-info">
         <strong>한국산삼감정평가협회 인증서</strong>
@@ -544,11 +629,13 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
            'down/KakaoTalk_20260719_200321489.jpg',
            '한국임업진흥원 품질검사 합격증',
            '국내산 특별관리임산물 품질검사 합격<br>검사번호 충남 2022-001A-9994')">
-      <div class="cert-thumb-img">
-        <img src="down/KakaoTalk_20260719_200321489.jpg" alt="한국임업진흥원 합격증" loading="lazy">
-        <div class="cert-thumb-expand">
-          <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        </div>
+      <div class="cert-thumb-icon">
+        <!-- badge-check icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="cert-thumb-icon-tag">합격증 · 클릭하여 보기</span>
       </div>
       <div class="cert-thumb-info">
         <strong>한국임업진흥원 합격증</strong>
@@ -562,11 +649,15 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
            'down/KakaoTalk_20260719_200236245_masked.jpg',
            '원산지 증명서',
            '천방농산영농조합법인 (충남 서천군)<br>산양산삼 12년산 흑산삼분말 7Kg')">
-      <div class="cert-thumb-img">
-        <img src="down/KakaoTalk_20260719_200236245_masked.jpg" alt="원산지 증명서" loading="lazy">
-        <div class="cert-thumb-expand">
-          <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        </div>
+      <div class="cert-thumb-icon">
+        <!-- file + map-pin icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+          <path d="M12 13v4"/>
+        </svg>
+        <span class="cert-thumb-icon-tag">증명서 · 클릭하여 보기</span>
       </div>
       <div class="cert-thumb-info">
         <strong>원산지 증명서</strong>
@@ -581,12 +672,15 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
            'down/KakaoTalk_20260719_200309400.jpg',
            '산양삼 이력관리시스템',
            '재배자 정보 · 생산신고 · 생산과정확인 · 품질검사 이력<br>충청남도 서천군 · 한국임업진흥원 현장 확인')">
-      <div class="cert-thumb-img dual-thumb">
-        <img src="down/KakaoTalk_20260719_200309400_01.jpg" alt="이력관리시스템 재배자 정보" loading="lazy">
-        <img src="down/KakaoTalk_20260719_200309400.jpg" alt="이력관리시스템 생산과정확인" loading="lazy">
-        <div class="cert-thumb-expand">
-          <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        </div>
+      <div class="cert-thumb-icon">
+        <!-- clipboard-list icon -->
+        <svg viewBox="0 0 24 24">
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+          <path d="M12 11h4"/><path d="M12 16h4"/>
+          <path d="M8 11h.01"/><path d="M8 16h.01"/>
+        </svg>
+        <span class="cert-thumb-icon-tag">이력관리 · 클릭하여 보기</span>
       </div>
       <div class="cert-thumb-info">
         <strong>산양삼 이력관리시스템</strong>
