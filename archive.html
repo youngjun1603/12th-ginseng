@@ -702,6 +702,27 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
       </div>
     </div>
 
+    <!-- 시험성적서 -->
+    <div class="cert-thumb"
+         onclick="openCertModal(
+           'down/시험성적서.jpg',
+           '시험성적서',
+           '산양산삼 원료 품질 시험 결과<br>항목별 적합 판정')">
+      <div class="cert-thumb-icon">
+        <!-- flask / test icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M9 3h6v11l4 6H5l4-6V3z"/>
+          <path d="M9 3H6"/><path d="M18 3h-3"/>
+          <path d="M6 17h12"/>
+        </svg>
+        <span class="cert-thumb-icon-tag">시험성적서 · 클릭하여 보기</span>
+      </div>
+      <div class="cert-thumb-info">
+        <strong>시험성적서</strong>
+        <span>산양산삼 원료 품질 시험 적합 판정</span>
+      </div>
+    </div>
+
     <!-- 이력관리 — 두 화면 합산 카드 -->
     <div class="cert-thumb"
          onclick="openCertModalDual(
@@ -826,6 +847,27 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
       성분 분석 자료
     </div>
     <div class="doc-grid">
+
+      <!-- 진세노사이드 비교 분석 — 실제 파일 -->
+      <div class="doc-card" data-tag="analysis">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">HWPX</div>
+          <div class="doc-title">진세노사이드 함량 비교 분석결과<br>(산양산삼 원료 성분 데이터)</div>
+          <div class="doc-meta">
+            <span>진세노사이드 함량 실측값</span>
+            <span>비교 분석 데이터 포함</span>
+          </div>
+          <div class="doc-actions">
+            <button class="doc-btn primary" onclick="openDownloadLock('down/진세노사이드함량 비교 분석결과.hwpx')">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              다운로드
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div class="doc-card" data-tag="analysis">
         <div class="doc-icon">
