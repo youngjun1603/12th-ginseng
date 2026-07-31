@@ -780,16 +780,11 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
             <span>전 항목 불검출</span>
           </div>
           <div class="doc-actions">
-            <button class="doc-btn" onclick="openViewModal('docs/pesticide-test.pdf','잔류농약 463종 검사 성적서')">
+            <button class="doc-btn" onclick="openCertModalDual('down/추가 자료/잔류농약 미표기1.jpg','down/추가 자료/잔류농약 미표기2.jpg','잔류농약 463종 검사 성적서','발효흑산삼 초미세분말 · 전 항목 불검출')">
               <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               뷰어
             </button>
-            <button class="doc-btn primary" onclick="openDownloadLock('docs/pesticide-test.pdf')">
-              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              다운로드
-            </button>
           </div>
-          <div class="coming-badge">업로드 예정</div>
         </div>
       </div>
 
@@ -804,7 +799,11 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
           <div class="doc-actions">
             <button class="doc-btn" onclick="openCertModal('down/시험성적서.jpg','중금속 검사 성적서','산양산삼 원료 품질 시험 결과<br>항목별 적합 판정')">
               <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              뷰어
+              성적서
+            </button>
+            <button class="doc-btn" onclick="openCertModal('down/추가 자료/38종.jpg','38종 사포닌 함량 분석표','산양산삼 원료 38종 사포닌 분석 결과')">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              사포닌 분석
             </button>
           </div>
         </div>
@@ -821,6 +820,27 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
       성분 분석 자료
     </div>
     <div class="doc-grid">
+
+      <!-- 38종 사포닌 함량 분석표 -->
+      <div class="doc-card" data-tag="analysis">
+        <div class="doc-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="doc-body">
+          <div class="doc-tag">이미지</div>
+          <div class="doc-title">38종 사포닌 함량 분석표<br>(PPD계 · PPT계 · 올레아난계)</div>
+          <div class="doc-meta">
+            <span>총 사포닌 110mg/g</span>
+            <span>Rb3 24.55mg/g</span>
+          </div>
+          <div class="doc-actions">
+            <button class="doc-btn" onclick="openCertModal('down/추가 자료/38종.jpg','38종 사포닌 함량 분석표','산양산삼 원료 38종 사포닌 분석 결과 · 총 사포닌 110mg/g')">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              뷰어
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- 진세노사이드 비교 분석 — 실제 파일 -->
       <div class="doc-card" data-tag="analysis">
