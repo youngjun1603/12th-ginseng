@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- 배경: 진녹색 둥근 사각형 -->
+  <rect width="512" height="512" rx="108" fill="#0D1A0D"/>
+  <!-- 골드 테두리 -->
+  <rect x="12" y="12" width="488" height="488" rx="96" fill="none" stroke="#C4993A" stroke-width="14"/>
+  <rect x="22" y="22" width="468" height="468" rx="86" fill="none" stroke="#C4993A" stroke-width="3" opacity=".4"/>
+
+  <!-- ── 산삼 식물 ── -->
+
+  <!-- 잎 5장 (상단) -->
+  <!-- 중앙 위 잎 -->
+  <ellipse cx="256" cy="82" rx="20" ry="38" fill="#1C3A1C" stroke="#C4993A" stroke-width="4"/>
+  <line x1="256" y1="118" x2="256" y2="82" stroke="#C4993A" stroke-width="2.5" opacity=".6"/>
+  <!-- 좌상단 잎 -->
+  <ellipse cx="208" cy="100" rx="17" ry="32" fill="#1C3A1C" stroke="#C4993A" stroke-width="4" transform="rotate(-28 208 100)"/>
+  <!-- 우상단 잎 -->
+  <ellipse cx="304" cy="100" rx="17" ry="32" fill="#1C3A1C" stroke="#C4993A" stroke-width="4" transform="rotate(28 304 100)"/>
+  <!-- 좌하단 잎 -->
+  <ellipse cx="178" cy="138" rx="14" ry="27" fill="#1C3A1C" stroke="#C4993A" stroke-width="3.5" transform="rotate(-50 178 138)"/>
+  <!-- 우하단 잎 -->
+  <ellipse cx="334" cy="138" rx="14" ry="27" fill="#1C3A1C" stroke="#C4993A" stroke-width="3.5" transform="rotate(50 334 138)"/>
+
+  <!-- 줄기 -->
+  <line x1="256" y1="118" x2="256" y2="196" stroke="#C4993A" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- 뿌리 몸체 상단 (목) -->
+  <rect x="238" y="193" width="36" height="26" rx="9" fill="#C4993A"/>
+  <!-- 뿌리 몸체 (타원형 주근) -->
+  <ellipse cx="256" cy="285" rx="52" ry="68" fill="#C4993A"/>
+
+  <!-- 잔뿌리 (하단) -->
+  <!-- 중앙 -->
+  <path d="M256 352 Q255 382 252 415 Q250 435 246 458" stroke="#C4993A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <!-- 좌측 -->
+  <path d="M218 342 Q192 372 176 402 Q167 423 162 448" stroke="#C4993A" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <!-- 우측 -->
+  <path d="M294 342 Q320 372 336 402 Q345 423 350 448" stroke="#C4993A" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+  <!-- 잔뿌리 끝 가지 (좌) -->
+  <path d="M162 448 Q150 462 144 474" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M162 448 Q172 464 174 478" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- 잔뿌리 끝 가지 (중) -->
+  <path d="M246 458 Q237 472 233 484" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M246 458 Q256 472 260 484" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- 잔뿌리 끝 가지 (우) -->
+  <path d="M350 448 Q340 462 338 476" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M350 448 Q360 462 366 476" stroke="#C4993A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+  <!-- 뿌리 몸체 하이라이트 (입체감) -->
+  <ellipse cx="242" cy="265" rx="16" ry="22" fill="rgba(255,255,255,.08)"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "name": "진본삼 산삼명작 샷",
+  "short_name": "진본삼",
+  "description": "12년근 비배양 산양산삼 발효 드링크",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1A0D",
+  "theme_color": "#142414",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
