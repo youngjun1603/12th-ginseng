@@ -807,11 +807,17 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
 /* ============================================================
    FLOATING MOBILE CTA
    ============================================================ */
-.float-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(10,14,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(196,153,58,.22);padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom));align-items:center;gap:12px;transform:translateY(100%);transition:transform .4s var(--ease)}
+.float-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(10,14,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(196,153,58,.22);padding:10px 16px;padding-bottom:max(10px,env(safe-area-inset-bottom));align-items:center;gap:12px;transform:translateY(100%);transition:transform .4s var(--ease)}
 .float-cta.visible{transform:translateY(0)}
-.float-cta-info{flex:1}
-.float-cta-name{font-family:var(--serif);font-size:14px;font-weight:700;color:var(--cr);letter-spacing:.06em}
-.float-cta-price{font-size:12px;color:var(--gold);font-weight:600;margin-top:2px}
+.float-cta-info{flex:1;min-width:0}
+.float-cta-orig{font-size:11px;color:rgba(248,244,236,.4);display:flex;align-items:center;gap:5px}
+.float-cta-orig s{text-decoration:line-through}
+.float-cta-disc{color:#ff6060;font-weight:700;font-size:12px}
+.float-cta-price{font-size:15px;color:var(--gold);font-weight:700;margin-top:2px;letter-spacing:.01em}
+.float-cta-sub{font-size:11px;color:rgba(196,153,58,.65);margin-top:2px}
+.float-cta-actions{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.float-cta-name{font-family:var(--serif);font-size:11px;color:rgba(248,244,236,.55);letter-spacing:.05em;white-space:nowrap}
+.float-cta-btns{display:flex;align-items:center;gap:8px}
 @media(max-width:960px){.float-cta{display:flex}}
 
 /* ============================================================
@@ -2340,16 +2346,24 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
 
 <!-- Floating Mobile CTA -->
 <div class="float-cta" id="floatCta">
+  <!-- 좌: 3줄 가격 정보 -->
   <div class="float-cta-info">
-    <div class="float-cta-name">진본삼 산삼명작 샷</div>
-    <div class="float-cta-price">특별가 357,000원 · 30병 세트</div>
+    <div class="float-cta-orig"><s>720,000원</s><span class="float-cta-disc">50%</span></div>
+    <div class="float-cta-price">판매가 357,000원</div>
+    <div class="float-cta-sub">30병 1세트 · 병당 11,900원</div>
   </div>
-  <button class="sns-icon kakao" onclick="shareKakao()" aria-label="카카오톡 공유" style="flex-shrink:0">
-    <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
-  </button>
-  <a class="btn btn-naver store-link" href="#" target="_blank" rel="noopener" style="padding:12px 16px;font-size:12px">
-    <span class="nv-n" style="width:16px;height:16px;font-size:11px">N</span>구매하기
-  </a>
+  <!-- 우: 상품명 + 버튼 -->
+  <div class="float-cta-actions">
+    <div class="float-cta-name">진본삼 산삼명작 샷</div>
+    <div class="float-cta-btns">
+      <button class="sns-icon kakao" onclick="shareKakao()" aria-label="카카오톡 공유">
+        <svg viewBox="0 0 24 24"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.576 1.418 4.842 3.584 6.246L4.5 21l4.518-2.394A11.3 11.3 0 0012 19c5.523 0 10-3.477 10-8.5S17.523 3 12 3z"/></svg>
+      </button>
+      <a class="btn btn-naver store-link" href="#" target="_blank" rel="noopener" style="padding:10px 14px;font-size:12px">
+        <span class="nv-n" style="width:16px;height:16px;font-size:11px">N</span>구매하기
+      </a>
+    </div>
+  </div>
 </div>
 <div id="toast">링크가 복사되었습니다</div>
 
