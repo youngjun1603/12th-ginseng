@@ -418,6 +418,14 @@ html.gt-active font,html.translated-active font{display:inline!important;max-wid
 .hero-cta .btn-secondary{color:var(--cr);border-color:rgba(248,244,236,.25)}
 .hero-cta .btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
 
+/* 히어로 강조 문구 */
+.hero-tagline{margin-top:20px;display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:clamp(13px,1.1vw,16px);font-weight:700;letter-spacing:.06em;word-break:keep-all;background:linear-gradient(90deg,#8A6010 0%,#C4993A 20%,#FFE27A 45%,#E8C040 62%,#C4993A 80%,#8A6010 100%);background-size:280% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmerTag 2.2s linear infinite,floatTag 3.8s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(196,153,58,.45))}
+@keyframes shimmerTag{0%{background-position:0% center}100%{background-position:280% center}}
+@keyframes floatTag{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-tagline .spark{display:inline-block;-webkit-text-fill-color:#D4A940;font-size:.95em;line-height:1;animation:sparkTag 1.3s ease-in-out infinite alternate}
+.hero-tagline .spark.s2{animation-delay:.65s}
+@keyframes sparkTag{0%{opacity:.2;transform:scale(.65) rotate(-25deg)}100%{opacity:1;transform:scale(1.5) rotate(25deg)}}
+
 .hero-metrics{display:flex;gap:36px;align-items:flex-end;padding-top:28px;border-top:1px solid rgba(196,153,58,.16);max-width:560px}
 .hm{display:flex;flex-direction:column;gap:6px}
 .hm-num{font-family:var(--serif);font-weight:700;font-size:32px;color:var(--gold);line-height:1}
@@ -1038,6 +1046,9 @@ html[lang="zh-CN"] .nav-acc-title,html[lang="zh-CN"] .nav-acc-body p{word-break:
       <div class="hero-cta reveal delay-3">
         <a class="btn btn-naver btn-naver-lg store-link" href="#" target="_blank" rel="noopener"><span class="nv-n">N</span>진본삼 산삼명작 구매하기</a>
         <a class="btn btn-secondary btn-lg" href="#tech">공법 확인하기</a>
+      </div>
+      <div class="hero-tagline">
+        <span class="spark">✦</span>12년근 발효흑산삼 6뿌리의 강력한 활력을 마셔보세요<span class="spark s2">✦</span>
       </div>
     </div>
 
