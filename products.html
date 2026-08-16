@@ -152,6 +152,12 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
 .btn-buy svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;flex-shrink:0}
 .btn-buy.disabled{background:rgba(248,244,236,.1);color:rgba(248,244,236,.3);pointer-events:none}
 .coming-badge{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(248,244,236,.3);padding-top:6px}
+.prod-tagline{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:9px;font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.06em;word-break:keep-all;color:#C4993A;animation:glowTag 2s ease-in-out infinite,floatTag 3.8s ease-in-out infinite;text-align:center}
+.prod-tagline .spark{display:inline-block;color:#C4993A;font-size:.95em;line-height:1;animation:sparkTag 1.3s ease-in-out infinite alternate}
+.prod-tagline .spark.s2{animation-delay:.65s}
+@keyframes glowTag{0%,100%{color:#C4993A;text-shadow:0 0 6px rgba(196,153,58,.3),0 0 14px rgba(196,153,58,.15)}50%{color:#FFE070;text-shadow:0 0 10px rgba(255,220,80,.95),0 0 22px rgba(196,153,58,.75),0 0 40px rgba(196,153,58,.4)}}
+@keyframes floatTag{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes sparkTag{0%{opacity:.2;transform:scale(.65) rotate(-25deg);color:#C4993A}100%{opacity:1;transform:scale(1.5) rotate(25deg);color:#FFE070}}
 
 /* Product subscription tabs */
 .prod-sub-tabs{display:flex;background:var(--g-900);border-radius:6px;overflow:hidden;border:1px solid rgba(196,153,58,.25);margin-bottom:14px}
@@ -369,6 +375,9 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
                 네이버에서 구매하기
               </a>
             </div>
+            <div class="prod-tagline">
+              <span class="spark">✦</span>12년근 발효흑산삼 6뿌리의 강력한 활력을 마셔보세요<span class="spark s2">✦</span>
+            </div>
             <div class="coming-badge">스토어 오픈 준비 중</div>
           </div>
 
@@ -386,6 +395,9 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
                 6개월 구독 신청하기
               </a>
             </div>
+            <div class="prod-tagline">
+              <span class="spark">✦</span>12년근 발효흑산삼 6뿌리의 강력한 활력을 마셔보세요<span class="spark s2">✦</span>
+            </div>
             <div class="coming-badge">스토어 오픈 준비 중</div>
           </div>
 
@@ -402,6 +414,9 @@ html.gt-active .page-header h1,html.gt-active .page-header p{word-break:break-wo
                 <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3A1 1 0 006 17h12M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
                 1년 구독 신청하기
               </a>
+            </div>
+            <div class="prod-tagline">
+              <span class="spark">✦</span>12년근 발효흑산삼 6뿌리의 강력한 활력을 마셔보세요<span class="spark s2">✦</span>
             </div>
             <div class="coming-badge">스토어 오픈 준비 중</div>
           </div>
